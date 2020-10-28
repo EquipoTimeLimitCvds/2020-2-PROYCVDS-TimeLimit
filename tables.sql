@@ -5,7 +5,6 @@ create table if not exists "PERSONAL" (
 	apellido Varchar(30) NOT NULL,
 	clave Varchar(50) NOT NULL	
 );
-
 create table if not exists "Laboratorios"(
 	Id int not null,
 	Nombre varchar(30)not null,
