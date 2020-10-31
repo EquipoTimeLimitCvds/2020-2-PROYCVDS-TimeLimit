@@ -22,7 +22,13 @@ public class MyBatisUser implements UserDAO {
         }
     }**/
 
+    public UserMapper getUserMapper() {
+        return userMapper;
+    }
 
+    public void setUserMapper(UserMapper userMapper) {
+        this.userMapper = userMapper;
+    }
 
     @Override
     public User getUser(String nombre) throws TimeLimitExceptions {

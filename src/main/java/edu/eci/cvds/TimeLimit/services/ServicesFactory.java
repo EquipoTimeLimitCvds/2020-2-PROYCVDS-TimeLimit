@@ -17,7 +17,7 @@ public class ServicesFactory {
 
     private static ServicesFactory instance= new ServicesFactory();
 
-    private static Optional<Injector> optInjector;
+    private static Optional<Injector> optInjector=Optional.empty();
 
 
     private Injector myBatisInjector(final String env, final String pathResource) {

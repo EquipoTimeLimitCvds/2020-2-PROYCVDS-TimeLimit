@@ -24,6 +24,7 @@ public class LoginBean {
 
     private String nombre;
     private String clave;
+    
 
 
     //@Inject
@@ -45,6 +46,9 @@ public class LoginBean {
 
     public String getNombre() {
         return nombre;
+    }
+    public String getClave(){
+        return clave;
     }
 
 

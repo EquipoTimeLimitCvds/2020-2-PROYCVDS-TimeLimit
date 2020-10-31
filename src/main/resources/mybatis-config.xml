@@ -10,7 +10,7 @@
     <properties resource="config.properties">
     </properties>
     <typeAliases>
-        <!--<typeAlias type="edu.eci.cvds.TimeLimit.model.User" alias="User"/>!-->
+        <typeAlias type="edu.eci.cvds.TimeLimit.model.User" alias="User"/>
         <!--<typeAlias type="edu.eci.cvds.TimeLimit.model.Initiative" alias="Initiative"/>!-->
         <!--<typeAlias type="edu.eci.cvds.TimeLimit.model.Comment" alias="Comment"/>!-->
     </typeAliases>
@@ -31,7 +31,7 @@
     </environments>
         
     <mappers>
-        <!-- <mapper resource="mappers/UserMapper.xml"></mapper>!-->
+        <mapper resource="mappers/UserMapper.xml"></mapper>
     </mappers>
         
         
