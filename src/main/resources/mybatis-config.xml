@@ -11,6 +11,8 @@
     </properties>
     <typeAliases>
         <typeAlias type="edu.eci.cvds.TimeLimit.model.User" alias="User"/>
+        <typeAlias type="edu.eci.cvds.TimeLimit.model.Elemento" alias="Elemento"/>
+        <typeAlias type="edu.eci.cvds.TimeLimit.model.Novedad" alias="Novedad"/>
         <!--<typeAlias type="edu.eci.cvds.TimeLimit.model.Initiative" alias="Initiative"/>!-->
         <!--<typeAlias type="edu.eci.cvds.TimeLimit.model.Comment" alias="Comment"/>!-->
     </typeAliases>
@@ -32,6 +34,8 @@
         
     <mappers>
         <mapper resource="mappers/UserMapper.xml"></mapper>
+        <mapper resource="mappers/ElementoMapper.xml"></mapper>
+        <mapper resource="mappers/NovedadMapper.xml"></mapper>
     </mappers>
         
         
