@@ -5,22 +5,22 @@
 
 <mapper namespace="edu.eci.cvds.TimeLimit.Persistence.mybatisimpl.mappers.NovedadMapper">
     <resultMap type="Novedad" id="NovedadResult">
-        <id property="id" column="id"/>
-	<result property="fecha" column="fecha"/>
-        <result property="descripcion" column="descripcion"/>
-        <result property="estado" column="estado"/>
-	<result property="tipo" column="tipo"/>
-        <result property="idelemento" column="idelemento"/>
+    	<id property="id" column="id"/>
+		<result property="fecha" column="fecha"/>
+    	<result property="descripcion" column="descripcion"/>
+    	<result property="estado" column="estado"/>
+		<result property="tipo" column="tipo"/>
+    	<result property="idelemento" column="idelemento"/>
        
 
     </resultMap>
     <select id="getNovedad" resultMap="NovedadResult" parameterType="String">
         SELECT 
-	n.id,
+		n.id,
         n.fecha,
         n.descripcion,
-	n.estado,
-	n.tipo,
+		n.estado,
+		n.tipo,
         n.idelemento
         FROM "novedades" as n
     </select>

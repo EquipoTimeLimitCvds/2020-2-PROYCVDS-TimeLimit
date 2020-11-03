@@ -5,22 +5,22 @@
 
 <mapper namespace="edu.eci.cvds.TimeLimit.Persistence.mybatisimpl.mappers.ElementoMapper">
     <resultMap type="Elemento" id="ElementoResult">
-        <id property="id" column="id"/>
-	<result property="nombre" column="nombre"/>
-        <result property="marca" column="marca"/>
-        <result property="modelo" column="modelo"/>
-	<result property="caracteristicas" column="caracteristicas"/>
-        <result property="idEquipo" column="idequipo"/>
+    	<id property="id" column="id"/>
+		<result property="nombre" column="nombre"/>
+    	<result property="marca" column="marca"/>
+    	<result property="modelo" column="modelo"/>
+		<result property="caracteristicas" column="caracteristicas"/>
+    	<result property="idEquipo" column="idequipo"/>
 
 
     </resultMap>
     <select id="getElemento" resultMap="ElementoResult" parameterType="String">
         SELECT 
-	l.id,
+		l.id,
         l.nombre,
         l.marca,
-	l.modelo,
-	l.caracteristicas,
+		l.modelo,
+		l.caracteristicas,
         l.idEquipo
         FROM "elementos" as l
 	WHERE nombre = #{nombre}
