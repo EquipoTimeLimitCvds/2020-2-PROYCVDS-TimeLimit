@@ -26,7 +26,7 @@ create table  if not exists "equipos"(
 	EnUso boolean not null,
 	IdLaboratorio int not null
 );
-drop table "equipos"; 
+--drop table "equipos";-- 
 create table if not exists "elementos"(
 	Id int not null,
 	Nombre Varchar(30)not null,
