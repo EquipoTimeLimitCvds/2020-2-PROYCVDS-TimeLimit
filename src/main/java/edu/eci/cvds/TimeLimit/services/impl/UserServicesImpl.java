@@ -24,6 +24,14 @@ public class UserServicesImpl implements UserServices {
 
     @Override
     public boolean validateLogin(String nombre, String clave) throws TimeLimitExceptions {
-        return false;
+        User user=userDao.getUser(nombre);
+        if (user==null){
+            return false;
+        }else{
+            return true;
+        }
+    }
+    public UserDAO getUserDao(){
+        return userDao;
     }
 }

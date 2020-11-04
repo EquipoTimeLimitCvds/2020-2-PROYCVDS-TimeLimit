@@ -4,6 +4,7 @@ package edu.eci.cvds.TimeLimit.manageBeans;
         import edu.eci.cvds.TimeLimit.exceptions.TimeLimitExceptions;
         import edu.eci.cvds.TimeLimit.services.ServicesFactory;
         import org.apache.shiro.SecurityUtils;
+        import org.apache.shiro.authc.UnknownAccountException;
         import org.apache.shiro.authz.annotation.RequiresGuest;
         import org.apache.shiro.subject.Subject;
 
@@ -50,16 +51,23 @@ public class LoginBean {
     public String getClave(){
         return clave;
     }
+    public void setNombre(String nombre){
+        this.nombre=nombre;
+    }
+    public void setClave(String clave){
+        this.clave=clave;
+    }
+
 
 
     @RequiresGuest
     public void login() throws TimeLimitExceptions {
         try {
              logger.login(nombre,clave);
-             System.out.println("Conecte");
+             FacesContext.getCurrentInstance().getExternalContext().redirect("/index2.xhtml");
 
-        } catch (TimeLimitExceptions e){
-           throw new TimeLimitExceptions  ("no conecte",e);
+        } catch (TimeLimitExceptions | IOException e){
+            FacesContext.getCurrentInstance().addMessage("shiro", new FacesMessage(FacesMessage.SEVERITY_ERROR, "Usuario no registrado", "Este usuario no se encuentra en nuestra base de datos"));
         }
 
     }
@@ -68,8 +76,4 @@ public class LoginBean {
         FacesContext facesContext = FacesContext.getCurrentInstance();
         facesContext.getExternalContext().redirect("");
     }
-
-
-
-
 }

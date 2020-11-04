@@ -26,11 +26,6 @@ create table  if not exists "equipos"(
 	EnUso boolean not null,
 	IdLaboratorio int not null
 );
-<<<<<<< HEAD
---drop table "equipos";-- 
-=======
----drop table "equipos";---- 
->>>>>>> 2ab9958b15fc35e7e6b126c8bd250ce2f02c8a9d
 create table if not exists "elementos"(
 	Id int not null,
 	Nombre Varchar(30)not null,
