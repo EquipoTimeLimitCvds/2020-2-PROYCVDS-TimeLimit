@@ -7,9 +7,12 @@
     <title>TimeLimit</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon" />
+    <link href="assets/css/log_in.css" rel="stylesheet"/>
 
 </h:head>
 <h:body class="is-preload">
+	<div class="login-box">
     <!-- Header -->
     <header id="header">
         <h1>Laboratorios - TimeLimit</h1>
@@ -17,10 +20,27 @@
     </header>
     <!-- Signup Form -->
     <h:form id="signup-form" method="post" action="#">
+    	<p:growl id="growl" showDetail="true" sticky="true" life="4000"> 
+        		<p:autoUpdate />
+   			</p:growl>
+			<style>
+				div[id="frm:growl_container"] > div {
+					background: #ABCADB !important;
+					color: #000;
+					text-shadow:none;
+					opacity:0.9;
+				}
+			</style>
         <p:inputText type="email" name="email" id="email" placeholder="Email Address" value="#{LoginBean.nombre}"/><br/>
         <p:inputText type="password" name="password" id="password" placeholder="Password"  value="#{LoginBean.clave}"/>
         <p:commandButton type="submit" value="Entrar" style="background:#00468D; margin-top: 0.5% " styleClass="customStyleButton" action="#{LoginBean.login()}"/>
     </h:form>
-
+	</div>
 </h:body>
 </html>
+
+
+
+
+
+
