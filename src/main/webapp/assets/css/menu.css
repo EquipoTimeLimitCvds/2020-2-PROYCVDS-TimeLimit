@@ -14,13 +14,11 @@ body{
 }
 
 .login-box {
-	width: 355px;
+	width: 30%;
 	height: 350px;
 	background: #fff;
 	color: #727070;
-	top: 50%;
-	left: 50%;
-	position: relative;
+	float:left;
 	transform: translate(-50%, -50%);
 	box-sizing: border-box;
 	padding: 70px 30px;
@@ -84,4 +82,25 @@ body{
 .login-box .control-label{
 	color: #0B41F8;
 	font-family: Impact;
+}
+
+
+
+
+
+
+
+.contenedor {
+	width: 80%;
+	height: 300px;
+	top: 50%;
+	left: 50%;
+	position: relative;
+	transform: translate(-40%, 0%);
+}
+
+.espaciador {
+	width: 3%;
+	height: 350px;
+	float:left;
 }
