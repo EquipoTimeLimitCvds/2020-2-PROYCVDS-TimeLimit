@@ -16,7 +16,7 @@ body{
 .login-box {
 	width: 30%;
 	height: 350px;
-	color: #FFF;
+	color: #fff;
 	float:left;
 	transform: translate(-50%, -50%);
 	box-sizing: border-box;
@@ -36,64 +36,78 @@ body{
 
 .login-box .form-control{
 	margin-bottom:10px;
-	box-shadow: none;
-	background: transparent;
 	border:none;
-	color: #000;
+	color: #fff;
 	width: 100%;
 	margin-bottom: 25px;
-	border: none;
-	outline: none;
 	height: 40px;
 	font-size: 16px;
-	text-shadow: none;
-	border-bottom: 2px solid #727070;
+	border-bottom: 2px solid #fff;
 }
 
 .login-box .form-control:focus{
-	border-bottom: 3px solid #0B41F8;
+	border-bottom: 3px solid #fff;
 }
 
 .login-box button{
-	box-shadow: none;
 	width: 100%;
-	border: none;
-	outline: none;
 	height: 32px;
-	background: #0B41F8;
-	color: #fff;
+	background: #fff;
+	color: #0B41F8;
 	font-size: 16px;
 	border-radius: 5px;
 	margin-top: 18px;
-	width: 100%;
-	text-shadow: none;
 	font-family: Impact;
 }
 
 .login-box button:hover{
 	background-color: #fff;
-	color: #050505;
-	border: 1px solid #050505;
+	color: #fff;
+	border: 1px solid #fff;
+}
+
+.login-box input{
+	width: 100%;
+	height: 32px;
+	background: #fff;
+	color: #0B41F8;
+	font-size: 16px;
+	border-radius: 5px;
+	margin-top: 18px;
+	font-family: Impact;
+}
+
+.login-box input:hover{
+	background-color: #fff;
+	color: #fff;
+	border: 1px solid #fff;
 }
 
 .login-box .control-label{
-	color: #0B41F8;
+	color: #fff;
 	font-family: Impact;
 }
 
 
 
+.menu{
+	width: 100%;
+	height: 10%;
+	transform: translate(0%, 50%);
+	font-family: sans-serif;
+	color: #fff;
+}
 
 
 
 
 .contenedor {
 	width: 80%;
-	height: 300px;
+	height: 50%;
 	top: 50%;
 	left: 50%;
 	position: relative;
-	transform: translate(-40%, 0%);
+	transform: translate(-40%, -30%);
 }
 
 .espaciador {

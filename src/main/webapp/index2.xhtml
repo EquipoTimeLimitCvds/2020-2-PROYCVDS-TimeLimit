@@ -12,6 +12,9 @@
 
 </h:head>
 <h:body class="is-preload">
+	<div class="menu">
+		<h1 align="center">MENU</h1>
+	</div>
 	<div class="contenedor">
 		<div class="espaciador"></div>
 		<div class="login-box">
@@ -20,21 +23,7 @@
 	        <h1>Elementos</h1>
 	        <img src="assets/img/elementos.png" width="100%" height="200" />
 	    </header>
-	    <!-- Signup Form -->
-	    <h:form id="signup-form" method="post" action="#">
-	    	<p:growl id="growl" showDetail="true" sticky="true" life="4000"> 
-	        		<p:autoUpdate />
-	   			</p:growl>
-				<style>
-					div[id="frm:growl_container"] > div {
-						background: #ABCADB !important;
-						color: #000;
-						text-shadow:none;
-						opacity:0.9;
-					}
-				</style>
-	        <p:commandButton type="submit" value="Elementos" style="background:#00468D; margin-top: 0.5% " styleClass="customStyleButton" action="#{LoginBean.login()}"/>
-	    </h:form>
+	    <a href="index.xhtml"><input style="background:#fff; margin-top: 0.5%" styleClass="customStyleButton" type="button" value="Elementos"></input></a>
 		</div>
 		
 		<div class="espaciador"></div>
@@ -45,21 +34,7 @@
 	        <h1>Equipos</h1>
 	        <img src="assets/img/equipos.png"  />
 	    </header>
-	    <!-- Signup Form -->
-	    <h:form id="signup-form1" method="post" action="#">
-	    	<p:growl id="growl" showDetail="true" sticky="true" life="4000"> 
-	        		<p:autoUpdate />
-	   			</p:growl>
-				<style>
-					div[id="frm:growl_container"] > div {
-						background: #ABCADB !important;
-						color: #000;
-						text-shadow:none;
-						opacity:0.9;
-					}
-				</style>
-	        <p:commandButton type="submit" value="Equipos" style="background:#00468D; margin-top: 0.5% " styleClass="customStyleButton" action="#{LoginBean.login()}"/>
-	    </h:form>
+	    <a href="index.xhtml"><input style="background:#fff; margin-top: 0.5%" styleClass="customStyleButton" type="button" value="Equipos"></input></a>
 		</div>
 		
 		<div class="espaciador"></div>
@@ -71,21 +46,7 @@
 	        
 	        <img src="assets/img/novedades.png"  width="100%" height="200"  />
 	    </header>
-	    <!-- Signup Form -->
-	    <h:form id="signup-form2" method="post" action="#">
-	    	<p:growl id="growl" showDetail="true" sticky="true" life="4000"> 
-	        		<p:autoUpdate />
-	   			</p:growl>
-				<style>
-					div[id="frm:growl_container"] > div {
-						background: #ABCADB !important;
-						color: #000;
-						text-shadow:none;
-						opacity:0.9;
-					}
-				</style>
-	        <p:commandButton type="submit" value="Novedades" style="background:#00468D; margin-top: 0.5% " styleClass="customStyleButton" action="#{LoginBean.login()}"/>
-	    </h:form>
+	    <a href="index.xhtml"><input style="background:#fff; margin-top: 0.5%" styleClass="customStyleButton" type="button" value="Novedades"></input></a>
 		</div>
 	</div>
 </h:body>
