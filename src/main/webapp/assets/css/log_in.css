@@ -6,7 +6,7 @@ body{
       rgba(0, 0, 0, 0.5),
       rgba(0, 0, 0, 0.5)
     ),
-	url(../img/fondolog.jpg);
+	url(../img/fondo.jpg);
 	background-position: 0, 10;
 	background-size: cover;
 	font-family: sans-serif;
@@ -17,7 +17,7 @@ body{
 	width: 355px;
 	height: 350px;
 	background: #fff;
-	color: #727070;
+	color: #024D12;
 	top: 50%;
 	left: 50%;
 	position: relative;
@@ -26,8 +26,8 @@ body{
 	padding: 70px 30px;
 	border-color: #fff;
 	border-radius: 10px;
-	border-top: 3px solid #050505;
-	border-bottom: 3px solid #050505;
+	border-top: 3px solid #024D12;
+	border-bottom: 3px solid #024D12;
 }
 
 .login-box .avatar {
@@ -52,7 +52,7 @@ body{
 	height: 40px;
 	font-size: 16px;
 	text-shadow: none;
-	border-bottom: 2px solid #727070;
+	border-bottom: 2px solid #024D12;
 }
 
 .login-box .form-control:focus{
@@ -77,8 +77,8 @@ body{
 
 .login-box button:hover{
 	background-color: #fff;
-	color: #050505;
-	border: 1px solid #050505;
+	color: #024D12;
+	border: 1px solid #024D12;
 }
 
 .login-box .control-label{
