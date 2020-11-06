@@ -16,16 +16,13 @@ body{
 .login-box {
 	width: 30%;
 	height: 350px;
-	background: #fff;
-	color: #727070;
+	color: #FFF;
 	float:left;
 	transform: translate(-50%, -50%);
 	box-sizing: border-box;
 	padding: 70px 30px;
 	border-color: #fff;
 	border-radius: 10px;
-	border-top: 3px solid #050505;
-	border-bottom: 3px solid #050505;
 }
 
 .login-box .avatar {
