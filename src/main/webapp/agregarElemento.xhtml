@@ -12,11 +12,40 @@
 </h:head>
 
 <h:body>
+
 	<div class="elemento">
 		<a href="elementos.xhtml"><input style="background:#fff; margin-top: 0.5%" styleClass="customStyleButton" type="button" value="Volver"></input></a>
 	</div>
-	<div class="box">
-		<input type="text" name="search" placeholder="Agregar elemento" class="src" autocomplete="off"></input>
+	
+	<div class="contenedor">
+	<div class="login-box">
+    <!-- Header -->
+    <header id="header">
+        <h1>Agregar Elemento</h1>
+    </header>
+    <!-- Signup Form -->
+    <h:form id="signup-form" method="post" action="#">
+    	<p:growl id="growl" showDetail="true" sticky="true" life="4000"> 
+        		<p:autoUpdate />
+   			</p:growl>
+			<style>
+				div[id="frm:growl_container"] > div {
+					background: #ABCADB !important;
+					color: #000;
+					text-shadow:none;
+					opacity:0.9;
+				}
+			</style>
+			<img class="avatar" src= "assets/img/timelimit.png" alt="Logo de login"/>
+        <p:inputText type="id" name="id" id="id" placeholder="Id"/><br/>
+        <p:inputText type="nombre" name="nombre" id="nombre" placeholder="Nombre" />
+        <p:inputText type="marca" name="marca" id="marca" placeholder="Marca"/>
+        <p:inputText type="modelo" name="modelo" id="modelo" placeholder="Modelo"/>
+        <p:inputText type="caracteristicas" name="caracteristicas" id="caracteristicas" placeholder="Caracteristicas"/>
+        <p:inputText type="idEquipo" name="idEquipo" id="idEquipo" placeholder="Id Equipo" />
+        <p:commandButton type="submit" value="Entrar" style="background:#024D12; margin-top: 0.5% " styleClass="customStyleButton"/>
+    </h:form>
+	</div>
 	</div>
 </h:body>
 </html>

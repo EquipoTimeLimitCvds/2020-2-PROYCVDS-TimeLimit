@@ -8,15 +8,43 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon" />
-    <link href="assets/css/novedades.css" rel="stylesheet"/>
+    <link href="assets/css/elementos.css" rel="stylesheet"/>
 </h:head>
 
 <h:body>
-	<div class="novedad">
+	<div class="elemento">
 		<a href="novedades.xhtml"><input style="background:#fff; margin-top: 0.5%" styleClass="customStyleButton" type="button" value="Volver"></input></a>
 	</div>
-	<div class="box">
-		<input type="text" name="search" placeholder="Agregar novedad" class="src" autocomplete="off"></input>
+	
+	<div class="contenedor">
+		<div class="login-box">
+	    <!-- Header -->
+	    <header id="header">
+	        <h1>Agregar Novedad</h1>
+	    </header>
+	    <!-- Signup Form -->
+	    <h:form id="signup-form" method="post" action="#">
+	    	<p:growl id="growl" showDetail="true" sticky="true" life="4000"> 
+	        		<p:autoUpdate />
+	   			</p:growl>
+				<style>
+					div[id="frm:growl_container"] > div {
+						background: #ABCADB !important;
+						color: #000;
+						text-shadow:none;
+						opacity:0.9;
+					}
+				</style>
+				<img class="avatar" src= "assets/img/timelimit.png" alt="Logo de login"/>
+	        <p:inputText type="id" name="id" id="id" placeholder="Id"/><br/>
+	        <p:inputText type="fecha" name="fecha" id="fecha" placeholder="Fecha" />
+	        <p:inputText type="descripcion" name="descripcion" id="descripcion" placeholder="Descripción"/>
+	        <p:inputText type="estado" name="estado" id="estado" placeholder="Estado"/>
+	        <p:inputText type="tipo" name="tipo" id="tipo" placeholder="Tipo"/>
+	        <p:inputText type="idElemento" name="idElemento" id="idElemento" placeholder="Id Elemento" />
+	        <p:commandButton type="submit" value="Entrar" style="background:#024D12; margin-top: 0.5% " styleClass="customStyleButton"/>
+	    </h:form>
+		</div>
 	</div>
 </h:body>
 </html>

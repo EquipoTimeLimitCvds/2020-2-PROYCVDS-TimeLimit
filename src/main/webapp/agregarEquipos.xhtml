@@ -8,15 +8,42 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon" />
-    <link href="assets/css/equipos.css" rel="stylesheet"/>
+    <link href="assets/css/elementos.css" rel="stylesheet"/>
 </h:head>
 
 <h:body>
-	<div class="equipo">
+	<div class="elemento">
 		<a href="equipos.xhtml"><input style="background:#fff; margin-top: 0.5%" styleClass="customStyleButton" type="button" value="Volver"></input></a>
 	</div>
-	<div class="box">
-		<input type="text" name="search" placeholder="Agregar equipo" class="src" autocomplete="off"></input>
+	
+	<div class="contenedor">
+		<div class="login-box">
+	    <!-- Header -->
+	    <header id="header">
+	        <h1>Agregar Equipo</h1>
+	    </header>
+	    <!-- Signup Form -->
+	    <h:form id="signup-form" method="post" action="#">
+	    	<p:growl id="growl" showDetail="true" sticky="true" life="4000"> 
+	        		<p:autoUpdate />
+	   			</p:growl>
+				<style>
+					div[id="frm:growl_container"] > div {
+						background: #ABCADB !important;
+						color: #000;
+						text-shadow:none;
+						opacity:0.9;
+					}
+				</style>
+				<img class="avatar" src= "assets/img/timelimit.png" alt="Logo de login"/>
+	        <p:inputText type="id" name="id" id="id" placeholder="Id"/><br/>
+	        <p:inputText type="nombre" name="nombre" id="nombre" placeholder="Nombre" />
+	        <p:inputText type="estado" name="estado" id="estado" placeholder="Estado"/>
+	        <p:inputText type="enUso" name="enUso" id="enUso" placeholder="En Uso"/>
+	        <p:inputText type="idLaboratorio" name="idLaboratorio" id="idLaboratorio" placeholder="Id Laboratorio" />
+	        <p:commandButton type="submit" value="Entrar" style="background:#024D12; margin-top: 0.5% " styleClass="customStyleButton"/>
+	    </h:form>
+		</div>
 	</div>
 </h:body>
 </html>
