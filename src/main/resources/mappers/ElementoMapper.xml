@@ -27,8 +27,8 @@
     </select>
 
     <insert id="RegistrarElemento" parameterType="map">
-        INSERT INTO elementos
-	VALUES( #{id},#{nombre},#{marca},#{modelo},#{caracteristicas},#{idEquipo});
+        INSERT INTO "elementos"
+	VALUES((select count(*)+1 from "elementos"),#{nombre},#{marca},#{modelo},#{caracteristicas},#{idEquipo});
     </insert>
     	
 

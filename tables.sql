@@ -6,10 +6,10 @@ create table if not exists "PERSONAL" (
 	clave Varchar(50) NOT NULL	
 );
 
+CREATE SEQUENCE NoLab INCREMENT BY 1;
 create table if not exists "Laboratorios"(
 	Id int not null,
 	Nombre varchar(30)not null,
-	No_Equipo int not null,
 	Horario varchar (20)not null,
 	Descripcion Varchar(30)not null
 );
@@ -21,11 +21,13 @@ create table if not exists "Tiene" (
 
 create table  if not exists "equipos"(
 	Id int not null,
-	Nombre Varchar(20)not null,
 	Estado Varchar(20)not null,
 	EnUso boolean not null,
 	IdLaboratorio int not null
 );
+
+
+CREATE SEQUENCE NoEle INCREMENT BY 1;
 create table if not exists "elementos"(
 	Id int not null,
 	Nombre Varchar(30)not null,
@@ -34,6 +36,8 @@ create table if not exists "elementos"(
 	Caracteristicas varchar(50)not null,
 	IdEquipo int not null
 );
+
+CREATE SEQUENCE NoNove INCREMENT BY 1;
 create table if not exists "novedades"(
 	Id int not null,
 	Fecha date not null,
@@ -42,7 +46,6 @@ create table if not exists "novedades"(
 	tipo varchar(15) not null,
 	IdElemento int not null
 );
-
 
 
 alter table "PERSONAL" add constraint PK_PERSONAL primary key(id);
@@ -59,11 +62,5 @@ alter table "novedades" add constraint FK_novedades_Equipos foreign key(IdElemen
 alter table "novedades" add constraint FK_novedades_Laboratorios foreign key(IdElemento) references "Laboratorios"(id);
 alter table "novedades" add constraint FK_novedades_elementos foreign key(IdElemento) references "elementos"(id);
 
-------------------DROP CONSTRAINT--------------------------------------------------------
-alter table "Tiene" drop constraint FK_Tiene_Personal;
-alter table "Tiene" drop constraint FK_Tiene_Laboratorios;
-alter table "equipos" drop constraint FK_Equipos_Laboratorios;
-alter table "novedades" drop constraint FK_novedades_Laboratorios;
-alter table "novedades" drop constraint FK_novedades_Equipos;
-alter table "elementos" drop constraint FK_elementos_Equipos;
-alter table "novedades" drop constraint FK_novedades_elementos;
+
+insert into "PERSONAL"(id,nombre,cargo,apellido,clave) values(2145058,'Steven','Monitor','Bermudez','123456');
