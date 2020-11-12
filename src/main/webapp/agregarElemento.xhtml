@@ -37,13 +37,13 @@
 				}
 			</style>
 			<img class="avatar" src= "assets/img/timelimit.png" alt="Logo de login"/>
-        <p:inputText type="id" name="id" id="id" placeholder="Id"/><br/>
-        <p:inputText type="nombre" name="nombre" id="nombre" placeholder="Nombre" />
-        <p:inputText type="marca" name="marca" id="marca" placeholder="Marca"/>
-        <p:inputText type="modelo" name="modelo" id="modelo" placeholder="Modelo"/>
-        <p:inputText type="caracteristicas" name="caracteristicas" id="caracteristicas" placeholder="Caracteristicas"/>
-        <p:inputText type="idEquipo" name="idEquipo" id="idEquipo" placeholder="Id Equipo" />
-        <p:commandButton type="submit" value="Entrar" style="background:#024D12; margin-top: 0.5% " styleClass="customStyleButton"/>
+        <p:inputText type="id" name="id" id="id" placeholder="Id" value="#{ElementoBean.id}" />
+        <p:inputText type="nombre" name="nombre" id="nombre" placeholder="Nombre" value="#{ElementoBean.nombre}" />
+        <p:inputText type="marca" name="marca" id="marca" placeholde="Marca" value="#{ElementoBean.marca}"/>
+        <p:inputText type="modelo" name="modelo" id="modelo" placeholder="Modelo" value="#{ElementoBean.modelo}"/>
+        <p:inputText type="caracteristicas" name="caracteristicas" id="caracteristicas" placeholder="Caracteristicas" value="#{ElementoBean.caracteristicas}"/>
+        <p:inputText type="idEquipo" name="idEquipo" id="idEquipo" placeholder="Id Equipo" value="#{ElementoBean.idEquipo}"/>
+        <p:commandButton type="submit" value="Entrar" style="background:#024D12; margin-top: 0.5% " styleClass="customStyleButton" action="#{ElementoBean.registrarElemento()}"/>
     </h:form>
 	</div>
 	</div>

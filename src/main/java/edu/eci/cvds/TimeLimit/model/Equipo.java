@@ -4,14 +4,14 @@ public class Equipo {
     private int id;
     private String nombre;
     private String estado;
-    private Boolean enuso;
+    private String enUso;
     private int idLaboratorio;
 
-    public void Equipo(int id,String nombre,String marca,String modelo,String caracteristicas,int idEquipo){
+    public void Equipo(int id,String nombre,String estado,String enUso,int idLaboratorio){
         this.id=id;
         this.nombre=nombre;
         this.estado=estado;
-        this.enuso=enuso;
+        this.enUso=enUso;
         this.idLaboratorio=idLaboratorio;
     }
     public String getNombre() {
@@ -30,12 +30,12 @@ public class Equipo {
         this.estado = estado;
     }
 
-    public Boolean getenuso() {
-        return enuso;
+    public String getenuso() {
+        return enUso;
     }
 
-    public void setenuso(Boolean enuso) {
-        this.enuso = enuso;
+    public void setenuso(String enUso) {
+        this.enUso = enUso;
     }
 
     public int getId() {

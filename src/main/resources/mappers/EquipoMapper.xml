@@ -8,25 +8,14 @@
         <id property="id" column="id"/>
         <result property="nombre" column="nombre"/>
         <result property="estado" column="estado"/>
-        <result property="enUso" column="enUso"/>
-		<result property="idLaboratorio" column="idLaboratorio"/>
-       
-
+        <result property="enUso" column="enuso"/>
+		<result property="idLaboratorio" column="idlaboratorio"/>
     </resultMap>
-    <select id="getEquipo" resultMap="EquipoResult" parameterType="String">
-        SELECT 
-		e.id,
-		e.nombre,
-        e.estado,
-        e.enUso,
-		e.idLaboratorio
-        FROM "equipos" as e
-        WHERE nombre = #{nombre}
-    </select>
 
-    <insert id="RegistrarEquipo" parameterType="map">
-        INSERT INTO "equipos"
-	VALUES((select count(*)+1 from "equipos"),#{nombre},#{estado},#{enUso},#{idLaboratorio}) ;
+
+    <insert id="registrarEquipo" parameterType="edu.eci.cvds.TimeLimit.model.Equipo">
+        INSERT INTO "equipos"(id,nombre,estado,enUso,idLaboratorio)
+	VALUES(#{id},#{nombre},#{estado},#{enUso},#{idLaboratorio}) ;
     </insert>
     	
 

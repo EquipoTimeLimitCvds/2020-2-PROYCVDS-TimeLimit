@@ -4,6 +4,7 @@ import org.apache.ibatis.annotations.Param;
 
 import edu.eci.cvds.TimeLimit.model.Laboratorios;
 
+
 public interface LaboratoriosMapper {
 
 	public Laboratorios getLaboratorios(int id);

@@ -11,15 +11,6 @@
     	<result property="descripcion" column="modelo"/>
 	
     </resultMap>
-    <select id="getLaboratorio" resultMap="LaboratorioResult" parameterType="String">
-        SELECT 
-		l.id,
-        l.nombre,
-        l.horario,
-		l.descripcion,
-        FROM "Laboratorios" as l
-	WHERE nombre = #{nombre}
-    </select>
 
     <insert id="RegistrarLaboratorio" parameterType="map">
         INSERT INTO "Laboratorios"

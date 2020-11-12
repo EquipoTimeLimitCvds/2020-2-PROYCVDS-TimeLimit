@@ -36,12 +36,12 @@
 					}
 				</style>
 				<img class="avatar" src= "assets/img/timelimit.png" alt="Logo de login"/>
-	        <p:inputText type="id" name="id" id="id" placeholder="Id"/><br/>
-	        <p:inputText type="nombre" name="nombre" id="nombre" placeholder="Nombre" />
-	        <p:inputText type="estado" name="estado" id="estado" placeholder="Estado"/>
-	        <p:inputText type="enUso" name="enUso" id="enUso" placeholder="En Uso"/>
-	        <p:inputText type="idLaboratorio" name="idLaboratorio" id="idLaboratorio" placeholder="Id Laboratorio" />
-	        <p:commandButton type="submit" value="Entrar" style="background:#024D12; margin-top: 0.5% " styleClass="customStyleButton"/>
+	        <p:inputText type="id" name="id" id="id" placeholder="Id" value="#{EquipoBean.id}" /><br/>
+	        <p:inputText type="nombre" name="nombre" id="nombre" placeholder="Nombre" value="#{EquipoBean.nombre}"/>
+	        <p:inputText type="estado" name="estado" id="estado" placeholder="Estado" value="#{EquipoBean.estado}"/>
+	        <p:inputText type="enUso" name="enUso" id="enUso" placeholder="En Uso" value="#{EquipoBean.enUso}"/>
+	        <p:inputText type="idLaboratorio" name="idLaboratorio" id="idLaboratorio" placeholder="Id Laboratorio" value="#{EquipoBean.idLaboratorio}" />
+	        <p:commandButton type="submit" value="Entrar" style="background:#024D12; margin-top: 0.5% " styleClass="customStyleButton" action="#{EquipoBean.registrarEquipo()}"/>
 	    </h:form>
 		</div>
 	</div>

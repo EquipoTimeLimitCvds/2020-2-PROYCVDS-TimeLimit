@@ -15,7 +15,10 @@ package edu.eci.cvds.TimeLimit.manageBeans;
         import java.io.IOException;
 
 
+
 @SuppressWarnings("deprecation")
+
+
 @ManagedBean(name="LoginBean")
 @SessionScoped
 public class LoginBean {
