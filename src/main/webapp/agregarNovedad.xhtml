@@ -35,14 +35,13 @@
 						opacity:0.9;
 					}
 				</style>
-				<img class="avatar" src= "assets/img/timelimit.png" alt="Logo de login"/>
-	        <p:inputText type="id" name="id" id="id" placeholder="Id"/><br/>
-	        <p:inputText type="fecha" name="fecha" id="fecha" placeholder="Fecha" />
-	        <p:inputText type="descripcion" name="descripcion" id="descripcion" placeholder="Descripción"/>
-	        <p:inputText type="estado" name="estado" id="estado" placeholder="Estado"/>
-	        <p:inputText type="tipo" name="tipo" id="tipo" placeholder="Tipo"/>
-	        <p:inputText type="idElemento" name="idElemento" id="idElemento" placeholder="Id Elemento" />
-	        <p:commandButton type="submit" value="Entrar" style="background:#024D12; margin-top: 0.5% " styleClass="customStyleButton"/>
+				<img class="avatar" src= "assets/img/timelimit.png" alt="Logo de login" />
+	        <p:inputText type="id" name="id" id="id" placeholder="Id" value="#{NovedadBean.id}"/><br/>
+	        <p:inputText type="descripcion" name="descripcion" id="descripcion" placeholder="Descripción" value="#{NovedadBean.descripcion}"/>
+	        <p:inputText type="estado" name="estado" id="estado" placeholder="Estado" value="#{NovedadBean.estado}"/>
+	        <p:inputText type="tipo" name="tipo" id="tipo" placeholder="Tipo" value="#{NovedadBean.tipo}"/>
+	        <p:inputText type="idElemento" name="idElemento" id="idElemento" placeholder="Id Elemento" value="#{NovedadBean.idElemento}"/>
+	        <p:commandButton type="submit" value="Entrar" style="background:#024D12; margin-top: 0.5% " styleClass="customStyleButton" action="#{NovedadBean.registrarNovedad()}"/>
 	    </h:form>
 		</div>
 	</div>

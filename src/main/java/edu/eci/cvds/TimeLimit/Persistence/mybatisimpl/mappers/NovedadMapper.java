@@ -8,7 +8,7 @@ import java.time.LocalDate;
 import java.util.Date;
 
 public interface NovedadMapper {
-    public void registrarNovedad(@Param("id")int id, @Param("fecha") LocalDate fecha, @Param("descripcion")String descripcion, @Param("estado")String estado, @Param("tipo")String tipo, @Param("idelemento")int idelemento);
+    public void registrarNovedad(@Param("id")int id, @Param("fecha") LocalDate fecha, @Param("descripcion")String descripcion, @Param("estado")String estado, @Param("tipo")String tipo, @Param("idElemento")int idElemento);
 
     public Novedad getNovedad(int id);
 }

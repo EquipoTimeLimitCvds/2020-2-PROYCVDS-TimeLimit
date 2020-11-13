@@ -10,22 +10,13 @@
     	<result property="descripcion" column="descripcion"/>
     	<result property="estado" column="estado"/>
 		<result property="tipo" column="tipo"/>
-    	<result property="idelemento" column="idelemento"/>
+    	<result property="idElemento" column="idelemento"/>
        
 
     </resultMap>
-    <select id="getNovedad" resultMap="NovedadResult" parameterType="String">
-        SELECT 
-		n.id,
-        n.fecha,
-        n.descripcion,
-		n.estado,
-		n.tipo,
-        n.idelemento
-        FROM "novedades" as n
-    </select>
 
-    <insert id="RegistrarNovedad" parameterType="map">
+
+    <insert id="registrarNovedad" parameterType="map">
     INSERT INTO "novedades"(id,fecha,descripcion,estado,tipo,idElemento)
 	VALUES(#{id},#{fecha},#{descripcion},#{estado},#{tipo},#{idElemento}) ;
     </insert>

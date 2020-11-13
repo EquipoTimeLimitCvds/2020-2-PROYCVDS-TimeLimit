@@ -14,6 +14,7 @@ import javax.faces.context.FacesContext;
 
 
 
+
 @SuppressWarnings("deprecation")
 @ManagedBean(name="EquipoBean")
 @SessionScoped

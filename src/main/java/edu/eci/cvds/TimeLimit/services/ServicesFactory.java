@@ -2,18 +2,13 @@ package edu.eci.cvds.TimeLimit.services;
 
 import com.google.inject.Injector;
 
-import edu.eci.cvds.TimeLimit.Persistence.ElementoDao;
-import edu.eci.cvds.TimeLimit.Persistence.EquipoDao;
-import edu.eci.cvds.TimeLimit.Persistence.LaboratoriosDao;
-import edu.eci.cvds.TimeLimit.Persistence.UserDAO;
-import edu.eci.cvds.TimeLimit.Persistence.mybatisimpl.MyBatisElemento;
-import edu.eci.cvds.TimeLimit.Persistence.mybatisimpl.MyBatisEquipo;
-import edu.eci.cvds.TimeLimit.Persistence.mybatisimpl.MyBatisLaboratorios;
-import edu.eci.cvds.TimeLimit.Persistence.mybatisimpl.MyBatisUser;
+import edu.eci.cvds.TimeLimit.Persistence.*;
+import edu.eci.cvds.TimeLimit.Persistence.mybatisimpl.*;
 import edu.eci.cvds.TimeLimit.authenticator.SessionLogger;
 import edu.eci.cvds.TimeLimit.authenticator.ShiroSession;
 import edu.eci.cvds.TimeLimit.services.impl.ElementoServicesImpl;
 import edu.eci.cvds.TimeLimit.services.impl.EquipoServicesImpl;
+import edu.eci.cvds.TimeLimit.services.impl.NovedadServicesImpl;
 import edu.eci.cvds.TimeLimit.services.impl.UserServicesImpl;
 import org.mybatis.guice.XMLMyBatisModule;
 
@@ -38,6 +33,8 @@ public class ServicesFactory {
                 bind(UserServices.class).to(UserServicesImpl.class);
                 bind(ElementoDao.class).to(MyBatisElemento.class);
                 bind(ElementoServices.class).to(ElementoServicesImpl.class);
+                bind(NovedadDao.class).to(MyBatisNovedad.class);
+                bind(NovedadServices.class).to(NovedadServicesImpl.class);
                 bind(EquipoDao.class).to(MyBatisEquipo.class);
                 bind(EquipoServices.class).to(EquipoServicesImpl.class);
                 bind(LaboratoriosDao.class).to(MyBatisLaboratorios.class);
@@ -74,8 +71,14 @@ public class ServicesFactory {
     
     public EquipoServices getEquipoServices(){
         if(!optInjector.isPresent()){
-            optInjector=Optional.of(myBatisInjector("test","mybatis-config-h3.xml"));
+            optInjector=Optional.of(myBatisInjector("test","mybatis-config-h.xml"));
         }
         return optInjector.get().getInstance(EquipoServices.class);
+    }
+    public NovedadServices getNovedadServices(){
+        if(!optInjector.isPresent()){
+            optInjector=Optional.of(myBatisInjector("test","mybatis-config-h2.xml"));
+        }
+        return optInjector.get().getInstance(NovedadServices.class);
     }
 }

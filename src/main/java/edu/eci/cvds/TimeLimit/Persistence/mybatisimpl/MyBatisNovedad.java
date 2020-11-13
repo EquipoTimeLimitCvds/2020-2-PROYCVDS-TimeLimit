@@ -36,7 +36,7 @@ public class MyBatisNovedad implements NovedadDao {
             LocalDate fecha=LocalDate.now();
             novedadMapper.registrarNovedad(id,fecha,descripcion,estado,tipo,idElemento);
         }catch (Exception e){
-            throw new TimeLimitExceptions("No se puede insertar el elemento",e);
+            throw new TimeLimitExceptions("No se puede insertar la Novedad",e);
         }
     }
 }
