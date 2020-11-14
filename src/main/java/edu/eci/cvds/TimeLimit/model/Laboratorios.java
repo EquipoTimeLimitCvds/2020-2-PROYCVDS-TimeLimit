@@ -6,7 +6,7 @@ public class Laboratorios {
     private String horario;
     private String descripcion;
 
-    public void Elemento(int id,String nombre,String horario,String descripcion){
+    public void Laboratorio(int id,String nombre,String horario,String descripcion){
         this.id=id;
         this.nombre=nombre;
         this.horario=horario;

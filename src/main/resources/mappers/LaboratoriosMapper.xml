@@ -7,15 +7,18 @@
     <resultMap type="Laboratorios" id="LaboratoriosResult">
     	<id property="id" column="id"/>
 		<result property="nombre" column="nombre"/>
-    	<result property="horario" column="marca"/>
-    	<result property="descripcion" column="modelo"/>
+    	<result property="horario" column="horario"/>
+    	<result property="descripcion" column="descripcion"/>
 	
     </resultMap>
 
-    <insert id="RegistrarLaboratorio" parameterType="map">
-        INSERT INTO "Laboratorios"
-	VALUES((select count(*)+1 from "Laboratorios"),#{nombre},#{horario},#{descripcion});
+    <insert id="registrarLaboratorio" parameterType="edu.eci.cvds.TimeLimit.model.Laboratorios">
+        INSERT INTO "Laboratorios"(id,nombre,horario,descripcion)
+	VALUES(#{id},#{nombre},#{horario},#{descripcion});
     </insert>
     	
 
 </mapper>
+
+
+

@@ -38,4 +38,11 @@ public class MyBatisLaboratorios implements LaboratoriosDao {
             throw new TimeLimitExceptions("No se puede insertar el laboratorio",e);
         }
     }
+
+	@Override
+	public void registrarLaboratorio(int id, String nombre, String horario, String descripcion)
+			throws TimeLimitExceptions {
+		// TODO Auto-generated method stub
+		
+	}
 }
