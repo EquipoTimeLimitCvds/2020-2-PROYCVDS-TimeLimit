@@ -10,15 +10,15 @@ import edu.eci.cvds.TimeLimit.services.LaboratorioServices;
 
 public class LaboratoriosServiceImpl implements LaboratorioServices{
 	@Inject
-    private LaboratoriosDao elementoDao;
+    private LaboratoriosDao laboratoriosDao;
 
 
 	@Override
-	public void registrarLaboratorio(int id, String nombre, String horario, String descripcion) throws TimeLimitExceptions {
+	public void registrarLaboratorio(String nombre, String horario, String descripcion) throws TimeLimitExceptions {
 		if(nombre==null){
 			throw new TimeLimitExceptions("El laboratorio no es correcto");
 		}else{
-			elementoDao.registrarLaboratorio(id,nombre,horario,descripcion);
+			laboratoriosDao.registrarLaboratorio(nombre,horario,descripcion);
 		}
 	}
 

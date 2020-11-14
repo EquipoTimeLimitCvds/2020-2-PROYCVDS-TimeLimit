@@ -14,7 +14,7 @@
 
     <insert id="registrarLaboratorio" parameterType="edu.eci.cvds.TimeLimit.model.Laboratorios">
         INSERT INTO "Laboratorios"(id,nombre,horario,descripcion)
-	VALUES(#{id},#{nombre},#{horario},#{descripcion});
+	VALUES((select count(*)+1 from "Laboratorios"),#{nombre},#{horario},#{descripcion});
     </insert>
     	
 

@@ -88,7 +88,7 @@ public class ElementoBean {
 
     public void registrarElemento()throws TimeLimitExceptions{
         try{
-            elementoServices.registrarElemento(id,nombre,marca,modelo,caracteristicas,idEquipo);
+            elementoServices.registrarElemento(nombre,marca,modelo,caracteristicas,idEquipo);
             FacesContext.getCurrentInstance().addMessage(null,new FacesMessage("Elemento creado con exito"));
             PrimeFaces current = PrimeFaces.current();
             current.executeScript("PF('dlg2').hide();");

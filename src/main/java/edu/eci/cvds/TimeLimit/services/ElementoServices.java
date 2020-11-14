@@ -7,7 +7,7 @@ import java.sql.Time;
 
 public interface ElementoServices {
 
-    public void registrarElemento(int id,String nombre ,String marca,String modelo,String caracteristicas,int idEquipo)throws TimeLimitExceptions;
+    public void registrarElemento(String nombre ,String marca,String modelo,String caracteristicas,int idEquipo)throws TimeLimitExceptions;
 
     public Elemento getElemento(int id)throws TimeLimitExceptions;
 

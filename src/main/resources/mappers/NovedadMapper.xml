@@ -18,7 +18,7 @@
 
     <insert id="registrarNovedad" parameterType="map">
     INSERT INTO "novedades"(id,fecha,descripcion,estado,tipo,idElemento)
-	VALUES(#{id},#{fecha},#{descripcion},#{estado},#{tipo},#{idElemento}) ;
+	VALUES((select count(*)+1 from "novedades"),#{fecha},#{descripcion},#{estado},#{tipo},#{idElemento}) ;
     </insert>
     	
 

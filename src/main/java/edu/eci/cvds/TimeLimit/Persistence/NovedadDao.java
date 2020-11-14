@@ -7,5 +7,5 @@ import java.time.LocalDate;
 
 public interface NovedadDao {
     public Novedad getNovedad(int id) throws TimeLimitExceptions;
-    public void registrarNovedad(int id, String descripcion, String estado, String tipo, int idElemento)throws TimeLimitExceptions;
+    public void registrarNovedad(String descripcion, String estado, String tipo, int idElemento)throws TimeLimitExceptions;
 }

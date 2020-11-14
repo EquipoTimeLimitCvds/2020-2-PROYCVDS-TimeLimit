@@ -65,7 +65,7 @@ public class LaboratorioBean {
     }
     public void registrarLaboratorio()throws TimeLimitExceptions{
         try{
-            laboratorioServices.registrarLaboratorio(id,nombre,horario,descripcion);
+            laboratorioServices.registrarLaboratorio(nombre,horario,descripcion);
             FacesContext.getCurrentInstance().addMessage(null,new FacesMessage("Laboratorio creado con exito"));
             PrimeFaces current = PrimeFaces.current();
             current.executeScript("PF('dlg2').hide();");

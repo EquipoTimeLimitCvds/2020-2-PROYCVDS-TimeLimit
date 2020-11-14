@@ -7,7 +7,7 @@ import java.sql.Time;
 
 public interface EquipoServices {
 
-    public void registrarEquipo(int id,String nombre ,String estado,String enUso,int idLaboratorio)throws TimeLimitExceptions;
+    public void registrarEquipo(String nombre ,String estado,String enUso,int idLaboratorio)throws TimeLimitExceptions;
 
     public Equipo getEquipo(int id)throws TimeLimitExceptions;
 

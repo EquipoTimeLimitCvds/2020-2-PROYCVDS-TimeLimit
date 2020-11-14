@@ -81,7 +81,7 @@ public class EquipoBean {
 
     public void registrarEquipo()throws TimeLimitExceptions{
         try{
-            equipoServices.registrarEquipo(id,nombre,estado,enUso,idLaboratorio);
+            equipoServices.registrarEquipo(nombre,estado,enUso,idLaboratorio);
             FacesContext.getCurrentInstance().addMessage(null,new FacesMessage("Equipo creado con exito"));
             PrimeFaces current = PrimeFaces.current();
             current.executeScript("PF('dlg2').hide();");

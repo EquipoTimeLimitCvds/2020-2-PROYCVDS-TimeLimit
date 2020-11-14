@@ -12,11 +12,11 @@ public class NovedadServicesImpl implements NovedadServices {
     @Inject
     private NovedadDao novedadDao;
     @Override
-    public void registrarNovedad(int id, String descripcion, String estado, String tipo, int idElemento) throws TimeLimitExceptions {
+    public void registrarNovedad(String descripcion, String estado, String tipo, int idElemento) throws TimeLimitExceptions {
         if(descripcion==null){
             throw new TimeLimitExceptions(("La novedad no es correcta"));
         }else{
-            novedadDao.registrarNovedad(id,descripcion,estado,tipo,idElemento);
+            novedadDao.registrarNovedad(descripcion,estado,tipo,idElemento);
         }
     }
 }

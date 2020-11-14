@@ -31,10 +31,10 @@ public class MyBatisNovedad implements NovedadDao {
             throw new TimeLimitExceptions("No puede obtener la novedad",e);
         }
     }
-    public void registrarNovedad(int id,String descripcion,String estado,String tipo,int idElemento) throws TimeLimitExceptions{
+    public void registrarNovedad(String descripcion,String estado,String tipo,int idElemento) throws TimeLimitExceptions{
         try{
             LocalDate fecha=LocalDate.now();
-            novedadMapper.registrarNovedad(id,fecha,descripcion,estado,tipo,idElemento);
+            novedadMapper.registrarNovedad(fecha,descripcion,estado,tipo,idElemento);
         }catch (Exception e){
             throw new TimeLimitExceptions("No se puede insertar la Novedad",e);
         }

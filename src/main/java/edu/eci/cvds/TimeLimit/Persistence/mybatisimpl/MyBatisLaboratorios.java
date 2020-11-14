@@ -18,11 +18,9 @@ public class MyBatisLaboratorios implements LaboratoriosDao {
         return laboratoriosMapper;
     }
 
-    public void setNovedadMapper(LaboratoriosMapper laboratoriosMapper)
-    {
+    public void setLaboratoriosMapper(LaboratoriosMapper laboratoriosMapper) {
         this.laboratoriosMapper = laboratoriosMapper;
     }
-
     @Override
     public Laboratorios getLaboratorios(int id) throws TimeLimitExceptions {
         try{
@@ -31,18 +29,13 @@ public class MyBatisLaboratorios implements LaboratoriosDao {
             throw new TimeLimitExceptions("No puede obtener los laboratorios",e);
         }
     }
-    public void registrarNovedad(int id,String nombre,String horario,String descripcion) throws TimeLimitExceptions{
+    @Override
+    public void registrarLaboratorio(String nombre,String horario,String descripcion) throws TimeLimitExceptions{
         try{
-            laboratoriosMapper.registrarLaboratorios(id,nombre,horario,descripcion);
+            laboratoriosMapper.registrarLaboratorio(nombre,horario,descripcion);
         }catch (Exception e){
             throw new TimeLimitExceptions("No se puede insertar el laboratorio",e);
         }
     }
 
-	@Override
-	public void registrarLaboratorio(int id, String nombre, String horario, String descripcion)
-			throws TimeLimitExceptions {
-		// TODO Auto-generated method stub
-		
-	}
 }

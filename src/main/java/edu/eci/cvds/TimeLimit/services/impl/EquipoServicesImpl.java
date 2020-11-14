@@ -12,11 +12,11 @@ public class EquipoServicesImpl implements EquipoServices {
 
 
     @Override
-    public void registrarEquipo(int id, String nombre, String estado, String enUso, int idLaboratorio) throws TimeLimitExceptions {
+    public void registrarEquipo(String nombre, String estado, String enUso, int idLaboratorio) throws TimeLimitExceptions {
         if(estado==null){
             throw new TimeLimitExceptions("El equipo no es correcto");
         }else{
-            equipoDao.registrarEquipo(id,nombre,estado,enUso,idLaboratorio);
+            equipoDao.registrarEquipo(nombre,estado,enUso,idLaboratorio);
         }
     }
 

@@ -8,7 +8,7 @@ import java.sql.Time;
 
 public interface LaboratorioServices {
 
-    public void registrarLaboratorio(int id,String nombre,String horario,String descripcion)throws TimeLimitExceptions;
+    public void registrarLaboratorio(String nombre,String horario,String descripcion)throws TimeLimitExceptions;
 
     public Laboratorios getLaboratorio(int id)throws TimeLimitExceptions;
 

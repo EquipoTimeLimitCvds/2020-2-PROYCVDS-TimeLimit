@@ -81,7 +81,7 @@ public class NovedadBean {
 
     public void registrarNovedad()throws TimeLimitExceptions{
         try{
-            novedadServices.registrarNovedad(id,descripcion,estado,tipo,idElemento);
+            novedadServices.registrarNovedad(descripcion,estado,tipo,idElemento);
             FacesContext.getCurrentInstance().addMessage(null,new FacesMessage("Novedad creada con exito"));
             PrimeFaces current = PrimeFaces.current();
             current.executeScript("PF('dlg2').hide();");

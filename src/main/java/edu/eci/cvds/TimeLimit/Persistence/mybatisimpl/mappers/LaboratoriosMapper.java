@@ -9,6 +9,6 @@ public interface LaboratoriosMapper {
 
 	public Laboratorios getLaboratorios(int id);
 
-	public void registrarLaboratorios(@Param("id")int id,@Param("nombre")String nombre,@Param("horario")String horario,@Param("descripcion") String descripcion);
+	public void registrarLaboratorio(@Param("nombre")String nombre,@Param("horario")String horario,@Param("descripcion") String descripcion);
 
 }

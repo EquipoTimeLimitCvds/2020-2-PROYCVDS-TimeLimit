@@ -6,6 +6,6 @@ import java.time.LocalDate;
 
 public interface NovedadServices {
 
-    public default void registrarNovedad(int id, String descripcion, String estado, String tipo, int idElemento) throws TimeLimitExceptions {
+    public default void registrarNovedad(String descripcion, String estado, String tipo, int idElemento) throws TimeLimitExceptions {
     }
 }

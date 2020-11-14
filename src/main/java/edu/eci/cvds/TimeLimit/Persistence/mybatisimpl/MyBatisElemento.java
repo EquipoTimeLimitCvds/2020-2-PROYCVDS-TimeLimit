@@ -27,9 +27,9 @@ public class MyBatisElemento implements ElementoDao {
             throw new TimeLimitExceptions("No puede obtener el elemento",e);
         }
     }
-    public void registrarElemento(int id,String nombre,String marca,String modelo,String caracteristicas,int idEquipo) throws TimeLimitExceptions{
+    public void registrarElemento(String nombre,String marca,String modelo,String caracteristicas,int idEquipo) throws TimeLimitExceptions{
         try{
-            elementoMapper.registrarElemento(id,nombre,marca,modelo,caracteristicas,idEquipo);
+            elementoMapper.registrarElemento(nombre,marca,modelo,caracteristicas,idEquipo);
         }catch (Exception e){
             throw new TimeLimitExceptions("No se puede insertar el elemento",e);
         }

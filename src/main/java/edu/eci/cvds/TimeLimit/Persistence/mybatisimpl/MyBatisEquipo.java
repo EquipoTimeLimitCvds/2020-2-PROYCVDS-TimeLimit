@@ -27,9 +27,9 @@ public class MyBatisEquipo implements EquipoDao {
             throw new TimeLimitExceptions("No puede obtener el equipo",e);
         }
     }
-    public void registrarEquipo(int id,String nombre,String estado,String enUso,int idLaboratorio) throws TimeLimitExceptions{
+    public void registrarEquipo(String nombre,String estado,String enUso,int idLaboratorio) throws TimeLimitExceptions{
         try{
-            equipoMapper.registrarEquipo(id,nombre,estado,enUso,idLaboratorio);
+            equipoMapper.registrarEquipo(nombre,estado,enUso,idLaboratorio);
         }catch (Exception e){
             throw new TimeLimitExceptions("No se puede insertar el equipo",e);
         }

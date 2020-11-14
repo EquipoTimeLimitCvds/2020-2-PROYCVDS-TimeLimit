@@ -28,7 +28,7 @@
 
     <insert id="registrarElemento" parameterType="edu.eci.cvds.TimeLimit.model.Elemento">
         INSERT INTO "elementos"(id,nombre,marca,modelo,caracteristicas,idEquipo)
-	VALUES(#{id},#{nombre},#{marca},#{modelo},#{caracteristicas},#{idEquipo});
+	VALUES((select count(*)+1 from "elementos"),#{nombre},#{marca},#{modelo},#{caracteristicas},#{idEquipo});
     </insert>
     	
 

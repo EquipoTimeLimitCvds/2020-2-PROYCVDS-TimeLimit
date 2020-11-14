@@ -12,11 +12,11 @@ public class ElementoServicesImpl implements ElementoServices {
 
 
     @Override
-    public void registrarElemento(int id, String nombre, String marca, String modelo, String caracteristicas, int idEquipo) throws TimeLimitExceptions {
+    public void registrarElemento(String nombre, String marca, String modelo, String caracteristicas, int idEquipo) throws TimeLimitExceptions {
         if(marca==null){
             throw new TimeLimitExceptions("El elemento no es correcto");
         }else{
-            elementoDao.registrarElemento(id,nombre,marca,modelo,caracteristicas,idEquipo);
+            elementoDao.registrarElemento(nombre,marca,modelo,caracteristicas,idEquipo);
         }
     }
 
