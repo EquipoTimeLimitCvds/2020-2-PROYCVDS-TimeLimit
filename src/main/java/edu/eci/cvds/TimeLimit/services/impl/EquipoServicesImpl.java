@@ -6,6 +6,8 @@ import edu.eci.cvds.TimeLimit.exceptions.TimeLimitExceptions;
 import edu.eci.cvds.TimeLimit.model.Equipo;
 import edu.eci.cvds.TimeLimit.services.EquipoServices;
 
+import java.util.ArrayList;
+
 public class EquipoServicesImpl implements EquipoServices {
     @Inject
     private EquipoDao equipoDao;
@@ -27,6 +29,12 @@ public class EquipoServicesImpl implements EquipoServices {
 
     public void imprimir(){
         System.out.println("hola imprimir");
+    }
+
+    @Override
+    public ArrayList<Equipo>getEquipos()throws TimeLimitExceptions{
+        return equipoDao.getEquipos();
+
     }
 
 }

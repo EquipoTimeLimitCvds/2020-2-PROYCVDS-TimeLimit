@@ -1,8 +1,11 @@
 package edu.eci.cvds.TimeLimit.manageBeans;
-
+import edu.eci.cvds.TimeLimit.manageBeans.ElementoBean;
 import com.google.inject.Inject;
 import edu.eci.cvds.TimeLimit.exceptions.TimeLimitExceptions;
+import edu.eci.cvds.TimeLimit.model.Elemento;
 import edu.eci.cvds.TimeLimit.model.Equipo;
+import edu.eci.cvds.TimeLimit.model.Laboratorio;
+import edu.eci.cvds.TimeLimit.services.ElementoServices;
 import edu.eci.cvds.TimeLimit.services.EquipoServices;
 import edu.eci.cvds.TimeLimit.services.ServicesFactory;
 import org.primefaces.PrimeFaces;
@@ -11,8 +14,7 @@ import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
-
-
+import java.util.ArrayList;
 
 
 @SuppressWarnings("deprecation")
@@ -23,12 +25,60 @@ public class EquipoBean {
     //private EquipoServices equipoServices;
 
     EquipoServices equipoServices= ServicesFactory.getInstance().getEquipoServices();
+    ElementoServices elementoServices= ServicesFactory.getInstance().getElementoServices();
+
 
     private int id;
     private String nombre;
     private String estado;
     private String enUso;
     private int idLaboratorio;
+    private Laboratorio idLab;
+    private Elemento ejemplo;
+    private Elemento ejemploDos;
+    private Elemento raton;
+    private Elemento torre;
+    private ArrayList<Equipo>listaEquipos;
+
+
+    public ArrayList<Equipo>getListaEquipos(){
+        return listaEquipos;
+    }
+    public void setListaEquipos(ArrayList<Equipo>listaEquipos){
+        this.listaEquipos=listaEquipos;
+    }
+
+    public Elemento getTorre() {
+        return torre;
+    }
+
+    public void setTorre(Elemento torre) {
+        this.torre = torre;
+    }
+
+    public Elemento getRaton() {
+        return raton;
+    }
+
+    public void setRaton(Elemento raton) {
+        this.raton = raton;
+    }
+
+    public Elemento getEjemploDos(){
+        return ejemploDos;
+    }
+
+
+    public void setEjemploDos(Elemento ejemploDos){
+        this.ejemploDos=ejemploDos;
+    }
+    public Elemento getEjemplo(){
+        return ejemplo;
+    }
+
+    public void setEjemplo(Elemento ejemplo) {
+        this.ejemplo = ejemplo;
+    }
 
     public EquipoServices getElementoServices(){
         return equipoServices;
@@ -36,6 +86,14 @@ public class EquipoBean {
 
     public void setEquipoServices(EquipoServices elementoServices){
         this.equipoServices=equipoServices;
+    }
+
+    public Laboratorio getIdLab(){
+        return idLab;
+    }
+
+    public void setIdLab(Laboratorio idLab) {
+        this.idLab = idLab;
     }
 
     public String getNombre() {
@@ -81,14 +139,41 @@ public class EquipoBean {
 
     public void registrarEquipo()throws TimeLimitExceptions{
         try{
-            equipoServices.registrarEquipo(nombre,estado,enUso,idLaboratorio);
-            FacesContext.getCurrentInstance().addMessage(null,new FacesMessage("Equipo creado con exito"));
-            PrimeFaces current = PrimeFaces.current();
-            current.executeScript("PF('dlg2').hide();");
+            idLaboratorio=idLab.getId();
+            if(idLaboratorio>0){
+                equipoServices.registrarEquipo(nombre,estado,enUso,idLaboratorio);
+                listaEquipos=new ArrayList<Equipo>();
+                listaEquipos=getEquipos();
+                for(int i=0;i<listaEquipos.size();i++){
+                    if(listaEquipos.get(i).getNombre().equals(nombre)){
+                        elementoServices.editElemento(ejemplo.getId(),listaEquipos.get(i).getId());
+                        elementoServices.editElemento(ejemploDos.getId(),listaEquipos.get(i).getId());
+                        elementoServices.editElemento(torre.getId(),listaEquipos.get(i).getId());
+                        elementoServices.editElemento(raton.getId(),listaEquipos.get(i).getId());
+                    }
+                }
+                FacesContext.getCurrentInstance().addMessage(null,new FacesMessage("Equipo creado con exito"));
+                PrimeFaces current = PrimeFaces.current();
+                current.executeScript("PF('dlg2').hide();");
+            }
+            else {
+                FacesContext.getCurrentInstance().addMessage(null,new FacesMessage(FacesMessage.SEVERITY_ERROR,"Datos erroneos en la creacion","Error"));
+            }
         }catch (TimeLimitExceptions ex){
             FacesContext.getCurrentInstance().addMessage(null,new FacesMessage(FacesMessage.SEVERITY_ERROR,"No se pudo crear el Equipo","Error"));
             throw ex;
         }
     }
+    public ArrayList<Equipo> getEquipos()throws TimeLimitExceptions{
+        ArrayList<Equipo>equipos=equipoServices.getEquipos();
+        return equipoServices.getEquipos();
+    }
 
 }
+
+
+
+
+
+
+

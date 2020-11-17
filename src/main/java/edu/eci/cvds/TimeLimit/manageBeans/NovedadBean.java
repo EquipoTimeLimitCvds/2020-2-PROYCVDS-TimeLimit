@@ -1,6 +1,10 @@
 package edu.eci.cvds.TimeLimit.manageBeans;
 
 import edu.eci.cvds.TimeLimit.exceptions.TimeLimitExceptions;
+import edu.eci.cvds.TimeLimit.model.Elemento;
+import edu.eci.cvds.TimeLimit.model.Equipo;
+import edu.eci.cvds.TimeLimit.model.Laboratorio;
+import edu.eci.cvds.TimeLimit.model.Novedad;
 import edu.eci.cvds.TimeLimit.services.EquipoServices;
 import edu.eci.cvds.TimeLimit.services.NovedadServices;
 import edu.eci.cvds.TimeLimit.services.ServicesFactory;
@@ -11,6 +15,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 @SuppressWarnings("deprecation")
 @ManagedBean(name="NovedadBean")
@@ -27,6 +32,9 @@ public class NovedadBean {
     private String estado;
     private String tipo;
     private int idElemento;
+
+
+
 
     public NovedadServices getNovedadServices(){
         return novedadServices;
@@ -81,6 +89,7 @@ public class NovedadBean {
 
     public void registrarNovedad()throws TimeLimitExceptions{
         try{
+
             novedadServices.registrarNovedad(descripcion,estado,tipo,idElemento);
             FacesContext.getCurrentInstance().addMessage(null,new FacesMessage("Novedad creada con exito"));
             PrimeFaces current = PrimeFaces.current();
@@ -90,4 +99,9 @@ public class NovedadBean {
             throw ex;
         }
     }
+    public ArrayList<Novedad>getNovedades() throws TimeLimitExceptions {
+        ArrayList<Novedad>novedades=novedadServices.getNovedades();
+        return novedades;
+    }
+
 }

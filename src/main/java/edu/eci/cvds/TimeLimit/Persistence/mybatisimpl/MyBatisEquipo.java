@@ -6,6 +6,8 @@ import edu.eci.cvds.TimeLimit.Persistence.mybatisimpl.mappers.EquipoMapper;
 import edu.eci.cvds.TimeLimit.exceptions.TimeLimitExceptions;
 import edu.eci.cvds.TimeLimit.model.Equipo;
 
+import java.util.ArrayList;
+
 public class MyBatisEquipo implements EquipoDao {
 
     @Inject
@@ -33,5 +35,12 @@ public class MyBatisEquipo implements EquipoDao {
         }catch (Exception e){
             throw new TimeLimitExceptions("No se puede insertar el equipo",e);
         }
-    }
+   }
+   public ArrayList<Equipo> getEquipos()throws TimeLimitExceptions{
+        try{
+            return equipoMapper.getEquipos();
+        }catch (Exception e){
+            throw new TimeLimitExceptions("No se encontraron equipos",e);
+        }
+   }
 }

@@ -7,6 +7,7 @@ import edu.eci.cvds.TimeLimit.exceptions.TimeLimitExceptions;
 import edu.eci.cvds.TimeLimit.model.Novedad;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class MyBatisNovedad implements NovedadDao {
 
@@ -38,5 +39,10 @@ public class MyBatisNovedad implements NovedadDao {
         }catch (Exception e){
             throw new TimeLimitExceptions("No se puede insertar la Novedad",e);
         }
+    }
+
+    @Override
+    public ArrayList<Novedad> getNovedades() {
+        return novedadMapper.getNovedades();
     }
 }

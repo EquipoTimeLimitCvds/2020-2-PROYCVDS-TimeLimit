@@ -12,9 +12,14 @@
 		<result property="idLaboratorio" column="idlaboratorio"/>
     </resultMap>
 
+    <select id="getEquipos" resultMap="EquipoResult" parameterType="map">
+        SELECT *
+        FROM "equipos";
+    </select>
+
 
     <insert id="registrarEquipo" parameterType="edu.eci.cvds.TimeLimit.model.Equipo">
-        INSERT INTO "equipos"(nombre,estado,enUso,idLaboratorio)
+        INSERT INTO "equipos"(id,nombre,estado,enUso,idLaboratorio)
 	VALUES((select count(*)+1 from "equipos"),#{nombre},#{estado},#{enUso},#{idLaboratorio}) ;
     </insert>
     	

@@ -14,17 +14,14 @@
 
 
     </resultMap>
-    <select id="getElemento" resultMap="ElementoResult" parameterType="String">
-        SELECT 
-		l.id,
-        l.nombre,
-        l.marca,
-		l.modelo,
-		l.caracteristicas,
-        l.idEquipo
-        FROM "elementos" as l
-	WHERE nombre = #{nombre}
+    <select id="getElementos" resultMap="ElementoResult" parameterType="map">
+        SELECT *
+        FROM "elementos";
     </select>
+
+    <update id="editElemento">
+        update "elementos" set idequipo=#{idequipo} where id=#{id};
+    </update>
 
     <insert id="registrarElemento" parameterType="edu.eci.cvds.TimeLimit.model.Elemento">
         INSERT INTO "elementos"(id,nombre,marca,modelo,caracteristicas,idEquipo)

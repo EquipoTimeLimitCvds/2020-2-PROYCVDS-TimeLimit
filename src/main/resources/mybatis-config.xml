@@ -14,7 +14,7 @@
         <typeAlias type="edu.eci.cvds.TimeLimit.model.Elemento" alias="Elemento"/>
         <typeAlias type="edu.eci.cvds.TimeLimit.model.Novedad" alias="Novedad"/>
         <typeAlias type="edu.eci.cvds.TimeLimit.model.Equipo" alias="Equipo"/>
-        <typeAlias type="edu.eci.cvds.TimeLimit.model.Laboratorios" alias="Laboratorios"/>
+        <typeAlias type="edu.eci.cvds.TimeLimit.model.Laboratorio" alias="Laboratorio"/>
     </typeAliases>
 
     <environments default="development">
@@ -37,7 +37,7 @@
         <mapper resource="mappers/ElementoMapper.xml"></mapper>
         <mapper resource="mappers/NovedadMapper.xml"></mapper>
         <mapper resource="mappers/EquipoMapper.xml"></mapper>
-        <mapper resource="mappers/LaboratoriosMapper.xml"></mapper>
+        <mapper resource="mappers/LaboratorioMapper.xml"></mapper>
         
     </mappers>
         

@@ -20,6 +20,10 @@
     INSERT INTO "novedades"(id,fecha,descripcion,estado,tipo,idElemento)
 	VALUES((select count(*)+1 from "novedades"),#{fecha},#{descripcion},#{estado},#{tipo},#{idElemento}) ;
     </insert>
+
+	<select id="getNovedades" resultMap="NovedadResult" parameterType="map">
+		SELECT * FROM "novedades";
+	</select>
     	
 
 </mapper>

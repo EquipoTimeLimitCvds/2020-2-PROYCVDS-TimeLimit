@@ -2,17 +2,18 @@ package edu.eci.cvds.TimeLimit.manageBeans;
 
 import com.google.inject.Inject;
 import edu.eci.cvds.TimeLimit.exceptions.TimeLimitExceptions;
-import edu.eci.cvds.TimeLimit.model.Laboratorios;
+import edu.eci.cvds.TimeLimit.model.Laboratorio;
 import edu.eci.cvds.TimeLimit.services.LaboratorioServices;
 import edu.eci.cvds.TimeLimit.services.ServicesFactory;
 import org.primefaces.PrimeFaces;
-
-import java.util.List;
+import sun.awt.Symbol;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 
 
@@ -28,31 +29,16 @@ public class LaboratorioBean {
     private String nombre;
     private String horario;
     private String descripcion;
-    private List<Laboratorios> listaLaboratorios;
-   
+    private ArrayList<Laboratorio>laboratorios=new ArrayList<Laboratorio>();
     
-    public LaboratorioServices getLaboratorioServices(){
+    
+    public LaboratorioServices getElementoServices(){
         return laboratorioServices;
     }
 
-    public void setLaboratorioServices(LaboratorioServices laboratorioServices){
+    public void setElementoServices(LaboratorioServices laboratorioServices){
         this.laboratorioServices=laboratorioServices;
     }
-    public List<Laboratorios> consultarLaboratorios() throws TimeLimitExceptions{
-        //return laboratorioServices.consultarLaboratorios();
-    	try {
-            if(listaLaboratorios == null){
-            	listaLaboratorios = laboratorioServices.consultarLaboratorios();
-            }
-       
-            return listaLaboratorios;
-        } catch (TimeLimitExceptions ex) {
-            throw ex;
-        }
-		
-		
-	}
-    
     public String getNombre() {
         return nombre;
     }
@@ -91,5 +77,9 @@ public class LaboratorioBean {
             FacesContext.getCurrentInstance().addMessage(null,new FacesMessage(FacesMessage.SEVERITY_ERROR,"No se pudo crear el Laboratorio","Error"));
             throw ex;
         }
+    }
+    public ArrayList<Laboratorio> todosLaboratorios() throws TimeLimitExceptions {
+        laboratorios=laboratorioServices.getLaboratorios();
+        return laboratorioServices.getLaboratorios();
     }
 }

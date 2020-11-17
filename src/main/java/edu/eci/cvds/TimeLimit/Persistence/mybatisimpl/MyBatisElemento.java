@@ -6,6 +6,9 @@ import edu.eci.cvds.TimeLimit.Persistence.mybatisimpl.mappers.ElementoMapper;
 import edu.eci.cvds.TimeLimit.exceptions.TimeLimitExceptions;
 import edu.eci.cvds.TimeLimit.model.Elemento;
 
+import java.sql.Time;
+import java.util.ArrayList;
+
 public class MyBatisElemento implements ElementoDao {
 
     @Inject
@@ -32,6 +35,19 @@ public class MyBatisElemento implements ElementoDao {
             elementoMapper.registrarElemento(nombre,marca,modelo,caracteristicas,idEquipo);
         }catch (Exception e){
             throw new TimeLimitExceptions("No se puede insertar el elemento",e);
+        }
+    }
+    public ArrayList<Elemento>getElementos()throws TimeLimitExceptions{
+        try{
+            return elementoMapper.getElementos();
+        }catch (Exception e){
+            throw new TimeLimitExceptions("No se puede consultar los elementos",e);
+        }
+    }public void editElemento(int id,int idEquipo) throws TimeLimitExceptions {
+        try{
+            elementoMapper.editElemento(id,idEquipo);
+        }catch (Exception e){
+            throw new TimeLimitExceptions("no se puede asociar elemento con el equipo",e);
         }
     }
 }

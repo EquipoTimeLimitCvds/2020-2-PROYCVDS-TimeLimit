@@ -7,7 +7,7 @@ import edu.eci.cvds.TimeLimit.Persistence.mybatisimpl.*;
 import edu.eci.cvds.TimeLimit.authenticator.SessionLogger;
 import edu.eci.cvds.TimeLimit.authenticator.ShiroSession;
 import edu.eci.cvds.TimeLimit.services.impl.ElementoServicesImpl;
-import edu.eci.cvds.TimeLimit.services.impl.LaboratoriosServiceImpl;
+import edu.eci.cvds.TimeLimit.services.impl.LaboratorioServiceImpl;
 import edu.eci.cvds.TimeLimit.services.impl.EquipoServicesImpl;
 import edu.eci.cvds.TimeLimit.services.impl.NovedadServicesImpl;
 import edu.eci.cvds.TimeLimit.services.impl.UserServicesImpl;
@@ -35,12 +35,11 @@ public class ServicesFactory {
                 bind(ElementoDao.class).to(MyBatisElemento.class);
                 bind(ElementoServices.class).to(ElementoServicesImpl.class);
                 bind(NovedadDao.class).to(MyBatisNovedad.class);
-      
                 bind(NovedadServices.class).to(NovedadServicesImpl.class);
                 bind(EquipoDao.class).to(MyBatisEquipo.class);
                 bind(EquipoServices.class).to(EquipoServicesImpl.class);
-                bind(LaboratoriosDao.class).to(MyBatisLaboratorios.class);
-                bind(LaboratorioServices.class).to(LaboratoriosServiceImpl.class);
+                bind(LaboratorioDao.class).to(MyBatisLaboratorio.class);
+                bind(LaboratorioServices.class).to(LaboratorioServiceImpl.class);
                 bind(SessionLogger.class).to(ShiroSession.class);
             }
         });

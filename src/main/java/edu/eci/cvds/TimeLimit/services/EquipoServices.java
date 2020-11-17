@@ -4,6 +4,7 @@ import edu.eci.cvds.TimeLimit.exceptions.TimeLimitExceptions;
 import edu.eci.cvds.TimeLimit.model.Equipo;
 
 import java.sql.Time;
+import java.util.ArrayList;
 
 public interface EquipoServices {
 
@@ -13,5 +14,6 @@ public interface EquipoServices {
 
     public void imprimir() throws TimeLimitExceptions;
 
-	
+
+    public ArrayList<Equipo> getEquipos()throws TimeLimitExceptions;
 }

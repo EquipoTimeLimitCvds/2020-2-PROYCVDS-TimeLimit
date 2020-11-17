@@ -6,6 +6,9 @@ import edu.eci.cvds.TimeLimit.exceptions.TimeLimitExceptions;
 import edu.eci.cvds.TimeLimit.model.Elemento;
 import edu.eci.cvds.TimeLimit.services.ElementoServices;
 
+import java.sql.Time;
+import java.util.ArrayList;
+
 public class ElementoServicesImpl implements ElementoServices {
     @Inject
     private ElementoDao elementoDao;
@@ -27,6 +30,14 @@ public class ElementoServicesImpl implements ElementoServices {
 
     public void imprimir(){
         System.out.println("hola imprimir");
+    }
+
+    public ArrayList<Elemento>getElementos()throws TimeLimitExceptions {
+        return elementoDao.getElementos();
+    }
+    @Override
+    public void editElemento(int id,int idEquipo)throws TimeLimitExceptions{
+        elementoDao.editElemento(id,idEquipo);
     }
 
 }
