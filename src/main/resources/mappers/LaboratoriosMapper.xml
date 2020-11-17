@@ -16,6 +16,13 @@
         INSERT INTO "Laboratorios"(id,nombre,horario,descripcion)
 	VALUES((select count(*)+1 from "Laboratorios"),#{nombre},#{horario},#{descripcion});
     </insert>
+    
+    
+    
+    
+    <select id='consultarLaboratorios' resultMap='LaboratoriosResult' parameterType="map">
+        SELECT * FROM "Laboratorio";
+    </select>
     	
 
 </mapper>

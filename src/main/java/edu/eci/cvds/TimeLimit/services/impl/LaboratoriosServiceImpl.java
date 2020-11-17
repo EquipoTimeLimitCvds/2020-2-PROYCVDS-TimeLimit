@@ -1,4 +1,6 @@
 package edu.eci.cvds.TimeLimit.services.impl;
+import java.util.List;
+
 import com.google.inject.Inject;
 
 
@@ -33,5 +35,13 @@ public class LaboratoriosServiceImpl implements LaboratorioServices{
 		// TODO Auto-generated method stub
 		
 	}
+	
+	@Override
+	public List<Laboratorios> consultarLaboratorios() throws TimeLimitExceptions {
+		
+		return laboratoriosDao.consultarLaboratorios();
+	}
+	
+	
 
 }

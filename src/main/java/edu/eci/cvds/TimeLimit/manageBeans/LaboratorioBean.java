@@ -7,6 +7,8 @@ import edu.eci.cvds.TimeLimit.services.LaboratorioServices;
 import edu.eci.cvds.TimeLimit.services.ServicesFactory;
 import org.primefaces.PrimeFaces;
 
+import java.util.List;
+
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
@@ -26,15 +28,31 @@ public class LaboratorioBean {
     private String nombre;
     private String horario;
     private String descripcion;
+    private List<Laboratorios> listaLaboratorios;
+   
     
-    
-    public LaboratorioServices getElementoServices(){
+    public LaboratorioServices getLaboratorioServices(){
         return laboratorioServices;
     }
 
-    public void setElementoServices(LaboratorioServices laboratorioServices){
+    public void setLaboratorioServices(LaboratorioServices laboratorioServices){
         this.laboratorioServices=laboratorioServices;
     }
+    public List<Laboratorios> consultarLaboratorios() throws TimeLimitExceptions{
+        //return laboratorioServices.consultarLaboratorios();
+    	try {
+            if(listaLaboratorios == null){
+            	listaLaboratorios = laboratorioServices.consultarLaboratorios();
+            }
+       
+            return listaLaboratorios;
+        } catch (TimeLimitExceptions ex) {
+            throw ex;
+        }
+		
+		
+	}
+    
     public String getNombre() {
         return nombre;
     }

@@ -7,6 +7,7 @@ import edu.eci.cvds.TimeLimit.exceptions.TimeLimitExceptions;
 import edu.eci.cvds.TimeLimit.model.Laboratorios;
 
 import java.time.LocalDate;
+import java.util.List;
 
 public class MyBatisLaboratorios implements LaboratoriosDao {
 
@@ -17,7 +18,7 @@ public class MyBatisLaboratorios implements LaboratoriosDao {
 
         return laboratoriosMapper;
     }
-
+    
     public void setLaboratoriosMapper(LaboratoriosMapper laboratoriosMapper) {
         this.laboratoriosMapper = laboratoriosMapper;
     }
@@ -37,5 +38,12 @@ public class MyBatisLaboratorios implements LaboratoriosDao {
             throw new TimeLimitExceptions("No se puede insertar el laboratorio",e);
         }
     }
+
+	@Override
+	public List<Laboratorios> consultarLaboratorios() throws TimeLimitExceptions  {
+		
+		//return laboratoriosMapper.consultarLaboratorios();
+		return laboratoriosMapper.consultarLaboratorios();
+	}
 
 }
