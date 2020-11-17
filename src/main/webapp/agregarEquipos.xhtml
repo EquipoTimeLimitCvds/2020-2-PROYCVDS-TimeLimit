@@ -129,6 +129,12 @@
 					</f:facet>
 					<h:outputText value="#{teclados.modelo}" />
 				</p:column>
+				<p:column style="color:black;">
+					<f:facet name="header">
+						<h:outputText value="IdEquipo" />
+					</f:facet>
+					<h:outputText value="#{teclados.idEquipo}" />
+				</p:column>
 
 			</p:dataTable>
 
@@ -171,6 +177,13 @@
 					<h:outputText value="#{monitores.modelo}" />
 				</p:column>
 
+				<p:column style="color:black;">
+					<f:facet name="header">
+						<h:outputText value="IdEquipo" />
+					</f:facet>
+					<h:outputText value="#{monitores.idEquipo}" />
+				</p:column>
+
 			</p:dataTable>
 			<h2 style="color:white; font-size:20px ;">Escoja el Mouse que va a pertenecer a este equipo</h2>
 			<p:dataTable id="tablaMouses" var="mouses" value="#{ElementoBean.getMousesDisponibles()}" selectionMode="single"
@@ -209,6 +222,12 @@
 						<h:outputText value="Modelo" />
 					</f:facet>
 					<h:outputText value="#{mouses.modelo}" />
+				</p:column>
+				<p:column style="color:black;">
+					<f:facet name="header">
+						<h:outputText value="IdEquipo" />
+					</f:facet>
+					<h:outputText value="#{mouses.idEquipo}" />
 				</p:column>
 
 			</p:dataTable>
@@ -249,6 +268,13 @@
 						<h:outputText value="Modelo" />
 					</f:facet>
 					<h:outputText value="#{cpu.modelo}" />
+				</p:column>
+
+				<p:column style="color:black;">
+					<f:facet name="header">
+						<h:outputText value="IdEquipo" />
+					</f:facet>
+					<h:outputText value="#{cpu.idEquipo}" />
 				</p:column>
 
 			</p:dataTable>

@@ -29,7 +29,7 @@ public class ElementoBean {
     private String marca;
     private String modelo;
     private String caracteristicas;
-    private int idEquipo;
+    private int idEquipo =0;
     private ArrayList<Elemento>tecladosDisponibles;
     private ArrayList<Elemento>monitoresDisponibles;
     private ArrayList<Elemento>cpusDisponibles;
