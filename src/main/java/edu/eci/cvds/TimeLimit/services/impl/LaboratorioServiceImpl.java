@@ -30,11 +30,6 @@ public class LaboratorioServiceImpl implements LaboratorioServices{
 	}
 
 	@Override
-	public void imprimir() throws TimeLimitExceptions {
-		// TODO Auto-generated method stub
-		
-	}
-	@Override
 	public ArrayList<Laboratorio> getLaboratorios() throws TimeLimitExceptions {
 		return laboratorioDao.getLaboratorios();
 	}

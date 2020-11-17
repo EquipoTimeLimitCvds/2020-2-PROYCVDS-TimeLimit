@@ -14,9 +14,8 @@ public interface LaboratorioServices {
 
     public Laboratorio getLaboratorio(int id)throws TimeLimitExceptions;
 
-    public void imprimir() throws TimeLimitExceptions;
 
-    public ArrayList<Laboratorio>getLaboratorios()throws TimeLimitExceptions;
+    public ArrayList<Laboratorio> getLaboratorios()throws TimeLimitExceptions;
 
 
 	

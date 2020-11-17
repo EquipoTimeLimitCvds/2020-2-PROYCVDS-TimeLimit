@@ -15,10 +15,7 @@
     <select id="getLaboratorios" resultMap="LaboratorioResult" parameterType="map">
         SELECT * FROM "Laboratorio";
     </select>
-    <select id="getLaboratorio" resultMap="LaboratorioResult" parameterType="String">
-        SELECT * FROM "Laboratorio"
-        WHERE id=#{id};
-    </select>
+
     <insert id="registrarLaboratorio" parameterType="edu.eci.cvds.TimeLimit.model.Laboratorio">
         INSERT INTO "Laboratorio"(id,nombre,horario,descripcion)
 	VALUES((select count(*)+1 from "Laboratorio"),#{nombre},#{horario},#{descripcion});
