@@ -1,6 +1,7 @@
 create table if not exists "PERSONAL" (
 	id int NOT NULL,
 	nombre varchar(30) NOT NULL,
+	name varchar(30) NOT NULL,
 	cargo Varchar(15) NOT NULL,
 	apellido Varchar(30) NOT NULL,
 	clave Varchar(200) NOT NULL
