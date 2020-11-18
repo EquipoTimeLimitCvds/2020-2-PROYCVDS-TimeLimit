@@ -54,10 +54,7 @@ alter table "equipos" add constraint PK_Equipos primary key(id);
 alter table "elementos" add constraint PK_Elementos primary key(id);
 alter table "novedades" add constraint PK_Novedades primary key(id);
 
-alter table "PERSONAL" add constraint UK_name unique(nombre);
-alter table "equipos" add constraint UK_nombreEquipo unique(nombre);
 
-ALTER TABLE "equipos" ADD CONSTRAINT equipos_nombre CHECK (equipos.nombre LIKE 'Sistemas%' or equipos.nombre LIKE 'sistemas%' or equipos.nombre LIKE 'SISTEMAS%');
 
 alter table "Tiene" add constraint FK_Tiene_Personal foreign key(IdPersonal) references "PERSONAL"(id);
 alter table "Tiene" add constraint FK_Tiene_Laboratorios foreign key(IdLaboratorio) references "Laboratorios"(id);
