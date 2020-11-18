@@ -79,4 +79,5 @@ public class LoginBean {
         FacesContext facesContext = FacesContext.getCurrentInstance();
         facesContext.getExternalContext().redirect("");
     }
+
 }
