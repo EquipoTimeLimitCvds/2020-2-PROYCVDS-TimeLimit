@@ -84,7 +84,7 @@ public class EquipoBean {
         return equipoServices;
     }
 
-    public void setEquipoServices(EquipoServices elementoServices){
+    public void setEquipoServices(EquipoServices equipoServices){
         this.equipoServices=equipoServices;
     }
 

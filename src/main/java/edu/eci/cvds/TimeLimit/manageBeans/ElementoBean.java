@@ -35,7 +35,7 @@ public class ElementoBean {
     private ArrayList<Elemento>cpusDisponibles;
     private ArrayList<Elemento>mousesDisponibles;
     private ArrayList<Elemento>elementos;
-
+    private Elemento elemento;
 
     public ArrayList<Elemento>getTecladosDisponibles() throws TimeLimitExceptions {
         elementos=getElementos();
@@ -44,7 +44,7 @@ public class ElementoBean {
         for(int i=0;i<elementos.size();i++){
             //System.out.println(elementos.get(i).getNombre().equals("Teclado"));
             //System.out.println(elementos.get(i).getIdEquipo());
-            if(elementos.get(i).getNombre().equals("Teclado")&& elementos.get(i).getIdEquipo()==0){
+            if(elementos.get(i).getNombre().equals("Teclado")&& elementos.get(i).getIdEquipo()==0 && !(elementos.get(i).getModelo().equals("No disponible"))){
                 tecladosDisponibles.add(elementos.get(i));
             }
         }
@@ -57,20 +57,20 @@ public class ElementoBean {
         this.monitoresDisponibles=monitoresDisponibles;
     }
     public ArrayList<Elemento>getMonitoresDisponibles() throws TimeLimitExceptions {
-        getElementos();
+    	elementos=getElementos();
         monitoresDisponibles=new ArrayList<Elemento>();
         for(int i=0;i<getElementos().size();i++){
-            if(elementos.get(i).getNombre().equals("Monitor")&& elementos.get(i).getIdEquipo()==0){
+            if(elementos.get(i).getNombre().equals("Monitor")&& elementos.get(i).getIdEquipo()==0 && !(elementos.get(i).getModelo().equals("No disponible"))){
                 monitoresDisponibles.add(elementos.get(i));
             }
         }
         return monitoresDisponibles;
     }
     public ArrayList<Elemento>getMousesDisponibles() throws TimeLimitExceptions {
-        getElementos();
+    	elementos=getElementos();
         mousesDisponibles=new ArrayList<Elemento>();
         for(int i=0;i<getElementos().size();i++){
-            if(elementos.get(i).getNombre().equals("Mouse")&& elementos.get(i).getIdEquipo()==0){
+            if(elementos.get(i).getNombre().equals("Mouse")&& elementos.get(i).getIdEquipo()==0 && !(elementos.get(i).getModelo().equals("No disponible"))){
                 mousesDisponibles.add(elementos.get(i));
             }
         }
@@ -82,10 +82,10 @@ public class ElementoBean {
     }
 
     public ArrayList<Elemento>getCpusDisponibles() throws TimeLimitExceptions {
-        getElementos();
+    	elementos=getElementos();
         cpusDisponibles=new ArrayList<Elemento>();
         for(int i=0;i<getElementos().size();i++){
-            if(elementos.get(i).getNombre().equals("Cpu")&& elementos.get(i).getIdEquipo()==0){
+            if(elementos.get(i).getNombre().equals("Cpu")&& elementos.get(i).getIdEquipo()==0 && !(elementos.get(i).getModelo().equals("No disponible"))){
                 cpusDisponibles.add(elementos.get(i));
             }
         }
@@ -148,6 +148,14 @@ public class ElementoBean {
     public void setIdEquipo(int idEquipo) {
         this.idEquipo = idEquipo;
     }
+    
+    public Elemento getElemento() {
+        return elemento;
+    }
+
+    public void setElemento(Elemento elemento) {
+        this.elemento = elemento;
+    }
 
     public String getCaracteristicas() {
         return caracteristicas;
@@ -175,6 +183,18 @@ public class ElementoBean {
     }
     public void editElemento(int id,int idEquipo)throws TimeLimitExceptions{
         elementoServices.editElemento(id,idEquipo);
+    }
+    
+    public void eliminarElemento() throws TimeLimitExceptions{
+    	try{
+            elementoServices.eliminarElemento(elemento.getId(),"No disponible");
+            FacesContext.getCurrentInstance().addMessage(null,new FacesMessage("Elemento dado de baja con exito"));
+            PrimeFaces current = PrimeFaces.current();
+            current.executeScript("PF('dlg2').hide();");
+        }catch (TimeLimitExceptions ex){
+            FacesContext.getCurrentInstance().addMessage(null,new FacesMessage(FacesMessage.SEVERITY_ERROR,"No se pudo dar de baja el Elemento","Error"));
+            throw ex;
+        }
     }
 
 }

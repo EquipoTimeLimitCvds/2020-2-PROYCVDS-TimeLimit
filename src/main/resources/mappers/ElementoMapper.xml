@@ -27,6 +27,10 @@
         INSERT INTO "elementos"(id,nombre,marca,modelo,caracteristicas,idEquipo)
 	VALUES((select count(*)+1 from "elementos"),#{nombre},#{marca},#{modelo},#{caracteristicas},#{idEquipo});
     </insert>
+    
+    <update id="eliminarElemento" parameterType="edu.eci.cvds.TimeLimit.model.Elemento">
+    	update "elementos" SET modelo=#{modelo} WHERE id=#{id};
+    </update>
     	
 
 </mapper>

@@ -22,6 +22,11 @@ public class ElementoServicesImpl implements ElementoServices {
             elementoDao.registrarElemento(nombre,marca,modelo,caracteristicas,idEquipo);
         }
     }
+    
+    @Override
+    public void eliminarElemento(int id,String modelo) throws TimeLimitExceptions {
+    	elementoDao.eliminarElemento(id,modelo);
+    }
 
     @Override
     public Elemento getElemento(int id) throws TimeLimitExceptions {

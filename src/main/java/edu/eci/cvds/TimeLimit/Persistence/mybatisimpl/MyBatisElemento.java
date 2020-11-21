@@ -30,6 +30,8 @@ public class MyBatisElemento implements ElementoDao {
             throw new TimeLimitExceptions("No puede obtener el elemento",e);
         }
     }
+    
+    @Override
     public void registrarElemento(String nombre,String marca,String modelo,String caracteristicas,int idEquipo) throws TimeLimitExceptions{
         try{
             elementoMapper.registrarElemento(nombre,marca,modelo,caracteristicas,idEquipo);
@@ -43,11 +45,21 @@ public class MyBatisElemento implements ElementoDao {
         }catch (Exception e){
             throw new TimeLimitExceptions("No se puede consultar los elementos",e);
         }
-    }public void editElemento(int id,int idEquipo) throws TimeLimitExceptions {
+    }
+    public void editElemento(int id,int idEquipo) throws TimeLimitExceptions {
         try{
             elementoMapper.editElemento(id,idEquipo);
         }catch (Exception e){
             throw new TimeLimitExceptions("no se puede asociar elemento con el equipo",e);
         }
     }
+
+	@Override
+	public void eliminarElemento(int id,String modelo) throws TimeLimitExceptions {
+		try{
+            elementoMapper.eliminarElemento(id, modelo);
+        }catch (Exception e){
+            throw new TimeLimitExceptions("No se puede dar de baja el elemento",e);
+        }	
+	}
 }
