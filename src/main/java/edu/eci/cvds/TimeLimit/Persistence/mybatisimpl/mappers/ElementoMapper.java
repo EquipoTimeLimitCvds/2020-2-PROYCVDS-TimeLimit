@@ -13,4 +13,8 @@ public interface ElementoMapper {
     public ArrayList<Elemento> getElementos();
 
     public void editElemento(@Param("id")int id,@Param("idequipo")int idequipo);
+
+    public void borrarElemento(@Param("id")int id);
+
+    public void addElemento(@Param("id")int id, @Param("idequipo")int idequipo);
 }

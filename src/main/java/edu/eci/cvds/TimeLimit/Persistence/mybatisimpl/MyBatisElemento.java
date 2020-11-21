@@ -50,4 +50,22 @@ public class MyBatisElemento implements ElementoDao {
             throw new TimeLimitExceptions("no se puede asociar elemento con el equipo",e);
         }
     }
+
+    @Override
+    public void addElemento(int id, int idequipo) throws TimeLimitExceptions {
+        try{
+            elementoMapper.addElemento(id,idequipo);
+        }catch (Exception e){
+            throw new TimeLimitExceptions("no se puede asociar elemento con el equipo",e);
+        }
+    }
+
+    @Override
+    public void borrarElemento(int id) throws TimeLimitExceptions {
+        try{
+            elementoMapper.borrarElemento(id);
+        }catch (Exception e){
+            throw new TimeLimitExceptions("no se puede borrarElemento",e);
+        }
+    }
 }

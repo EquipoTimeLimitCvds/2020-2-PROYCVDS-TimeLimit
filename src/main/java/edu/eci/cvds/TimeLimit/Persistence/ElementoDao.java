@@ -13,5 +13,7 @@ public interface ElementoDao {
     public ArrayList<Elemento> getElementos()throws TimeLimitExceptions;
 
     public void editElemento(int id, int idEquipo) throws TimeLimitExceptions;
+    public void addElemento(int id, int idequipo) throws TimeLimitExceptions;
+    public  void borrarElemento(int id) throws TimeLimitExceptions;
 }
 

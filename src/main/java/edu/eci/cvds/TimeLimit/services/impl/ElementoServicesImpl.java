@@ -40,4 +40,15 @@ public class ElementoServicesImpl implements ElementoServices {
         elementoDao.editElemento(id,idEquipo);
     }
 
+    @Override
+    public void borrarElemento(int id) throws TimeLimitExceptions {
+        elementoDao.borrarElemento(id);
+    }
+
+    @Override
+    public void addElemento(int id, int idequipo) throws TimeLimitExceptions {
+        elementoDao.addElemento(id,idequipo);
+
+    }
+
 }
