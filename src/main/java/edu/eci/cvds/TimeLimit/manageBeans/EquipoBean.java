@@ -31,6 +31,7 @@ public class EquipoBean {
     private int id;
     private String nombre;
     private String estado;
+    private String prueba;
     private String enUso;
     private int idLaboratorio;
     private Laboratorio idLab;
@@ -39,7 +40,28 @@ public class EquipoBean {
     private Elemento raton;
     private Elemento torre;
     private ArrayList<Equipo>listaEquipos;
+    private ArrayList<Elemento>elementos;
+	private Equipo imaginacion;
+    private Elemento Cambio;
+    private Elemento elementonuevo;
+    private ArrayList<Elemento> ElementosDisponibles;
 
+	public Equipo getImaginacion() {
+        return imaginacion;
+    }
+
+    public void setImaginacion(Equipo imaginacion) {
+        this.imaginacion = imaginacion;
+    }
+
+    public String getPrueba() {
+        return prueba;
+    }
+
+    public void setPrueba(String prueba) {
+
+        this.prueba = prueba;
+    }
 
     public ArrayList<Equipo>getListaEquipos(){
         return listaEquipos;
@@ -168,6 +190,40 @@ public class EquipoBean {
         ArrayList<Equipo>equipos=equipoServices.getEquipos();
         return equipoServices.getEquipos();
     }
+    public void quitarElemento()throws TimeLimitExceptions {
+        elementos=new ArrayList<Elemento>();
+        //System.out.println(idequipo);
+       // System.out.println("llega");
+       // System.out.println(prueba);
+
+        elementos=elementoServices.getElementos();
+        for(int i=0;i<elementos.size();i++){
+            if(elementos.get(i).getNombre().equals(prueba)&& elementos.get(i).getIdEquipo()==imaginacion.getId()){
+                Cambio=elementos.get(i);
+            }
+        }
+        ElementosDisponibles=new ArrayList<Elemento>();
+        for(int i=0;i<elementos.size();i++){
+            if(elementos.get(i).getNombre().equals(prueba)&& elementos.get(i).getIdEquipo()==0 && elementos.get(i).getIdEquipo()<89898){
+                ElementosDisponibles.add(elementos.get(i));
+
+            }
+			
+        }
+        if(ElementosDisponibles.size()>0) {
+            elementonuevo = ElementosDisponibles.get(0);
+            elementoServices.borrarElemento(Cambio.getId());
+            elementoServices.addElemento(elementonuevo.getId(),imaginacion.getId());
+
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "El cambio se realizo efectivamente", "Succesfull"));
+
+        }else {
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "No hay Elementos disponibles para el cambio", "Error"));
+        }
+
+
+    }
+
 
 }
 

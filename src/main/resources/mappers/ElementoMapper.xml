@@ -22,6 +22,12 @@
     <update id="editElemento">
         update "elementos" set idequipo=#{idequipo} where id=#{id};
     </update>
+    <update id="borrarElemento">
+        update "elementos" set idequipo=898988 where id=#{id};
+    </update>
+    <update id="addElemento">
+        update "elementos" set idequipo=#{idequipo} where id=#{id};
+    </update>
 
     <insert id="registrarElemento" parameterType="edu.eci.cvds.TimeLimit.model.Elemento">
         INSERT INTO "elementos"(id,nombre,marca,modelo,caracteristicas,idEquipo)
