@@ -13,6 +13,81 @@ body{
 	height: 100vh;
 }
 
+.laboratorio {
+	width: 355px;
+	height: 60px;
+	color: #fff;
+	top: 0%;
+	left: 50%;
+	position: relative;
+	transform: translate(-50%, -40%);
+	box-sizing: border-box;
+	padding: 70px 30px;
+	border-color: #fff;
+	border-radius: 10px;
+	
+	
+}
+
+
+.laboratorio .form-control{
+	margin-bottom:10px;
+	box-shadow: none;
+	background: transparent;
+	border:none;
+	color: #000;
+	width: 100%;
+	margin-bottom: 25px;
+	border: none;
+	outline: none;
+	height: 40px;
+	font-size: 16px;
+	text-shadow: none;
+	border-bottom: 2px solid #024D12;
+}
+
+.laboratorio .form-control:focus{
+	border-bottom: 3px solid #0B41F8;
+}
+
+.laboratorio button{
+	width: 100%;
+	height: 32px;
+	background: #fff;
+	color: #fff;
+	font-size: 16px;
+	border-radius: 5px;
+	margin-top: 18px;
+	font-family: Impact;
+}
+
+.laboratorio input{
+	width: 100%;
+	height: 32px;
+	background: #fff;
+	color: #fff;
+	font-size: 16px;
+	border-radius: 5px;
+	margin-top: 18px;
+	font-family: Impact;
+}
+.laboratorio input:hover{
+	background-color: #fff;
+	color: #fff;
+	border: 1px solid #fff;
+}
+.laboratorio button:hover{
+	background-color: #fff;
+	color: #024D12;
+	border: 1px solid #024D12;
+}
+
+.laboratorio .control-label{
+	color: #0B41F8;
+	font-family: Impact;
+}
+
+
 .login-box {
 	width: 22%;
 	height: 350px;
@@ -87,18 +162,6 @@ body{
 	color: #fff;
 	font-family: Impact;
 }
-
-
-
-.menu{
-	width: 100%;
-	height: 10%;
-	transform: translate(20%, 50%);
-	font-family: sans-serif;
-	color: #fff;
-}
-
-
 
 
 .contenedor {
