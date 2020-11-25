@@ -70,6 +70,13 @@
 					</f:facet>
 					<h:outputText value="#{Elementos.idEquipo}" />
 				</p:column>
+				<p:column style="color:black;">
+				<f:facet name="header">
+					<h:outputText value="Opción" />
+				</f:facet>
+				<input style="background:#fff; margin-top: 0.5%" styleClass="customStyleButton" type="button" value="Reportar Elemento"></input>
+			
+			</p:column>
 			
 			</p:dataTable>
 			<p:commandButton type="submit" value="Dar de Baja" style="background:#024D12;color:#fff; margin-top: 0.5%; margin-left: 49.5%" styleClass="customStyleButton" actionListener="#{ElementoBean.eliminarElemento()}"/>
