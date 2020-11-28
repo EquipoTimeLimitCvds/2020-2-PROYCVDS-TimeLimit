@@ -22,8 +22,10 @@
 	    <!-- Header -->
 	    <header id="header">
 	        <h1>Agregar Equipo</h1>
+	        <img class="avatar" src= "assets/img/timelimit.png" alt="Logo de login"/>
 	    </header>
 	    <!-- Signup Form -->
+	    
 	    <h:form id="signup-form" method="post" action="#">
 	    	<p:growl id="growl" showDetail="true" sticky="true" life="4000"> 
 	        		<p:autoUpdate />
@@ -36,7 +38,7 @@
 						opacity:0.9;
 					}
 				</style>
-				<img class="avatar" src= "assets/img/timelimit.png" alt="Logo de login"/>
+				
 				<p:dataTable var="Equipos" value="#{EquipoBean.getEquipos()}" selectionMode="single"
 						 selection="#{EquipoBean.imaginacion}" rowKey="#{Equipos.id}"
 						   style="margin-bottom: 1%;width: 90%; margin-left: 5%; border-radius: 15px;" 
@@ -92,7 +94,8 @@
             <f:selectItem itemLabel="Cpu" itemValue="Cpu" />
             <f:selectItem itemLabel="Mouse" itemValue="Mouse" />
         </h:selectOneMenu>
-			<p:commandButton type="submit" value="Aceptar"  update=":@form"/>
+			<p:commandButton type="submit" value="Aceptar" style="background:#024D12; margin-top: 0.5% " update=":@form"/>
+			
 
 			<p:dataTable id="tablaElementos" var="Lab" value="#{EquipoBean.getElementosEditar()}" selectionMode="single"
 						 selection="#{EquipoBean.proximo}" rowKey="#{Lab.id}"
