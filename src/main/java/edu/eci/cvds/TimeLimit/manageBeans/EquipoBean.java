@@ -7,6 +7,7 @@ import edu.eci.cvds.TimeLimit.model.Equipo;
 import edu.eci.cvds.TimeLimit.model.Laboratorio;
 import edu.eci.cvds.TimeLimit.services.ElementoServices;
 import edu.eci.cvds.TimeLimit.services.EquipoServices;
+import edu.eci.cvds.TimeLimit.services.NovedadServices;
 import edu.eci.cvds.TimeLimit.services.ServicesFactory;
 import org.primefaces.PrimeFaces;
 
@@ -26,6 +27,7 @@ public class EquipoBean {
 
     EquipoServices equipoServices= ServicesFactory.getInstance().getEquipoServices();
     ElementoServices elementoServices= ServicesFactory.getInstance().getElementoServices();
+    NovedadServices novedadServices= ServicesFactory.getInstance().getNovedadServices();
 
 
     private int id;
@@ -43,10 +45,18 @@ public class EquipoBean {
     private ArrayList<Elemento>elementos;
 	private Equipo imaginacion;
     private Elemento Cambio;
-    private Elemento elementonuevo;
+    private Elemento proximo;
     private ArrayList<Elemento> ElementosDisponibles;
 
-	public Equipo getImaginacion() {
+    public Elemento getProximo() {
+        return proximo;
+    }
+
+    public void setProximo(Elemento proximo) {
+        this.proximo = proximo;
+    }
+
+    public Equipo getImaginacion() {
         return imaginacion;
     }
 
@@ -172,6 +182,7 @@ public class EquipoBean {
                         elementoServices.editElemento(ejemploDos.getId(),listaEquipos.get(i).getId());
                         elementoServices.editElemento(torre.getId(),listaEquipos.get(i).getId());
                         elementoServices.editElemento(raton.getId(),listaEquipos.get(i).getId());
+                        novedadServices.registrarNovedad("se creo el equipo"+nombre,"finalizada","Equipo",listaEquipos.size());
                     }
                 }
                 FacesContext.getCurrentInstance().addMessage(null,new FacesMessage("Equipo creado con exito"));
@@ -192,9 +203,7 @@ public class EquipoBean {
     }
     public void quitarElemento()throws TimeLimitExceptions {
         elementos=new ArrayList<Elemento>();
-        //System.out.println(idequipo);
-       // System.out.println("llega");
-       // System.out.println(prueba);
+
 
         elementos=elementoServices.getElementos();
         for(int i=0;i<elementos.size();i++){
@@ -202,25 +211,32 @@ public class EquipoBean {
                 Cambio=elementos.get(i);
             }
         }
-        ElementosDisponibles=new ArrayList<Elemento>();
-        for(int i=0;i<elementos.size();i++){
-            if(elementos.get(i).getNombre().equals(prueba)&& elementos.get(i).getIdEquipo()==0 && elementos.get(i).getIdEquipo()<89898){
-                ElementosDisponibles.add(elementos.get(i));
 
-            }
-			
-        }
-        if(ElementosDisponibles.size()>0) {
-            elementonuevo = ElementosDisponibles.get(0);
+        elementos=elementoServices.getElementos();
             elementoServices.borrarElemento(Cambio.getId());
-            elementoServices.addElemento(elementonuevo.getId(),imaginacion.getId());
+            elementoServices.addElemento(proximo.getId(),imaginacion.getId());
 
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "El cambio se realizo efectivamente", "Succesfull"));
 
-        }else {
-            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "No hay Elementos disponibles para el cambio", "Error"));
-        }
 
+            //FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "No hay Elementos disponibles para el cambio", "Error"));
+
+    }
+    public ArrayList<Elemento>getElementosEditar() throws TimeLimitExceptions {
+	    ArrayList<Elemento> editar=elementoServices.getElementos();
+        ArrayList<Elemento> nueva=new ArrayList<Elemento>();
+
+	    for (Elemento objeto:editar){
+
+	        if(objeto.getNombre().equals(prueba)&& prueba!=null){
+	            nueva.add(objeto);
+            }
+        }
+        if(prueba==null){
+            return editar;
+        }else{
+            return nueva;
+        }
 
     }
 

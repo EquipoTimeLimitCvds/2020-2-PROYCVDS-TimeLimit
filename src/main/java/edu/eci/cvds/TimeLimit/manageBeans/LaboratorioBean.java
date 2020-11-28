@@ -4,6 +4,7 @@ import com.google.inject.Inject;
 import edu.eci.cvds.TimeLimit.exceptions.TimeLimitExceptions;
 import edu.eci.cvds.TimeLimit.model.Laboratorio;
 import edu.eci.cvds.TimeLimit.services.LaboratorioServices;
+import edu.eci.cvds.TimeLimit.services.NovedadServices;
 import edu.eci.cvds.TimeLimit.services.ServicesFactory;
 import org.primefaces.PrimeFaces;
 import sun.awt.Symbol;
@@ -25,6 +26,8 @@ public class LaboratorioBean {
 	//@Inject
     //private LaboratorioServices laboratorioServices;
 	LaboratorioServices laboratorioServices= ServicesFactory.getInstance().getLaboratorioServices();
+    NovedadServices novedadServices= ServicesFactory.getInstance().getNovedadServices();
+
 	private int id;
     private String nombre;
     private String horario;
@@ -69,7 +72,9 @@ public class LaboratorioBean {
     }
     public void registrarLaboratorio()throws TimeLimitExceptions{
         try{
+            laboratorios=todosLaboratorios();
             laboratorioServices.registrarLaboratorio(nombre,horario,descripcion);
+            novedadServices.registrarNovedad("Se creo el Laboratorio "+nombre+" "+"de id "+laboratorios.size()+1,"finalizada","Laboratorio",laboratorios.size()+1);
             FacesContext.getCurrentInstance().addMessage(null,new FacesMessage("Laboratorio creado con exito"));
             PrimeFaces current = PrimeFaces.current();
             current.executeScript("PF('dlg2').hide();");

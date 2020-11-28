@@ -86,13 +86,37 @@
 		</p:dataTable>
 			
 		
-        <h:selectOneMenu id="Elemento_h" value="#{EquipoBean.prueba}" style="width: 300x; height:50px" >
+        <h:selectOneMenu id="Elemento_h" value="#{EquipoBean.prueba}" style="width: 300x; height:50px" update=":@form">
             <f:selectItem itemLabel="Teclado" itemValue="Teclado" />
             <f:selectItem itemLabel="Monitor" itemValue="Monitor" />
             <f:selectItem itemLabel="Cpu" itemValue="Cpu" />
             <f:selectItem itemLabel="Mouse" itemValue="Mouse" />
         </h:selectOneMenu>
-        <p:commandButton type="submit" value="Asociar" style="background:#024D12; margin-top: 0.5% " styleClass="customStyleButton" action="#{EquipoBean.quitarElemento()}"/>
+			<p:commandButton type="submit" value="Aceptar"  update=":@form"/>
+
+			<p:dataTable id="tablaElementos" var="Lab" value="#{EquipoBean.getElementosEditar()}" selectionMode="single"
+						 selection="#{EquipoBean.proximo}" rowKey="#{Lab.id}"
+						 paginator="true" rows="10" paginatorTemplate="{CurrentPageReport} {PreviousPageLink} {PageLinks} {LastPageLink}RowsPerPageDropdown}"
+						 currentPageReportTemplate="{startRecord}-{endRecord} de {totalRecords} guardadas" rowsPerPageTemplate="5,10,15,20">>
+				<p:column style="color:black;" filterBy="#{Lab.id}" sortBy="#{Lab.id}" >
+					<f:facet name="header">
+						<h:outputText value="IdLaboratorio" />
+					</f:facet>
+					<h:outputText value="#{Lab.id}" />
+				</p:column>
+
+
+
+				<p:column style="color:black;">
+					<f:facet name="header">
+						<h:outputText value="Nombre" />
+					</f:facet>
+					<h:outputText value="#{Lab.nombre}" />
+				</p:column>
+
+			</p:dataTable>
+
+			<p:commandButton type="submit" value="PRUEBA" style="background:#024D12; margin-top: 0.5% " styleClass="customStyleButton" action="#{EquipoBean.quitarElemento()}"/>
 
 
 		</h:form>

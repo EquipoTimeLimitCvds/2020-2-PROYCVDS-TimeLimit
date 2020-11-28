@@ -4,6 +4,7 @@ import com.google.inject.Inject;
 import edu.eci.cvds.TimeLimit.exceptions.TimeLimitExceptions;
 import edu.eci.cvds.TimeLimit.model.Elemento;
 import edu.eci.cvds.TimeLimit.services.ElementoServices;
+import edu.eci.cvds.TimeLimit.services.NovedadServices;
 import edu.eci.cvds.TimeLimit.services.ServicesFactory;
 import org.primefaces.PrimeFaces;
 
@@ -23,6 +24,7 @@ public class ElementoBean {
     //private ElementoServices elementoServices;
 
     ElementoServices elementoServices= ServicesFactory.getInstance().getElementoServices();
+    NovedadServices novedadServices= ServicesFactory.getInstance().getNovedadServices();
 
     private int id;
     private String nombre;
@@ -42,8 +44,6 @@ public class ElementoBean {
         //System.out.println("llega a teclados");
         tecladosDisponibles=new ArrayList<Elemento>();
         for(int i=0;i<elementos.size();i++){
-            //System.out.println(elementos.get(i).getNombre().equals("Teclado"));
-            //System.out.println(elementos.get(i).getIdEquipo());
             if(elementos.get(i).getNombre().equals("Teclado")&& elementos.get(i).getIdEquipo()==0 && !(elementos.get(i).getModelo().equals("No disponible"))){
                 tecladosDisponibles.add(elementos.get(i));
             }
@@ -167,7 +167,9 @@ public class ElementoBean {
 
     public void registrarElemento()throws TimeLimitExceptions{
         try{
+            elementos=getElementos();
             elementoServices.registrarElemento(nombre,marca,modelo,caracteristicas,idEquipo);
+            novedadServices.registrarNovedad("Se creo el elemento "+nombre+" "+"de id "+elementos.size()+1,"finalizada","Elemento",0);
             FacesContext.getCurrentInstance().addMessage(null,new FacesMessage("Elemento creado con exito"));
             PrimeFaces current = PrimeFaces.current();
             current.executeScript("PF('dlg2').hide();");
