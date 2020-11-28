@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3c.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+	  xmlns:f="http://java.sun.com/jsf/core"
+      lang="es">
+
+<h:head>
+	<title>TimeLimit</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon" />
+    <link href="assets/css/elementos.css" rel="stylesheet"/>
+</h:head>
+
+<h:body>
+	<div class="elemento">
+		<a href="novedades.xhtml"><input style="background:#fff; margin-top: 0.5%" styleClass="customStyleButton" type="button" value="Volver"></input></a>
+	</div>
+	
+	<div class="contenedor">
+		<div class="login-box">
+	    <!-- Header -->
+	    <header id="header">
+	        <h1>Agregar Novedad</h1>
+	    </header>
+	    <!-- Signup Form -->
+	    <h:form id="signup-form" method="post" action="#">
+	    	<p:growl id="growl" showDetail="true" sticky="true" life="4000"> 
+	        		<p:autoUpdate />
+	   			</p:growl>
+				<style>
+					div[id="frm:growl_container"] > div {
+						background: #ABCADB !important;
+						color: #000;
+						text-shadow:none;
+						opacity:0.9;
+					}
+				</style>
+				<img class="avatar" src= "assets/img/timelimit.png" alt="Logo de login" />
+	        <p:inputText type="descripcion" name="descripcion" id="descripcion" placeholder="Descripción" value="#{NovedadBean.descripcion}"/>
+			<h:selectOneMenu id="novedad_estado" value="#{NovedadBean.estado}" style="width: 300x; height:50px" >
+				<f:selectItem itemLabel="Seleccione su opcion" itemValue="Seleccione su opcion" />
+				<f:selectItem itemLabel="Pendiente" itemValue="Pendiente" />
+				<f:selectItem itemLabel="Finalizada" itemValue="Finalizada" />
+				<f:selectItem itemLabel="En Curso" itemValue="En curso" />
+			</h:selectOneMenu>
+			<h:selectOneMenu id="novedad_tipo" value="#{NovedadBean.tipo}" style="width: 300x; height:50px" >
+				<f:selectItem itemLabel="Seleccione el tipo de novedad" itemValue="Seleccione el tipo de novedad" />
+				<f:selectItem itemLabel="Laboratorio" itemValue="Laboratorio" />
+				<f:selectItem itemLabel="Equipo" itemValue="Equipo" />
+				<f:selectItem itemLabel="Elemento" itemValue="Elemento" />
+			</h:selectOneMenu>
+
+			<p:inputText type="Idelemento" name="Idelemento" id="Idelemento" placeholder="Idelemento" value="#{NovedadBean.idElemento}"/>
+	        <p:commandButton type="submit" value="Agregar" style="background:#024D12; margin-top: 0.5% " styleClass="customStyleButton" action="#{NovedadBean.registrarNovedad()}"/>
+	    </h:form>
+		</div>
+	</div>
+</h:body>
+</html>

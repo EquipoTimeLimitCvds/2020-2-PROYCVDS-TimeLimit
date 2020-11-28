@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3c.org/1999/xhtml"
+	  xmlns:h="http://xmlns.jcp.org/jsf/html"
+	  xmlns:p="http://primefaces.org/ui"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  lang="es">
+<h:head>
+	<title>TimeLimit</title>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon" />
+	<link href="assets/css/laboratorios.css" rel="stylesheet"/>
+</h:head>
+
+<h:body>
+	<div class="laboratorio">
+		<a href="novedades.xhtml"><input style="background:#fff; margin-top: 0.5%" styleClass="customStyleButton" type="button" value="Volver"></input></a>
+	</div>
+	<h:form>
+
+		<center>
+
+			<h2 style="color:white; font-size:100px ;">Novedades</h2>
+		</center>
+		<br></br>
+		<p:dataTable var="Novedades" value="#{NovedadBean.getNovedades()}"  style="margin-bottom: 1%;
+					width: 90%; margin-left: 5%; border-radius: 15px;" paginator="true"  rows="10"
+					 paginatorTemplate="{CurrentPageReport} {PreviousPageLink} {PageLinks}  {LastPageLink} {RowsPerPageDropdown}"
+					 currentPageReportTemplate="{startRecord}-{endRecord} de {totalRecords} guardadas"
+					 rowsPerPageTemplate="5,10,15,20">				>
+
+
+			<p:column  style="color:black;"  filterBy="#{Novedades.id}" sortBy="#{Novedades.id}"  >
+				<f:facet name="header">
+					<h:outputText value="ID" />
+				</f:facet>
+				<h:outputText value="#{Novedades.id}" />
+			</p:column>
+
+			<p:column style="color:black;" filterBy="#{Novedades.fecha}" sortBy="#{Novedades.fecha}" >
+				<f:facet name="header">
+					<h:outputText value="Fecha" />
+				</f:facet>
+				<h:outputText value="#{Novedades.fecha}" />
+			</p:column>
+
+			<p:column style="color:black;" filterBy="#{Novedades.estado}" sortBy="#{Novedades.estado}" >
+				<f:facet name="header">
+					<h:outputText value="Estado" />
+				</f:facet>
+				<h:outputText value="#{Novedades.estado}" />
+			</p:column>
+
+			<p:column style="color:black;" filterBy="#{Novedades.tipo}" sortBy="#{Novedades.tipo}">
+				<f:facet name="header">
+					<h:outputText value="Tipo" />
+				</f:facet>
+				<h:outputText value="#{Novedades.tipo}" />
+			</p:column>
+
+			<p:column style="color:black;" filterBy="#{Novedades.idelemento}" sortBy="#{Novedades.idelemento}">
+				<f:facet name="header">
+					<h:outputText value="IdElemento" />
+				</f:facet>
+				<h:outputText value="#{Novedades.idElemento}" />
+			</p:column>
+
+		</p:dataTable>
+
+	</h:form>
+
+</h:body>
+</html>
