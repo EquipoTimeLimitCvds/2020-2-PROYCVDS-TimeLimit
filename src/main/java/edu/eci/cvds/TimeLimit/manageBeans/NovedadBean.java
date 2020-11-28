@@ -5,6 +5,7 @@ import edu.eci.cvds.TimeLimit.model.Elemento;
 import edu.eci.cvds.TimeLimit.model.Equipo;
 import edu.eci.cvds.TimeLimit.model.Laboratorio;
 import edu.eci.cvds.TimeLimit.model.Novedad;
+import edu.eci.cvds.TimeLimit.services.ElementoServices;
 import edu.eci.cvds.TimeLimit.services.EquipoServices;
 import edu.eci.cvds.TimeLimit.services.NovedadServices;
 import edu.eci.cvds.TimeLimit.services.ServicesFactory;
@@ -26,6 +27,9 @@ public class NovedadBean {
     //private NovedadServices novedadServices;
 
     NovedadServices novedadServices = ServicesFactory.getInstance().getNovedadServices();
+    ElementoServices elementoServices= ServicesFactory.getInstance().getElementoServices();
+
+
     private int id;
     private LocalDate fecha=LocalDate.now();
     private String descripcion;
@@ -102,6 +106,9 @@ public class NovedadBean {
     public ArrayList<Novedad>getNovedades() throws TimeLimitExceptions {
         ArrayList<Novedad>novedades=novedadServices.getNovedades();
         return novedades;
+    }
+    public ArrayList<Elemento>getTodosElementos() throws TimeLimitExceptions{
+        return elementoServices.getElementos();
     }
 
 }

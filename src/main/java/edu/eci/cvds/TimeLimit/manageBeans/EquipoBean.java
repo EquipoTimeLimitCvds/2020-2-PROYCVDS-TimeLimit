@@ -202,25 +202,35 @@ public class EquipoBean {
         return equipoServices.getEquipos();
     }
     public void quitarElemento()throws TimeLimitExceptions {
-        elementos=new ArrayList<Elemento>();
+        elementos = new ArrayList<Elemento>();
 
 
-        elementos=elementoServices.getElementos();
-        for(int i=0;i<elementos.size();i++){
-            if(elementos.get(i).getNombre().equals(prueba)&& elementos.get(i).getIdEquipo()==imaginacion.getId()){
-                Cambio=elementos.get(i);
+        elementos = elementoServices.getElementos();
+        try {
+
+
+            for (int i = 0; i < elementos.size(); i++) {
+                if (elementos.get(i).getNombre().equals(prueba) && elementos.get(i).getIdEquipo() == imaginacion.getId()) {
+                    Cambio = elementos.get(i);
+                }
             }
-        }
 
-        elementos=elementoServices.getElementos();
+
+            elementos = elementoServices.getElementos();
             elementoServices.borrarElemento(Cambio.getId());
-            elementoServices.addElemento(proximo.getId(),imaginacion.getId());
-
+            elementoServices.addElemento(proximo.getId(), imaginacion.getId());
+            novedadServices.registrarNovedad("Se asoció el elemento " + proximo.getId() + " y se asoció al equipo " + imaginacion.getId(),"finalizada","Elemento", Cambio.getId());
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "El cambio se realizo efectivamente", "Succesfull"));
 
+        } catch (TimeLimitExceptions ex) {
 
-            //FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "No hay Elementos disponibles para el cambio", "Error"));
 
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "No hay Elementos disponibles para el cambio", "Error"));
+            throw ex;
+        }
+    }
+    public ArrayList<Elemento>getElementos() throws TimeLimitExceptions{
+        return elementoServices.getElementos();
     }
     public ArrayList<Elemento>getElementosEditar() throws TimeLimitExceptions {
 	    ArrayList<Elemento> editar=elementoServices.getElementos();
