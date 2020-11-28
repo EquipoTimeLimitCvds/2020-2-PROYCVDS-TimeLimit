@@ -15,7 +15,7 @@ body{
 
 .novedad input:hover{
 	background-color: #fff;
-	color: #fff;
+	color: #0a0a0a;
 	border: 1px solid #fff;
 }
 .novedad {
@@ -82,7 +82,7 @@ body{
 
 .novedad button:hover{
 	background-color: #fff;
-	color: #024D12;
+	color: #0a0a0a;
 	border: 1px solid #024D12;
 }
 
@@ -183,7 +183,7 @@ input.src:hover{
 
 .login-box input:hover{
 	background-color: #fff;
-	color: #fff;
+	color: #0a0a0a;
 	border: 1px solid #fff;
 }
 
