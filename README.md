@@ -12,3 +12,10 @@ Algunas de las funciones que puede realizar el personal son:
 * Crear laboratorios.
 * Crear elementos.
 * Registrar novedades de cada uno 
+### CircleCI
+[![CircleCI](https://circleci.com/gh/EquipoTimeLimitCvds/2020-2-PROYCVDS-TimeLimit.svg?style=svg)](https://circleci.com/gh/EquipoTimeLimitCvds/2020-2-PROYCVDS-TimeLimit)
+
+### Codacy
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/d1dc276b7002496887af5332f37e3c7b)](https://www.codacy.com/gh/EquipoTimeLimitCvds/2020-2-PROYCVDS-TimeLimit/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=EquipoTimeLimitCvds/2020-2-PROYCVDS-TimeLimit&amp;utm_campaign=Badge_Grade)
+### Despliegue automatico
+https://protectotimelimitcvds2020-2.herokuapp.com/
