@@ -49,4 +49,10 @@ public class ShiroSession implements SessionLogger {
         return SecurityUtils.getSubject().isAuthenticated();
     }
 
+    @Override
+    public void logout(){
+        SecurityUtils.getSubject().logout();
+    }
+
+
 }

@@ -5,5 +5,5 @@ public interface SessionLogger {
 
     public boolean isLogged();
 
-
+    public void logout();
 }

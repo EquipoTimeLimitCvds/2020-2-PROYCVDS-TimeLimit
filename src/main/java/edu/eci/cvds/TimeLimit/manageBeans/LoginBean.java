@@ -75,9 +75,42 @@ public class LoginBean {
 
     }
 
+
     public void activeSession () throws IOException {
         FacesContext facesContext = FacesContext.getCurrentInstance();
         facesContext.getExternalContext().redirect("");
+    }
+    public void volver(){
+        try{
+            FacesContext.getCurrentInstance().getExternalContext().redirect("/index.xhtml");
+        }catch (IOException e){
+            setErrorMessage(e);
+        }
+
+    }
+    public void retroceder(){
+        if(isLogged()){
+            try{
+                FacesContext.getCurrentInstance().getExternalContext().redirect("/index.xhtml");
+            }catch (IOException e){
+                setErrorMessage(e);
+            }
+        }
+    }
+    public boolean isLogged(){
+        return logger.isLogged();
+    }
+    public void logout() throws IOException{
+        System.out.println("estoy en logout");
+        if(isLogged()){
+            System.out.println("HOLA");
+            FacesContext.getCurrentInstance().getExternalContext().redirect("/index.xhtml");
+            SecurityUtils.getSubject().logout();
+        }
+    }
+    protected static void setErrorMessage(Exception e) {
+        String message = e.getMessage();
+        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, message, null));
     }
 
 }
