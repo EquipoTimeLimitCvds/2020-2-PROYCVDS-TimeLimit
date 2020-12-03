@@ -12,3 +12,5 @@ Algunas de las funciones que puede realizar el personal son:
 * Crear laboratorios.
 * Crear elementos.
 * Registrar novedades de cada uno 
+
+[![CircleCI](https://circleci.com/gh/EquipoTimeLimitCvds/2020-2-PROYCVDS-TimeLimit.svg?style=svg)](https://circleci.com/gh/EquipoTimeLimitCvds/2020-2-PROYCVDS-TimeLimit)
