@@ -14,3 +14,6 @@ Algunas de las funciones que puede realizar el personal son:
 * Registrar novedades de cada uno 
 
 [![CircleCI](https://circleci.com/gh/EquipoTimeLimitCvds/2020-2-PROYCVDS-TimeLimit.svg?style=svg)](https://circleci.com/gh/EquipoTimeLimitCvds/2020-2-PROYCVDS-TimeLimit)
+
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/d31f0b7b8e434fa7b1ea7853e3c7ef86)](https://www.codacy.com/manual/EquipoTimeLimitCvds/2020-2-PROYCVDS-TimeLimit?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=EquipoTimeLimitCvds/2020-2-PROYCVDS-TimeLimit&amp;utm_campaign=Badge_Grade)
