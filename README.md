@@ -127,10 +127,13 @@ https://protectotimelimitcvds2020-2.herokuapp.com/
  * Sebastian Villamarin - [svillamarin27](https://github.com/svillamarin27)
  * Daniel Varon - [Daniel1Varon](https://github.com/Daniel1Varon)
   
-### Descripción de la Metodología
 ### Taiga 
-En este enlace se evidencia el 
-### Release-Burndown Chart: 📈
+
+En este enlace se evidencia el avance del proyecto durante los 3 sprints 
+[Taiga](https://tree.taiga.io/project/santiagolaiton2700-historial-de-equipos-labinfo/timeline)
+
+### Descripción de la Metodología  y Release-Burndown Chart: 📈
+
 #### Sprint1
 
 Para este primer sprint escogimos 4 historias de usuario de las propuestas:
