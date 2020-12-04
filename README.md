@@ -15,7 +15,8 @@
 TimeLimit Laboratorios es un aplicativo web diseñado para que el personal perteneciente a la decanatura de Ingeniería de Sistemas de la Escuela Colombiana de Ingeniería Julio Garavito, pueden registrar los laboratorio, equipos y elementos de cada equipo, junto con las novedades que se realizan a cada uno de estos. La herramienta busca mantener a todo el personal informado sobre las novedades que se presentan en los laboratorios. 
 ### Manual de Usuario 
 
-_Al ingresar al aplicativo en primer lugar estara la ventana del _"Login"_ a la cual solo tienen acceso el personal del laboratorio y pueden ingresar con los datos de registros suministrados_
+Al ingresar al aplicativo en primer lugar estara la ventana del _"Login"_ a la cual solo tienen acceso el personal del laboratorio y pueden ingresar con los datos de registros suministrados
+
 ![image](https://user-images.githubusercontent.com/59893804/101206236-dbe3a900-363c-11eb-925e-7d09964a81a4.png)
 
 Despues de un login exitoso nos encontramos con 4 elementos principales: elementos , equipos , novedades y laboratorios 
@@ -23,45 +24,45 @@ Despues de un login exitoso nos encontramos con 4 elementos principales: element
 
 #### Equipos
 Donde tendremos funcionalidades como:
-* Consultar equipo
+* Consultar todos los equipos
 * Agregar equipo
-* Editar equipo 
+* Asociar elementos a un equipo especifico
 * Generar un reporte de equipos
 * Consultar todas las novedades de el equipo 
 ![image](https://user-images.githubusercontent.com/59893804/101207325-74c6f400-363e-11eb-9807-e61e1f62432a.png)
 
 #### Elementos
 Donde tendremos funcionalidades como:
-* Consultar equipo
-* Agregar equipo
-* Editar equipo 
-* Generar un reporte de equipos
-* Consultar todas las novedades de el equipo 
+* Consultar todos los elementos
+* Agregar elementos
+* Dar de baja a uno o varios elementos
+* Generar un reporte de elementos
+* Consultar todas las novedades de el elemento 
 ![image](https://user-images.githubusercontent.com/59893804/101206416-177e7300-363d-11eb-858e-3d4d0a3a1932.png)
 
 #### Novedades
 Donde tendremos funcionalidades como:
-* Consultar equipo
-* Agregar equipo
-* Editar equipo 
-* Generar un reporte de equipos
-* Consultar todas las novedades de el equipo 
+* Consultar todas las novedades
+* Agregar nuevas novedades
+* Generar un reporte de novedades
 ![image](https://user-images.githubusercontent.com/59893804/101207417-9aec9400-363e-11eb-9b7e-16d1f76cfbcd.png)
 
 #### Laboratorios
 Donde tendremos funcionalidades como:
-* Consultar equipo
-* Agregar equipo
-* Editar equipo 
-* Generar un reporte de equipos
-* Consultar todas las novedades de el equipo 
+* Consultar todos los laboratorios
+* Agregar laboratorios
+* Generar un reporte de laboratorios
+* Observar estadisticas de laboratorios 
+* Consultar todas las novedades de el laboratorio
 ![image](https://user-images.githubusercontent.com/59893804/101207463-a93ab000-363e-11eb-8463-5429a2c84e33.png)
 
 ### Funcionalidades importantes 
 El personal podra:
-* Registrar
+* Agregar
 * Consultar 
 * Asociar 
+* Dar de baja
+* Generar reporte 
 
 ## Arquitectura y Diseño detallado 🛠️📐
 ### Modelo E-R
