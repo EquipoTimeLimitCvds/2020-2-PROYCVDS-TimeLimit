@@ -138,18 +138,23 @@ Para este primer sprint escogimos 4 historias de usuario de las propuestas:
 * Registrar equipo 
 * Registrar elemento
 * Registrar novedad
+
 Decidimos trabajar a par;una pareja en el back y una pareja en el front.Como era el primer sprint la estructura del proyecto nos tomo la mayoria del tiempo por lo que la unica historia que se completo al 100% en el primer sprint fue la de "Iniciar sesión" , las otras tres se implementaron a un 80% , hizo falta algunos detalles y completar algunas subtareas. 
+
 _Burndown Chart_
 ![image](https://user-images.githubusercontent.com/59893804/101218372-f758af00-3650-11eb-948b-c352a98d0eea.png)
 _Backlog_
 
 #### Sprint2
 Para este segundo sprint escogimos 3 historias de usuario de las propuestas y añadimos una destinada a las correcciones del primer sprint:
+
 * Asociar elemento
 * Dar de baja elemento 
 * Crear laboratorio
 * Correcciones sprint 1 
+
 Seguimos trabajando con la misma metodologia de trabajo ( trabajar a par , una pareja en el back y una pareja en el front).Nos dimos cuenta que con la estructura montada y con el claro funcionamiento de nuestro aplicativo el segundo sprint fue mas sencillo y las historias y subtareas se realizaron exitosamente a tiempo. Logramos hacer todas las historias de usuario propuestas y algunas correcciones. Para este sprint solo quedaron pendientes algunas correcciones del sprint1.
+
 _Burndown Chart_
 ![image](https://user-images.githubusercontent.com/59893804/101218457-19eac800-3651-11eb-9609-a052520f1690.png)
 
@@ -157,12 +162,14 @@ _Backlog_
 
 #### Sprint3 
 Este ultimo sprint fue el que nos llevo mas trabajo ya que fuimos concientes de que teniamos muchos detalles por ajustar aparte de las historias de usuario propuestas , las cuales fueron 6 en esta ocasion , al principio definimos solo 5 pero luego vimos que podiamos añadir una mas incluyendo las correcciones del sprint anterior:
+
 * Asociar equipo
 * Reporte de equipos 
 * Reporte de elementos
 * Reporte de novedades
 * Reporte historico de novedades
 * Correcciones sprint 2
+
 Para este sprint cambiamos un poco la metodologia , seguimos trabajando a par pero nos dividimos las historias y subtareas equitativamente.
 
 _Burndown Chart_
