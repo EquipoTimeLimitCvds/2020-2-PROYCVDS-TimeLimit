@@ -82,8 +82,10 @@ public class LoginBean {
     }
     public void volver(){
         try{
-            FacesContext.getCurrentInstance().getExternalContext().redirect("/index.xhtml");
-        }catch (IOException e){
+            //FacesContext.getCurrentInstance().getExternalContext().redirect("/index.xhtml");
+            setNombre(null);
+            setClave(null);
+        }catch (Exception e){
             setErrorMessage(e);
         }
 
