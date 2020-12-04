@@ -142,8 +142,12 @@ Para este primer sprint escogimos 4 historias de usuario de las propuestas:
 Decidimos trabajar a par;una pareja en el back y una pareja en el front.Como era el primer sprint la estructura del proyecto nos tomo la mayoria del tiempo por lo que la unica historia que se completo al 100% en el primer sprint fue la de "Iniciar sesión" , las otras tres se implementaron a un 80% , hizo falta algunos detalles y completar algunas subtareas. 
 
 _Burndown Chart_
+
 ![image](https://user-images.githubusercontent.com/59893804/101218372-f758af00-3650-11eb-948b-c352a98d0eea.png)
+
 _Backlog_
+
+Estas fueron las subtareas propuestas
 
 #### Sprint2
 Para este segundo sprint escogimos 3 historias de usuario de las propuestas y añadimos una destinada a las correcciones del primer sprint:
@@ -160,6 +164,8 @@ _Burndown Chart_
 
 _Backlog_
 
+Estas fueron las subtareas propuestas
+
 #### Sprint3 
 Este ultimo sprint fue el que nos llevo mas trabajo ya que fuimos concientes de que teniamos muchos detalles por ajustar aparte de las historias de usuario propuestas , las cuales fueron 6 en esta ocasion , al principio definimos solo 5 pero luego vimos que podiamos añadir una mas incluyendo las correcciones del sprint anterior:
 
@@ -173,9 +179,12 @@ Este ultimo sprint fue el que nos llevo mas trabajo ya que fuimos concientes de 
 Para este sprint cambiamos un poco la metodologia , seguimos trabajando a par pero nos dividimos las historias y subtareas equitativamente.
 
 _Burndown Chart_
+
 ![image](https://user-images.githubusercontent.com/59893804/101218505-2d962e80-3651-11eb-92bd-f4069f0d3afd.png)
 
 _Backlog_
+
+Estas fueron las subtareas propuestas
 
 ### Reporte de análisis estático de código con _Codacy_ 💻
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/d1dc276b7002496887af5332f37e3c7b)](https://www.codacy.com/gh/EquipoTimeLimitCvds/2020-2-PROYCVDS-TimeLimit/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=EquipoTimeLimitCvds/2020-2-PROYCVDS-TimeLimit&amp;utm_campaign=Badge_Grade)
