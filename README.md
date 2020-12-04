@@ -4,6 +4,8 @@
 * **Integrantes**: Lina Buitrago,Santiago Laiton,Sebastian Villamarin y Daniel Varon
 * **Profesor**: Julian Velasco 
 * **Roles**:
+  **Julian Velasco** - *Product Owner* - [villanuevand]
+  **Santiago Laiton** - *Developer* - [santiagolaiton2700]
 
 ### Descripción del proyecto
 TimeLimit Laboratorios es un aplicativo web diseñado para que el personal perteneciente a la decanatura de Ingeniería de Sistemas de la Escuela Colombiana de Ingeniería Julio Garavito, pueden registrar los laboratorio, equipos y elementos de cada equipo, junto con las novedades que se realizan a cada uno de estos. La herramienta busca mantener a todo el personal informado sobre las novedades que se presentan en los laboratorios. 
