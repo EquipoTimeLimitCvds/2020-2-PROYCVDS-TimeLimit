@@ -171,6 +171,9 @@ _**Backlog**_
 
 Estas fueron las subtareas propuestas
 
+![image](https://user-images.githubusercontent.com/59893804/101221845-887e5480-3656-11eb-99d8-3e6661038ab5.png)
+
+
 #### Sprint3 
 Este ultimo sprint fue el que nos llevo mas trabajo ya que fuimos concientes de que teniamos muchos detalles por ajustar aparte de las historias de usuario propuestas , las cuales fueron 6 en esta ocasion , al principio definimos solo 5 pero luego vimos que podiamos añadir una mas incluyendo las correcciones del sprint anterior:
 
@@ -190,6 +193,8 @@ _**Burndown Chart**_
 _**Backlog**_
 
 Estas fueron las subtareas propuestas
+
+![image](https://user-images.githubusercontent.com/59893804/101222671-42c28b80-3658-11eb-8f14-8d4560d9c1a2.png)
 
 ### Reporte de análisis estático de código con _Codacy_ 💻
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/d1dc276b7002496887af5332f37e3c7b)](https://www.codacy.com/gh/EquipoTimeLimitCvds/2020-2-PROYCVDS-TimeLimit/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=EquipoTimeLimitCvds/2020-2-PROYCVDS-TimeLimit&amp;utm_campaign=Badge_Grade)
