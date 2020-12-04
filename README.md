@@ -116,7 +116,8 @@ Podemos generar reportes para equipos, laboratorios y elementos; para ello :
 ### Diagrama de clases
 ### Descripción de la arquitectura 
 ### _Despliegue en HEROKU_ 📦
-https://protectotimelimitcvds2020-2.herokuapp.com/
+[![Heroku](https://protectotimelimitcvds2020-2.herokuapp.com/index.xhtml)]https://protectotimelimitcvds2020-2.herokuapp.com/index.xhtml
+
 ### _Integración continua en CircleCI_ ✅
 [![CircleCI](https://circleci.com/gh/EquipoTimeLimitCvds/2020-2-PROYCVDS-TimeLimit.svg?style=svg)](https://circleci.com/gh/EquipoTimeLimitCvds/2020-2-PROYCVDS-TimeLimit)
 
