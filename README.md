@@ -29,6 +29,7 @@ Donde tendremos funcionalidades como:
 * Asociar elementos a un equipo especifico
 * Generar un reporte de equipos
 * Consultar todas las novedades de el equipo 
+
 ![image](https://user-images.githubusercontent.com/59893804/101207325-74c6f400-363e-11eb-9807-e61e1f62432a.png)
 
 #### Elementos
@@ -38,6 +39,7 @@ Donde tendremos funcionalidades como:
 * Dar de baja a uno o varios elementos
 * Generar un reporte de elementos
 * Consultar todas las novedades de el elemento 
+
 ![image](https://user-images.githubusercontent.com/59893804/101206416-177e7300-363d-11eb-858e-3d4d0a3a1932.png)
 
 #### Novedades
@@ -45,6 +47,7 @@ Donde tendremos funcionalidades como:
 * Consultar todas las novedades
 * Agregar nuevas novedades
 * Generar un reporte de novedades
+
 ![image](https://user-images.githubusercontent.com/59893804/101207417-9aec9400-363e-11eb-9b7e-16d1f76cfbcd.png)
 
 #### Laboratorios
@@ -54,6 +57,7 @@ Donde tendremos funcionalidades como:
 * Generar un reporte de laboratorios
 * Observar estadisticas de laboratorios 
 * Consultar todas las novedades de el laboratorio
+
 ![image](https://user-images.githubusercontent.com/59893804/101207463-a93ab000-363e-11eb-8463-5429a2c84e33.png)
 
 ### Funcionalidades importantes 
@@ -70,6 +74,7 @@ La unica variacion existe cuando creamos un nuevo equipo ya que este como requis
 3. Despues de esto se podra agregar exitosamente.
 
 **Consultar** 
+
 La función consultar tambien es muy sencilla , simplemente iremos al item que queremos consultar y oprimimos el boton "consultar" , despues de esto veremos en pantalla toda la informacion de todos los atributos del item.
 
 **Asociar** 
@@ -77,10 +82,19 @@ La función consultar tambien es muy sencilla , simplemente iremos al item que q
 La función de asociar esta dada solo para dos items:
 * Asociar un elemento a un equipo 
 * Asociar un equipo a un laboratorio 
-Asociar un equipo a un laboratorio ya lo explicamos ya que se hace cuando se agrega un nuevo equipo;para asociar un elemento a un equipo iremos al item "equipos" , luego a "asociar elemento" alli seleccionaremos el equipo al que le queremos asocair un elemento , luego elegiremos el elemento a asociar y oprimimos filtrar , se mostrara en pantalla los elementos de ese tipo disponibels par asociar lo seleccionaremos y por ultimo le daremos "asociar"; despues de esto el elemento quedara asociado con exito.
+Asociar un equipo a un laboratorio ya lo explicamos ya que se hace cuando se agrega un nuevo equipo;para asociar un elemento:
+1. Iremos al item "equipos" ,
+2. Luego seleccionaremos "asociar elemento" 
+3. Alli seleccionaremos el equipo al que le queremos asociar un elemento 
+4. Elegiremos el elemento a asociar y oprimimos filtrar, se mostrara en pantalla los elementos de ese tipo disponibles para asociar
+5. Seleccionaremos el que se desee 
+6. Por ultimo le daremos "asociar" y el elemento quedara asociado con exito.
 
 **Dar de baja**
+
 Para dar de baja a un elemento haremos lo siguiente:
+
+
 1. Entraremos al item elemento 
 2. Consultaremos todos los elementos
 3. Seleccionaremos el elemento que queremos dar de baja 
@@ -88,7 +102,9 @@ Para dar de baja a un elemento haremos lo siguiente:
 5. Exitosamente el elemento ya no estara disponible pero aun podemos ver toda su informacion
 
 * **Generar reporte** 
+
 Podemos generar reportes para equipos, laboratorios y elementos; para ello :
+
 1. Iremos al item al  cual queremos generarle un reporte 
 2. Consultaremos todos los items 
 3. Alli oprimiremos el botón de excel
