@@ -57,34 +57,42 @@ Donde tendremos funcionalidades como:
 ![image](https://user-images.githubusercontent.com/59893804/101207463-a93ab000-363e-11eb-8463-5429a2c84e33.png)
 
 ### Funcionalidades importantes 
+
 El personal podra:
-* **Agregar**
+
+**Agregar**
+
 El personal puede agregar nuevas novedades , equipos , elementos y laboratorios. La función de agregar es muy sencilla , simplemente se llenaran los campos del formulario y se seleccionaran las opciones adecuadas del mismo.
 La unica variacion existe cuando creamos un nuevo equipo ya que este como requisito debe contar con sus 4 elementos que lo componen , para ello haremos los siguiente pasos:
+
 1. Iremos a elementos y agregaremos 4 elementos de diferentes tipos (si no hay elementos disponibles para asociar) es decir "teclado" , "monitor" , "mouse" y "CPU".
 2. Despues de esto iremos a "equipos" , llenaremos los campos y seleccionaremos casillas; podemos o no seleccionar un laboratorio al que queremos que pertenezca cierto equipo , pero obligatoriamente tenemos que elegir los 4 elementos que se asociaran a el equipo.
 3. Despues de esto se podra agregar exitosamente.
-* **Consultar** 
+
+**Consultar** 
 La función consultar tambien es muy sencilla , simplemente iremos al item que queremos consultar y oprimimos el boton "consultar" , despues de esto veremos en pantalla toda la informacion de todos los atributos del item.
-* **Asociar** 
+
+**Asociar** 
+
 La función de asociar esta dada solo para dos items:
 * Asociar un elemento a un equipo 
 * Asociar un equipo a un laboratorio 
 Asociar un equipo a un laboratorio ya lo explicamos ya que se hace cuando se agrega un nuevo equipo;para asociar un elemento a un equipo iremos al item "equipos" , luego a "asociar elemento" alli seleccionaremos el equipo al que le queremos asocair un elemento , luego elegiremos el elemento a asociar y oprimimos filtrar , se mostrara en pantalla los elementos de ese tipo disponibels par asociar lo seleccionaremos y por ultimo le daremos "asociar"; despues de esto el elemento quedara asociado con exito.
-* **Dar de baja **
+
+**Dar de baja**
 Para dar de baja a un elemento haremos lo siguiente:
-* Entraremos al item elemento 
-* Consultaremos todos los elementos
-* Seleccionaremos el elemento que queremos dar de baja 
-* Oprimimos "dar de baja"
-* Exitosamente el elemento ya no estara disponible pero aun podemos ver toda su informacion
+1. Entraremos al item elemento 
+2. Consultaremos todos los elementos
+3. Seleccionaremos el elemento que queremos dar de baja 
+4. Oprimimos "dar de baja"
+5. Exitosamente el elemento ya no estara disponible pero aun podemos ver toda su informacion
 
 * **Generar reporte** 
 Podemos generar reportes para equipos, laboratorios y elementos; para ello :
-* Iremos al item al  cual queremos generarle un reporte 
-* Consultaremos todos los items 
-* Alli oprimiremos el botón de excel
-* Automaticamente se generara un archivo .xls con el reporte de ese item
+1. Iremos al item al  cual queremos generarle un reporte 
+2. Consultaremos todos los items 
+3. Alli oprimiremos el botón de excel
+4. Automaticamente se generara un archivo .xls con el reporte de ese item
 
 ## Arquitectura y Diseño detallado 🛠️📐
 ### Modelo E-R
