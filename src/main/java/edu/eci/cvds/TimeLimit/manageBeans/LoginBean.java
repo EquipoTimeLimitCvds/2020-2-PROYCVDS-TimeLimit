@@ -4,7 +4,8 @@ package edu.eci.cvds.TimeLimit.manageBeans;
         import edu.eci.cvds.TimeLimit.exceptions.TimeLimitExceptions;
         import edu.eci.cvds.TimeLimit.services.ServicesFactory;
         import org.apache.shiro.SecurityUtils;
-        import org.apache.shiro.authc.UnknownAccountException;
+import org.apache.shiro.authc.AuthenticationToken;
+import org.apache.shiro.authc.UnknownAccountException;
         import org.apache.shiro.authz.annotation.RequiresGuest;
         import org.apache.shiro.subject.Subject;
 
@@ -28,7 +29,7 @@ public class LoginBean {
 
     private String nombre;
     private String clave;
-    
+    private boolean logg;
 
 
     //@Inject
@@ -61,12 +62,19 @@ public class LoginBean {
         this.clave=clave;
     }
 
+    public boolean isLogg() {
+		return logg;
+	}
 
+	public void setLogg(boolean logg) {
+		this.logg = logg;
+	}
 
     @RequiresGuest
     public void login() throws TimeLimitExceptions {
         try {
              logger.login(nombre,clave);
+             setLogg(true);
              FacesContext.getCurrentInstance().getExternalContext().redirect("/index2.xhtml");
 
         } catch (TimeLimitExceptions | IOException e){
@@ -85,6 +93,9 @@ public class LoginBean {
             //FacesContext.getCurrentInstance().getExternalContext().redirect("/index.xhtml");
             setNombre(null);
             setClave(null);
+            SecurityUtils.getSubject().logout();
+            logger.logout();
+            setLogg(false);
         }catch (Exception e){
             setErrorMessage(e);
         }
@@ -93,7 +104,7 @@ public class LoginBean {
     public void retroceder(){
         if(isLogged()){
             try{
-                FacesContext.getCurrentInstance().getExternalContext().redirect("/index.xhtml");
+            	FacesContext.getCurrentInstance().getExternalContext().redirect("/index.xhtml");
             }catch (IOException e){
                 setErrorMessage(e);
             }
@@ -102,6 +113,7 @@ public class LoginBean {
     public boolean isLogged(){
         return logger.isLogged();
     }
+    
     public void logout() throws IOException{
         System.out.println("estoy en logout");
         if(isLogged()){
@@ -114,5 +126,7 @@ public class LoginBean {
         String message = e.getMessage();
         FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, message, null));
     }
+
+	
 
 }
