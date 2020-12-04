@@ -14,6 +14,13 @@
 ### Descripción General 
 TimeLimit Laboratorios es un aplicativo web diseñado para que el personal perteneciente a la decanatura de Ingeniería de Sistemas de la Escuela Colombiana de Ingeniería Julio Garavito, pueden registrar los laboratorio, equipos y elementos de cada equipo, junto con las novedades que se realizan a cada uno de estos. La herramienta busca mantener a todo el personal informado sobre las novedades que se presentan en los laboratorios. 
 ### Manual de Usuario 
+![image](https://user-images.githubusercontent.com/59893804/101206236-dbe3a900-363c-11eb-925e-7d09964a81a4.png)
+![image](https://user-images.githubusercontent.com/59893804/101206335-fd449500-363c-11eb-9545-6235d9195399.png)
+![image](https://user-images.githubusercontent.com/59893804/101206416-177e7300-363d-11eb-858e-3d4d0a3a1932.png)
+![image](https://user-images.githubusercontent.com/59893804/101207325-74c6f400-363e-11eb-9807-e61e1f62432a.png)
+![image](https://user-images.githubusercontent.com/59893804/101207417-9aec9400-363e-11eb-9b7e-16d1f76cfbcd.png)
+![image](https://user-images.githubusercontent.com/59893804/101207463-a93ab000-363e-11eb-8463-5429a2c84e33.png)
+
 ### Funcionalidades importantes 
 El personal podra:
 * Registrar
@@ -22,6 +29,7 @@ El personal podra:
 
 ## Arquitectura y Diseño detallado 🛠️📐
 ### Modelo E-R
+![image](https://user-images.githubusercontent.com/59893804/101204662-90300000-363a-11eb-95f1-e9a9179ea8cb.png
 ### Diagrama de clases
 ### Descripción de la arquitectura 
 ### _Despliegue en HEROKU_ 📦
