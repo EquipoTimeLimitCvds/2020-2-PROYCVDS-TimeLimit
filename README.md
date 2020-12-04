@@ -14,35 +14,35 @@
  * **Sebastian Villamarin** - *Developer* - [svillamarin27](https://github.com/svillamarin27)
   * **Daniel Varon** - *Developer* - [Daniel1Varon](https://github.com/Daniel1Varon)
 
-### Descripción del proyecto
+## Descripción del proyecto
 
-## Descripción General 
+### Descripción General 
 TimeLimit Laboratorios es un aplicativo web diseñado para que el personal perteneciente a la decanatura de Ingeniería de Sistemas de la Escuela Colombiana de Ingeniería Julio Garavito, pueden registrar los laboratorio, equipos y elementos de cada equipo, junto con las novedades que se realizan a cada uno de estos. La herramienta busca mantener a todo el personal informado sobre las novedades que se presentan en los laboratorios. 
 
-## Manual de Usuario 
+### Manual de Usuario 
 
-## Funcionalidades importantes 
+### Funcionalidades importantes 
 El personal podra:
 * Registrar
 * Consultar 
 * Asociar 
 
-### Arquitectura y Diseño detallado:
+## Arquitectura y Diseño detallado:
 
-## Modelo E-R
-## Diagrama de clases
-## Descripción de la arquitectura 🛠️
-## _Despliegue en HEROKU_ 📦
+### Modelo E-R
+### Diagrama de clases
+### Descripción de la arquitectura 🛠️
+### _Despliegue en HEROKU_ 📦
 https://protectotimelimitcvds2020-2.herokuapp.com/
-## _Integración continua en CircleCI_ ✅
+### _Integración continua en CircleCI_ ✅
 [![CircleCI](https://circleci.com/gh/EquipoTimeLimitCvds/2020-2-PROYCVDS-TimeLimit.svg?style=svg)](https://circleci.com/gh/EquipoTimeLimitCvds/2020-2-PROYCVDS-TimeLimit)
 
-### Descripción del proceso
-## Integrantes
-## Descripción de la Metodología
-## Taiga 
+## Descripción del proceso
+### Integrantes
+### Descripción de la Metodología
+### Taiga 
 En este enlace se evidencia el 
-## Release-Burndown Chart: 📈
+### Release-Burndown Chart: 📈
 
 
 ### Reporte de análisis estático de código con _Codacy_ 💻
