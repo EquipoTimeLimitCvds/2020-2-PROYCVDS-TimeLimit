@@ -31,10 +31,10 @@ https://protectotimelimitcvds2020-2.herokuapp.com/
 
 ## Descripción del proceso 📝
 ### Integrantes
- * **Santiago Laiton** - [santiagolaiton2700](https://github.com/santiagolaiton2700)
- * **Lina Buitrago** - [lina-6020](https://github.com/lina-6020)
- * **Sebastian Villamarin** - [svillamarin27](https://github.com/svillamarin27)
-  * **Daniel Varon** - [Daniel1Varon](https://github.com/Daniel1Varon)
+ * Santiago Laiton - [santiagolaiton2700](https://github.com/santiagolaiton2700)
+ * Lina Buitrago - [lina-6020](https://github.com/lina-6020)
+ * Sebastian Villamarin - [svillamarin27](https://github.com/svillamarin27)
+ * Daniel Varon - [Daniel1Varon](https://github.com/Daniel1Varon)
   
 ### Descripción de la Metodología
 ### Taiga 
