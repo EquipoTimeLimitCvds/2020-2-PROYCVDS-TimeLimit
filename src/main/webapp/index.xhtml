@@ -32,8 +32,8 @@
 				}
 			</style>
 			<img class="avatar" src= "assets/img/timelimit.png" alt="Logo de login"/>
-        <p:inputText type="email" name="email" id="email" placeholder="Name" value="#{LoginBean.nombre}"/><br/>
-        <p:inputText type="password" name="password" id="password" placeholder="Password"  value="#{LoginBean.clave}"/>
+        <p:inputText type="text" name="email" id="email" placeholder="Usuario" value="#{LoginBean.nombre}"/><br/>
+        <p:inputText type="password" name="password" id="password" placeholder="Contraseña"  value="#{LoginBean.clave}"/>
         <p:commandButton type="submit" value="Entrar" style="background:#024D12; margin-top: 0.5% " styleClass="customStyleButton" action="#{LoginBean.login()}"/>
     </h:form>
 	</div>
