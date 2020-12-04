@@ -114,7 +114,12 @@ Podemos generar reportes para equipos, laboratorios y elementos; para ello :
 ### Modelo E-R
 ![image](https://user-images.githubusercontent.com/59893804/101204662-90300000-363a-11eb-95f1-e9a9179ea8cb.png)
 ### Diagrama de clases
-### Descripción de la arquitectura 
+### Tecnologias utilizadas
+Se utilizaron diferentes tecnologias a lo largo del desarrollo del proyecto como:
+* **PrimeFaces (FRONT):** Fue la biblioteca de componenentes que seutilizo para el front del aplicativo , tiene componentes agradables a la vista que son innovadores en cuanto a diseño lo que mejora la experiencia de navegacion en el aplicativo.
+* **Guice (BACK) :** En cuanto a framework de inyeccion de dependencias utilizamos Google Guice el cual podia usarse para aplicaciones hechas en java (el lenguaje oficial de nuestro proyecto).
+* **PostgreSQL (BASE DE DATOS):** Este fue el servidor de base de datos relacional que utilizamos para el manejo de la base de datos del aplicativo;incluye caracteristicas de la orientacion a objetos como herencias , tipos de datos , funciones , restricciones y reglas de integridad caracteristicas muy utiles para el desarrollo de nuestro proyecto.
+
 ### _Despliegue en HEROKU_ 📦
 [![Deployed to Heroku](https://www.herokucdn.com/deploy/button.png)](https://protectotimelimitcvds2020-2.herokuapp.com)
 
