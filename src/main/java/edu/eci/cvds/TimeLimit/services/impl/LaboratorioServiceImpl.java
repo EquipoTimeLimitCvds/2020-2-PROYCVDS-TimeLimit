@@ -34,19 +34,7 @@ public class LaboratorioServiceImpl implements LaboratorioServices{
 	public ArrayList<Laboratorio> getLaboratorios() throws TimeLimitExceptions {
 		return laboratorioDao.getLaboratorios();
 	}
-	@Override
-	public ArrayList<Equipo> getEquiposDeRedes()throws  TimeLimitExceptions{
-		return laboratorioDao.getEquiposDeRedes();
-	}
 
-	@Override
-	public ArrayList<Equipo> getEquiposDePlataformas()throws TimeLimitExceptions{
-		return laboratorioDao.getEquiposDePlataformas();
-	}
-	@Override
-	public ArrayList<Equipo> getEquiposDeSoftware()throws TimeLimitExceptions{
-		return laboratorioDao.getEquiposDePlataformas();
-	}
 
 
 

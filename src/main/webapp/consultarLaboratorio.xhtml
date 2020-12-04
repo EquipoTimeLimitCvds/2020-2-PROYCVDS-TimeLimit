@@ -65,9 +65,9 @@
 
 		</p:dataTable>
 
-		<p:commandButton value="Graficar" id="graficar" actionListener="#{LaboratorioBean.graficar()}" update="hpgGrafico"/>
+		<p:commandButton value="Graficar" id="graficar" actionListener="#{EquipoBean.listar()}" update="hpgGrafico"/>
 		<h:panelGrid id="hpgGrafico">
-			<p:chart type="pie" model="#{LaboratorioBean.torta}" style="width: 1000px; height: 1000px" rendered="#{LaboratorioBean.torta!=null}"/>
+			<p:chart type="pie" model="#{EquipoBean.torta}" style="width: 1000px; height: 1000px" rendered="#{EquipoBean.torta!=null}"/>
 		</h:panelGrid>
 
 	</h:form>

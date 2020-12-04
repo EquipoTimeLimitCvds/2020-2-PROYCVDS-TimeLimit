@@ -13,10 +13,5 @@ public interface LaboratorioDao {
 	public Laboratorio getLaboratorio(int id) throws TimeLimitExceptions;
     public ArrayList<Laboratorio>getLaboratorios()throws TimeLimitExceptions;
 
-    public ArrayList<Equipo> getEquiposDeRedes()throws  TimeLimitExceptions;
-
-    public ArrayList<Equipo> getEquiposDePlataformas()throws TimeLimitExceptions;
-
-    public ArrayList<Equipo> getEquiposDeSoftware()throws TimeLimitExceptions;
 
 }

@@ -20,24 +20,6 @@
         INSERT INTO "Laboratorio"(id,nombre,horario,descripcion)
 	VALUES((select count(*)+1 from "Laboratorio"),#{nombre},#{horario},#{descripcion});
     </insert>
-    <select id="getEquiposDeSoftware" resultMap="LaboratorioResult" parameterType="map">
-        select eq.id,eq.nombre,eq.estado,eq.enuso,eq.idlaboratorio
-        from "Laboratorio" as  l2 join equipos as eq  on 2=l2.id
-        where eq.idlaboratorio =2;
-    </select>
-
-    <select id="getEquiposDeRedes" resultMap="LaboratorioResult" parameterType="map">
-        select eq.id,eq.nombre,eq.estado,eq.enuso,eq.idlaboratorio
-        from "Laboratorio" as  l2 join equipos as eq  on 1=l2.id
-        where eq.idlaboratorio =1;
-    </select>
-
-
-    <select id="getEquiposDePlataformas" resultMap="LaboratorioResult" parameterType="map">
-        select eq.id,eq.nombre,eq.estado,eq.enuso,eq.idlaboratorio
-        from "Laboratorio" as  l2 join equipos as eq  on 3=l2.id
-        where eq.idlaboratorio =3;
-    </select>
 </mapper>
 
 

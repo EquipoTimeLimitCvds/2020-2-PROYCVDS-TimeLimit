@@ -1,6 +1,4 @@
 package edu.eci.cvds.TimeLimit.manageBeans;
-import edu.eci.cvds.TimeLimit.manageBeans.ElementoBean;
-import com.google.inject.Inject;
 import edu.eci.cvds.TimeLimit.exceptions.TimeLimitExceptions;
 import edu.eci.cvds.TimeLimit.model.Elemento;
 import edu.eci.cvds.TimeLimit.model.Equipo;
@@ -10,6 +8,7 @@ import edu.eci.cvds.TimeLimit.services.EquipoServices;
 import edu.eci.cvds.TimeLimit.services.NovedadServices;
 import edu.eci.cvds.TimeLimit.services.ServicesFactory;
 import org.primefaces.PrimeFaces;
+import org.primefaces.model.chart.PieChartModel;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
@@ -28,6 +27,11 @@ public class EquipoBean {
     EquipoServices equipoServices= ServicesFactory.getInstance().getEquipoServices();
     ElementoServices elementoServices= ServicesFactory.getInstance().getElementoServices();
     NovedadServices novedadServices= ServicesFactory.getInstance().getNovedadServices();
+
+    private ArrayList<Equipo>equiposRedes=new ArrayList<Equipo>();
+    private ArrayList<Equipo>equiposPlataformas=new ArrayList<Equipo>();
+    private ArrayList<Equipo>equiposSoftware=new ArrayList<Equipo>();
+    private PieChartModel torta;
 
 
     private int id;
@@ -203,19 +207,13 @@ public class EquipoBean {
     }
     public void quitarElemento()throws TimeLimitExceptions {
         elementos = new ArrayList<Elemento>();
-
-
         elementos = elementoServices.getElementos();
         try {
-
-
             for (int i = 0; i < elementos.size(); i++) {
                 if (elementos.get(i).getNombre().equals(prueba) && elementos.get(i).getIdEquipo() == imaginacion.getId()) {
                     Cambio = elementos.get(i);
                 }
             }
-
-
             elementos = elementoServices.getElementos();
             elementoServices.borrarElemento(Cambio.getId());
             elementoServices.addElemento(proximo.getId(), imaginacion.getId());
@@ -249,9 +247,72 @@ public class EquipoBean {
         }
 
     }
+    public void laboratoriosEquipos()throws TimeLimitExceptions {
+        for (int i = 0; i < getEquipos().size(); i++) {
+            if (getEquipos().get(i).getIdLaboratorio() == 1) {
+                equiposRedes.add(getEquipos().get(i));
+            } else if (getEquipos().get(i).getIdLaboratorio() == 2) {
+                equiposSoftware.add(getEquipos().get(i));
+            } else if (getEquipos().get(i).getIdLaboratorio()==3) {
+                equiposPlataformas.add(getEquipos().get(i));
+            }
+        }
+    }
 
 
+
+    public void listar()throws TimeLimitExceptions{
+            laboratoriosEquipos();
+            graficar();
+    }
+
+    public void setEquiposPlataformas(ArrayList<Equipo> equiposPlataformas){
+        this.equiposPlataformas = equiposPlataformas;
+    }
+
+    public void setEquiposSoftware(ArrayList<Equipo> equiposSoftware) {
+        this.equiposSoftware = equiposSoftware;
+    }
+
+    public void setEquiposRedes(ArrayList<Equipo> equiposRedes) {
+        this.equiposRedes = equiposRedes;
+    }
+
+    public ArrayList<Equipo> getEquiposPlataformas() {
+        return equiposPlataformas;
+    }
+
+    public ArrayList<Equipo> getEquiposSoftware() {
+        return equiposSoftware;
+    }
+
+    public ArrayList<Equipo> getEquiposRedes() {
+        return equiposRedes;
+    }
+
+    public void graficar()throws TimeLimitExceptions{
+        torta=new PieChartModel();
+        torta.set("Laboratorio de Software",getEquiposSoftware().size());
+        torta.set("Laboratorio de Plataformas",getEquiposPlataformas().size());
+        torta.set("Laboratorio de Redes",getEquiposRedes().size());
+
+        torta.setTitle("Cantiadad de Equipos en cada laboratorio");
+        torta.setFill(true);
+        torta.setDiameter(500);
+        torta.setLegendPosition("e");
+    }
+
+    public PieChartModel getTorta() {
+        return torta;
+    }
+
+    public void setTorta(PieChartModel torta) {
+        this.torta = torta;
+    }
 }
+
+
+
 
 
 
