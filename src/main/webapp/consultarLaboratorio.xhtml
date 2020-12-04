@@ -21,9 +21,14 @@
 		<center>
 
 			<h2 style="color:white; font-size:100px ;">Laboratorios</h2>
+			<h:commandLink>
+				<h:graphicImage url="assets/img/excel.png"/>
+				<p:dataExporter type="xls" target="Laboratorios" fileName="excelLaboratorios"/>
+			</h:commandLink>
 		</center>
 		<br></br>
-		<p:dataTable var="Laboratorios" value="#{LaboratorioBean.todosLaboratorios()}"  style="margin-bottom: 1%;
+
+		<p:dataTable id="Laboratorios" var="Laboratorios" value="#{LaboratorioBean.todosLaboratorios()}"  style="margin-bottom: 1%;
 					width: 90%; margin-left: 5%; border-radius: 15px;" paginator="true"  rows="10"
 					 paginatorTemplate="{CurrentPageReport} {PreviousPageLink} {PageLinks}  {LastPageLink} {RowsPerPageDropdown}"
 					 currentPageReportTemplate="{startRecord}-{endRecord} de {totalRecords} guardadas"
@@ -59,6 +64,11 @@
 			</p:column>
 
 		</p:dataTable>
+
+		<p:commandButton value="Graficar" id="graficar" actionListener="#{LaboratorioBean.graficar()}" update="hpgGrafico"/>
+		<h:panelGrid id="hpgGrafico">
+			<p:chart type="pie" model="#{LaboratorioBean.torta}" style="width: 1000px; height: 1000px" rendered="#{LaboratorioBean.torta!=null}"/>
+		</h:panelGrid>
 
 	</h:form>
 

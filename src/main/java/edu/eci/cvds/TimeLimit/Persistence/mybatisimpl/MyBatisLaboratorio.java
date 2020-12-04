@@ -4,6 +4,7 @@ import com.google.inject.Inject;
 import edu.eci.cvds.TimeLimit.Persistence.LaboratorioDao;
 import edu.eci.cvds.TimeLimit.Persistence.mybatisimpl.mappers.LaboratorioMapper;
 import edu.eci.cvds.TimeLimit.exceptions.TimeLimitExceptions;
+import edu.eci.cvds.TimeLimit.model.Equipo;
 import edu.eci.cvds.TimeLimit.model.Laboratorio;
 
 import java.util.ArrayList;
@@ -45,5 +46,32 @@ public class MyBatisLaboratorio implements LaboratorioDao {
             throw new TimeLimitExceptions("No puede obtener los laboratorios",e);
         }
     }
+    @Override
+    public ArrayList<Equipo> getEquiposDeRedes()throws TimeLimitExceptions{
+        try{
+            return laboratorioMapper.getEquiposDeRedes();
+        }catch (Exception e){
+            throw new TimeLimitExceptions("No se pueden buscar equipos asociados a el laboratorio de redes");
+        }
+
+    }
+    @Override
+    public ArrayList<Equipo>getEquiposDePlataformas()throws TimeLimitExceptions{
+        try{
+            return laboratorioMapper.getEquiposDePlataformas();
+        }catch (Exception e){
+            throw new TimeLimitExceptions("No se pueden buscar equipos asociados a el laboratorio de Plataformas");
+        }
+    }
+    @Override
+    public ArrayList<Equipo>getEquiposDeSoftware()throws TimeLimitExceptions{
+        try{
+            return laboratorioMapper.getEquiposDeSoftware();
+        }catch (Exception e){
+            throw new TimeLimitExceptions("No se pueden buscar equipos asociados a el laboratorio de Sotfware");
+        }
+    }
+
+
 
 }

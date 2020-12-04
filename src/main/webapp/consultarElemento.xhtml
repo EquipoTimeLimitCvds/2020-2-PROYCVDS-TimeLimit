@@ -19,8 +19,11 @@
 	<h:form>
 
 		<center>
-
 			<h2 style="color:white; font-size:100px ;">Elementos</h2>
+			<h:commandLink>
+				<h:graphicImage url="assets/img/excel.png"/>
+				<p:dataExporter type="xls" target="tablaElementos" fileName="excelElementos"/>
+			</h:commandLink>
 		</center>
 		<br></br>
 		
@@ -45,14 +48,14 @@
 	
 				<p:column style="color:black;" filterBy="#{Elementos.marca}" sortBy="#{Elementos.marca}" >
 					<f:facet name="header">
-						<h:outputText value="Estado" />
+						<h:outputText value="Marca" />
 					</f:facet>
 					<h:outputText value="#{Elementos.marca}" />
 				</p:column>
 	
 				<p:column style="color:black;" filterBy="#{Elementos.modelo}" sortBy="#{Elementos.modelo}">
 					<f:facet name="header">
-						<h:outputText value="EnUso" />
+						<h:outputText value="En uso" />
 					</f:facet>
 					<h:outputText value="#{Elementos.modelo}" />
 				</p:column>

@@ -2,11 +2,13 @@ package edu.eci.cvds.TimeLimit.manageBeans;
 
 import com.google.inject.Inject;
 import edu.eci.cvds.TimeLimit.exceptions.TimeLimitExceptions;
+import edu.eci.cvds.TimeLimit.model.Equipo;
 import edu.eci.cvds.TimeLimit.model.Laboratorio;
 import edu.eci.cvds.TimeLimit.services.LaboratorioServices;
 import edu.eci.cvds.TimeLimit.services.NovedadServices;
 import edu.eci.cvds.TimeLimit.services.ServicesFactory;
 import org.primefaces.PrimeFaces;
+import org.primefaces.model.chart.PieChartModel;
 import sun.awt.Symbol;
 
 import javax.faces.application.FacesMessage;
@@ -28,11 +30,18 @@ public class LaboratorioBean {
 	LaboratorioServices laboratorioServices= ServicesFactory.getInstance().getLaboratorioServices();
     NovedadServices novedadServices= ServicesFactory.getInstance().getNovedadServices();
 
+    private PieChartModel torta;
+
 	private int id;
     private String nombre;
     private String horario;
     private String descripcion;
     private ArrayList<Laboratorio>laboratorios=new ArrayList<Laboratorio>();
+    private ArrayList<Equipo>equiposRedes=new ArrayList<Equipo>();
+    private ArrayList<Equipo>equiposPlataformas=new ArrayList<Equipo>();
+    private ArrayList<Equipo>equiposSoftware=new ArrayList<Equipo>();
+
+
     
     
     public LaboratorioServices getElementoServices(){
@@ -86,5 +95,38 @@ public class LaboratorioBean {
     public ArrayList<Laboratorio> todosLaboratorios() throws TimeLimitExceptions {
         laboratorios=laboratorioServices.getLaboratorios();
         return laboratorioServices.getLaboratorios();
+    }
+    public ArrayList<Equipo> getEquiposDeRedes()throws TimeLimitExceptions{
+        equiposRedes= laboratorioServices.getEquiposDeRedes();
+        return laboratorioServices.getEquiposDeRedes();
+    }
+    public ArrayList<Equipo> getEquiposDePlataformas()throws TimeLimitExceptions{
+        equiposPlataformas= laboratorioServices.getEquiposDePlataformas();
+        return laboratorioServices.getEquiposDePlataformas();
+    }
+    public ArrayList<Equipo> getEquiposDeSoftware()throws TimeLimitExceptions{
+        equiposSoftware= laboratorioServices.getEquiposDeSoftware();
+        System.out.println(equiposSoftware.size());
+        return laboratorioServices.getEquiposDeSoftware();
+    }
+
+    public void graficar()throws TimeLimitExceptions{
+        torta=new PieChartModel();
+        torta.set("Laboratorio de Software",getEquiposDeSoftware().size());
+        torta.set("Laboratorio de Plataformas",getEquiposDePlataformas().size());
+        torta.set("Laboratorio de Redes",getEquiposDeRedes().size());
+
+        torta.setTitle("Cantiadad de Equipos en cada laboratorio");
+        torta.setFill(true);
+        torta.setDiameter(500);
+        torta.setLegendPosition("e");
+    }
+
+    public PieChartModel getTorta() {
+        return torta;
+    }
+
+    public void setTorta(PieChartModel torta) {
+        this.torta = torta;
     }
 }

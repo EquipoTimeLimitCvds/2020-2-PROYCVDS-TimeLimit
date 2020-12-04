@@ -21,9 +21,13 @@
 		<center>
 
 			<h2 style="color:white; font-size:100px ;">Novedades</h2>
+			<h:commandLink>
+				<h:graphicImage url="assets/img/excel.png"/>
+				<p:dataExporter type="xls" target="tablaNovedades" fileName="excelElementos"/>
+			</h:commandLink>
 		</center>
 		<br></br>
-		<p:dataTable var="Novedades" value="#{NovedadBean.getNovedades()}"  style="margin-bottom: 1%;
+		<p:dataTable id="TablaNovedades" var="Novedades" value="#{NovedadBean.getNovedades()}"  style="margin-bottom: 1%;
 					width: 90%; margin-left: 5%; border-radius: 15px;" paginator="true"  rows="10"
 					 paginatorTemplate="{CurrentPageReport} {PreviousPageLink} {PageLinks}  {LastPageLink} {RowsPerPageDropdown}"
 					 currentPageReportTemplate="{startRecord}-{endRecord} de {totalRecords} guardadas"

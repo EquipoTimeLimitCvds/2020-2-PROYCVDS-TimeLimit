@@ -1,5 +1,6 @@
 package edu.eci.cvds.TimeLimit.Persistence.mybatisimpl.mappers;
 
+import edu.eci.cvds.TimeLimit.model.Equipo;
 import edu.eci.cvds.TimeLimit.model.Laboratorio;
 import org.apache.ibatis.annotations.Param;
 
@@ -12,4 +13,8 @@ public interface LaboratorioMapper {
 
 	public void registrarLaboratorio(@Param("nombre")String nombre,@Param("horario")String horario,@Param("descripcion") String descripcion);
 	public ArrayList<Laboratorio>getLaboratorios();
+
+    public ArrayList<Equipo> getEquiposDeRedes();
+    public ArrayList<Equipo> getEquiposDePlataformas();
+	public ArrayList<Equipo> getEquiposDeSoftware();
 }

@@ -46,8 +46,11 @@
             <f:selectItem itemLabel="Cpu" itemValue="Cpu" />
             <f:selectItem itemLabel="Mouse" itemValue="Mouse" />
         </h:selectOneMenu>
+        <h:selectOneMenu id="ModeloElemento" value="#{ElementoBean.modelo}" style="width: 100000000000x; height:50px" >
+            <f:selectItem itemLabel="Disponible" itemValue="Disponible" />
+            <f:selectItem itemLabel="No Disponible" itemValue="No Disponible" />
+        </h:selectOneMenu>
         <p:inputText type="marca" name="marca" id="marca" placeholde="Marca" value="#{ElementoBean.marca}"/>
-        <p:inputText type="modelo" name="modelo" id="modelo" placeholder="Modelo" value="#{ElementoBean.modelo}"/>
         <p:inputText type="caracteristicas" name="caracteristicas" id="caracteristicas" placeholder="Caracteristicas" value="#{ElementoBean.caracteristicas}"/>
         <p:commandButton type="submit" value="Agregar" style="background:#024D12; margin-top: 0.5% " styleClass="customStyleButton" action="#{ElementoBean.registrarElemento()}"/>
     </h:form>

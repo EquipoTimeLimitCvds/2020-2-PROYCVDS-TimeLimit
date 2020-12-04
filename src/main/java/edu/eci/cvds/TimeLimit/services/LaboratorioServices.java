@@ -5,7 +5,6 @@ import edu.eci.cvds.TimeLimit.model.Equipo;
 import edu.eci.cvds.TimeLimit.model.Laboratorio;
 
 
-import java.sql.Time;
 import java.util.ArrayList;
 
 public interface LaboratorioServices {
@@ -16,6 +15,13 @@ public interface LaboratorioServices {
 
 
     public ArrayList<Laboratorio> getLaboratorios()throws TimeLimitExceptions;
+
+    public ArrayList<Equipo> getEquiposDeRedes()throws TimeLimitExceptions;
+
+    public ArrayList<Equipo> getEquiposDePlataformas()throws TimeLimitExceptions;
+
+    public ArrayList<Equipo> getEquiposDeSoftware()throws TimeLimitExceptions;
+
 
 
 	

@@ -37,6 +37,9 @@
     <update id="eliminarElemento" parameterType="edu.eci.cvds.TimeLimit.model.Elemento">
     	update "elementos" SET modelo=#{modelo} WHERE id=#{id};
     </update>
+
+
+
     	
 
 </mapper>

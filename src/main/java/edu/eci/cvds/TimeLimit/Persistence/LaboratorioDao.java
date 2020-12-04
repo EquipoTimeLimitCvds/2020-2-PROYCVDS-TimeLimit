@@ -1,6 +1,7 @@
 package edu.eci.cvds.TimeLimit.Persistence;
 
 import edu.eci.cvds.TimeLimit.exceptions.TimeLimitExceptions;
+import edu.eci.cvds.TimeLimit.model.Equipo;
 import edu.eci.cvds.TimeLimit.model.Laboratorio;
 
 import java.sql.Time;
@@ -11,4 +12,11 @@ public interface LaboratorioDao {
 
 	public Laboratorio getLaboratorio(int id) throws TimeLimitExceptions;
     public ArrayList<Laboratorio>getLaboratorios()throws TimeLimitExceptions;
+
+    public ArrayList<Equipo> getEquiposDeRedes()throws  TimeLimitExceptions;
+
+    public ArrayList<Equipo> getEquiposDePlataformas()throws TimeLimitExceptions;
+
+    public ArrayList<Equipo> getEquiposDeSoftware()throws TimeLimitExceptions;
+
 }

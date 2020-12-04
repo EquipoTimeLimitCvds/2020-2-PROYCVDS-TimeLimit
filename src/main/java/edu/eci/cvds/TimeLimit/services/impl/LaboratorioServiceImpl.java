@@ -4,6 +4,7 @@ import com.google.inject.Inject;
 
 import edu.eci.cvds.TimeLimit.Persistence.LaboratorioDao;
 import edu.eci.cvds.TimeLimit.exceptions.TimeLimitExceptions;
+import edu.eci.cvds.TimeLimit.model.Equipo;
 import edu.eci.cvds.TimeLimit.model.Laboratorio;
 import edu.eci.cvds.TimeLimit.services.LaboratorioServices;
 
@@ -33,6 +34,20 @@ public class LaboratorioServiceImpl implements LaboratorioServices{
 	public ArrayList<Laboratorio> getLaboratorios() throws TimeLimitExceptions {
 		return laboratorioDao.getLaboratorios();
 	}
+	@Override
+	public ArrayList<Equipo> getEquiposDeRedes()throws  TimeLimitExceptions{
+		return laboratorioDao.getEquiposDeRedes();
+	}
+
+	@Override
+	public ArrayList<Equipo> getEquiposDePlataformas()throws TimeLimitExceptions{
+		return laboratorioDao.getEquiposDePlataformas();
+	}
+	@Override
+	public ArrayList<Equipo> getEquiposDeSoftware()throws TimeLimitExceptions{
+		return laboratorioDao.getEquiposDePlataformas();
+	}
+
 
 
 }
