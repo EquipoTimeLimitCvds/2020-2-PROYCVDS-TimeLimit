@@ -29,7 +29,7 @@ El personal podra:
 
 ## Arquitectura y Diseño detallado 🛠️📐
 ### Modelo E-R
-![image](https://user-images.githubusercontent.com/59893804/101204662-90300000-363a-11eb-95f1-e9a9179ea8cb.png
+![image](https://user-images.githubusercontent.com/59893804/101204662-90300000-363a-11eb-95f1-e9a9179ea8cb.png)
 ### Diagrama de clases
 ### Descripción de la arquitectura 
 ### _Despliegue en HEROKU_ 📦
