@@ -189,10 +189,14 @@ public class ElementoBean {
     
     public void eliminarElemento() throws TimeLimitExceptions{
     	try{
-            elementoServices.eliminarElemento(elemento.getId(),"No disponible");
-            FacesContext.getCurrentInstance().addMessage(null,new FacesMessage("Elemento dado de baja con exito"));
-            PrimeFaces current = PrimeFaces.current();
-            current.executeScript("PF('dlg2').hide();");
+    		if(elemento.getIdEquipo()==0){
+    			elementoServices.eliminarElemento(elemento.getId(),"No disponible");
+                FacesContext.getCurrentInstance().addMessage(null,new FacesMessage("Elemento dado de baja con exito"));
+                PrimeFaces current = PrimeFaces.current();
+                current.executeScript("PF('dlg2').hide();");
+            }
+    		else FacesContext.getCurrentInstance().addMessage(null,new FacesMessage(FacesMessage.SEVERITY_ERROR,"El elemento esta asociado a un equipo","Error"));
+            
         }catch (TimeLimitExceptions ex){
             FacesContext.getCurrentInstance().addMessage(null,new FacesMessage(FacesMessage.SEVERITY_ERROR,"No se pudo dar de baja el Elemento","Error"));
             throw ex;
