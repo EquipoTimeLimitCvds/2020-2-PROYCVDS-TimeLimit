@@ -112,7 +112,7 @@ Podemos generar reportes para equipos, laboratorios y elementos; para ello:
 
 ## Arquitectura y Diseño detallado 🛠️📐
 ### Modelo E-R
-![image](https://user-images.githubusercontent.com/59893804/101204662-90300000-363a-11eb-95f1-e9a9179ea8cb.png)
+![image](https://user-images.githubusercontent.com/59893804/101231110-0b170c00-3677-11eb-9793-fe1a2c71fcda.png)
 ### Diagrama de clases
 ### Tecnologías utilizadas
 Se utilizaron diferentes tecnologías a lo largo del desarrollo del proyecto como:

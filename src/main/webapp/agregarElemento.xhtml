@@ -40,19 +40,19 @@
 			<img class="avatar" src= "assets/img/timelimit.png" alt="Logo de login"/>
 
 
-        <h:selectOneMenu id="Elemento_Nombre" value="#{ElementoBean.nombre}" style="width: 300x; height:50px" >
-            <f:selectItem itemLabel="Teclado" itemValue="Teclado" />
+        <h:selectOneMenu id="Elemento_Nombre" value="#{ElementoBean.nombre}" style="width: 300x; height:40px">
+            <f:selectItem itemLabel="Teclado"  itemValue="Teclado" />
             <f:selectItem itemLabel="Monitor" itemValue="Monitor" />
             <f:selectItem itemLabel="Cpu" itemValue="Cpu" />
             <f:selectItem itemLabel="Mouse" itemValue="Mouse" />
         </h:selectOneMenu>
-        <h:selectOneMenu id="ModeloElemento" value="#{ElementoBean.modelo}" style="width: 100000000000x; height:50px" >
+        <h:selectOneMenu id="ModeloElemento" value="#{ElementoBean.modelo}" style="width: 100000000000x; height:40px; margin-top: 2%" >
             <f:selectItem itemLabel="Disponible" itemValue="Disponible" />
             <f:selectItem itemLabel="No Disponible" itemValue="No Disponible" />
         </h:selectOneMenu>
-        <p:inputText type="marca" name="marca" id="marca" placeholde="Marca" value="#{ElementoBean.marca}"/>
-        <p:inputText type="caracteristicas" name="caracteristicas" id="caracteristicas" placeholder="Caracteristicas" value="#{ElementoBean.caracteristicas}"/>
-        <p:commandButton type="submit" value="Agregar" style="background:#024D12; margin-top: 0.5% " styleClass="customStyleButton" action="#{ElementoBean.registrarElemento()}"/>
+        <p:inputText type="marca" name="marca" id="marca" placeholder="Marca" value="#{ElementoBean.marca}"/>
+        <p:inputText type="caracteristicas" name="caracteristicas" id="caracteristicas" placeholder="Caracteristicas"   value="#{ElementoBean.caracteristicas}"/>
+        <p:commandButton type="submit" align="center" value="Agregar"  style="background:#024D12; margin-top: 2% ; margin-left: 40%;width: 200px" styleClass="customStyleButton" action="#{ElementoBean.registrarElemento()}"/>
     </h:form>
 	</div>
 	</div>

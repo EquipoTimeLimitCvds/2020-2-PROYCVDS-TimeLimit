@@ -38,14 +38,14 @@
 					}
 				</style>
 				<img class="avatar" src= "assets/img/timelimit.png" alt="Logo de login" />
-	        <p:inputText type="descripcion" name="descripcion" id="descripcion" placeholder="Descripción" value="#{NovedadBean.descripcion}"/>
-			<h:selectOneMenu id="novedad_estado" value="#{NovedadBean.estado}" style="width: 300x; height:50px" >
+	        <p:inputText type="descripcion" name="descripcion" id="descripcion" placeholder="Descripción" style="margin-bottom: 2%" value="#{NovedadBean.descripcion}"/>
+			<h:selectOneMenu id="novedad_estado" value="#{NovedadBean.estado}" style="width: 300x; height:40px;margin-left: 40%" >
 				<f:selectItem itemLabel="Seleccione su opcion" itemValue="Seleccione su opcion" />
 				<f:selectItem itemLabel="Pendiente" itemValue="Pendiente" />
 				<f:selectItem itemLabel="Finalizada" itemValue="Finalizada" />
 				<f:selectItem itemLabel="En Curso" itemValue="En curso" />
 			</h:selectOneMenu>
-			<h:selectOneMenu id="novedad_tipo" value="#{NovedadBean.tipo}" style="width: 300x; height:50px">
+			<h:selectOneMenu id="novedad_tipo" value="#{NovedadBean.tipo}" style="width: 300x; height:40px;margin-left: 40%;margin-bottom: 2%">
 				<f:selectItem itemLabel="Seleccione el tipo de novedad" itemValue="Seleccione el tipo de novedad" />
 				<f:selectItem itemLabel="Laboratorio" itemValue="Laboratorio" />
 				<f:selectItem itemLabel="Equipo" itemValue="Equipo" />
@@ -205,7 +205,7 @@
 
 			</p:dataTable>
 
-	        <p:commandButton type="submit" value="Agregar" style="background:#024D12; margin-top: 0.5% " styleClass="customStyleButton" action="#{NovedadBean.registrarNovedad()}"/>
+	        <p:commandButton type="submit" value="Agregar" style="background:#024D12; margin-top: 2% ; margin-left: 40%;width: 200px" styleClass="customStyleButton" action="#{NovedadBean.registrarNovedad()}"/>
 	    </h:form>
 		</div>
 	</div>

@@ -86,14 +86,23 @@
 			
 
 		</p:dataTable>
+
 			<h1>Elija el tipo de elemento que desea asociar</h1>
-        <h:selectOneMenu id="Elemento_h" value="#{EquipoBean.prueba}" style="width: 300x; height:50px" update=":@form">
+
+
+			
+		
+        <h:selectOneMenu id="Elemento_h" value="#{EquipoBean.prueba}" style="width: 200x; height:35px;margin-bottom: 0%;margin-top: 2% ; margin-left: 40%;width: 200px" update=":@form">
+
             <f:selectItem itemLabel="Teclado" itemValue="Teclado" />
             <f:selectItem itemLabel="Monitor" itemValue="Monitor" />
             <f:selectItem itemLabel="Cpu" itemValue="Cpu" />
             <f:selectItem itemLabel="Mouse" itemValue="Mouse" />
         </h:selectOneMenu>
-			<p:commandButton type="submit" value="Filtrar" style="background:#024D12; margin-top: 0.5% " update=":@form"/>
+
+
+			<p:commandButton type="submit" value="Filtrar" style="background:#024D12; margin-top: 2% ;margin-bottom: 2%; margin-left: 40%;width: 200px" update=":@form"/>
+
 
 			<h1>Elija el elemento</h1>
 			<p:dataTable id="tablaElementos" var="Lab" value="#{EquipoBean.getElementosEditar()}" selectionMode="single"
@@ -118,7 +127,7 @@
 
 			</p:dataTable>
 
-			<p:commandButton type="submit" value="Asociar" style="background:#024D12; margin-top: 0.5% " styleClass="customStyleButton" action="#{EquipoBean.quitarElemento()}"/>
+			<p:commandButton type="submit" value="Asociar" style="background:#024D12; margin-top: 2% ; margin-left: 40%;width: 200px" styleClass="customStyleButton" action="#{EquipoBean.quitarElemento()}"/>
 
 
 		</h:form>
