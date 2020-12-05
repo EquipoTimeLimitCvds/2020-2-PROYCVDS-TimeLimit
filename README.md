@@ -125,7 +125,10 @@ Podemos generar reportes para equipos, laboratorios y elementos; para ello:
 ## Arquitectura y Diseño detallado 🛠️📐
 ### Modelo E-R
 ![image](https://user-images.githubusercontent.com/59893804/101231110-0b170c00-3677-11eb-9793-fe1a2c71fcda.png)
+
 ### Diagrama de clases
+![image](https://user-images.githubusercontent.com/59893804/101245454-0d12b680-36db-11eb-9747-f21fa06ce00a.png)
+
 ### Tecnologías utilizadas
 Se utilizaron diferentes tecnologías a lo largo del desarrollo del proyecto como:
 * **PrimeFaces (FRONT):** Fue la biblioteca de componentes que se utilizó para el front del aplicativo , tiene componentes agradables a la vista que son innovadores en cuanto a diseño lo que mejora la experiencia de navegación en el aplicativo.
