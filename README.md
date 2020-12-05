@@ -112,6 +112,8 @@ Para dar de baja a un elemento haremos lo siguiente:
 **Generar reporte** 
 
 ![image](https://user-images.githubusercontent.com/59893804/101232469-bcba3b00-367f-11eb-948c-23bdd4a7f808.png)
+![image](https://user-images.githubusercontent.com/59893804/101232629-a52f8200-3680-11eb-8bc6-85916e5c272e.png)
+
 
 Podemos generar reportes para equipos, laboratorios y elementos; para ello:
 
