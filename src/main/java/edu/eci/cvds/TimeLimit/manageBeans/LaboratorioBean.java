@@ -1,7 +1,9 @@
 package edu.eci.cvds.TimeLimit.manageBeans;
 
 import edu.eci.cvds.TimeLimit.exceptions.TimeLimitExceptions;
+import edu.eci.cvds.TimeLimit.model.Equipo;
 import edu.eci.cvds.TimeLimit.model.Laboratorio;
+import edu.eci.cvds.TimeLimit.services.EquipoServices;
 import edu.eci.cvds.TimeLimit.services.LaboratorioServices;
 import edu.eci.cvds.TimeLimit.services.NovedadServices;
 import edu.eci.cvds.TimeLimit.services.ServicesFactory;
@@ -25,6 +27,7 @@ public class LaboratorioBean {
     //private LaboratorioServices laboratorioServices;
     LaboratorioServices laboratorioServices = ServicesFactory.getInstance().getLaboratorioServices();
     NovedadServices novedadServices = ServicesFactory.getInstance().getNovedadServices();
+    EquipoServices equipoServices= ServicesFactory.getInstance().getEquipoServices();
 
 
 
@@ -151,6 +154,12 @@ public class LaboratorioBean {
         try{
             int cerrar=cerrarLab.getId();
             laboratorioServices.cerrarLaboratorio(cerrar);
+            ArrayList<Equipo> cambiarLab=equipoServices.getEquipos();
+            for (int i=0;i<cambiarLab.size();i++){
+                if(cerrar==cambiarLab.get(i).getIdLaboratorio()){
+                    equipoServices.cambiarLaboratorio(cambiarLab.get(i).getId());
+                }
+            }
         }catch (TimeLimitExceptions ex){
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,"No se puede cerrar este laboratorio","Error"));
         }

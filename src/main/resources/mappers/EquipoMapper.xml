@@ -23,6 +23,10 @@
 	VALUES((select count(*)+1 from "equipos"),#{nombre},#{estado},#{enUso},#{idLaboratorio},#{nombreLaboratorio}) ;
     </insert>
 
+    <update id="cambiarLaboratorio" parameterType="edu.eci.cvds.TimeLimit.model.Equipo">
+        update "equipos" SET idlaboratorio=0,nombrelaboratorio='N/A' WHERE id=#{id};
+    </update>
+
 
     	
 

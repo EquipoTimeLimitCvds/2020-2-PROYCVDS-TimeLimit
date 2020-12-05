@@ -21,7 +21,7 @@
 		<div class="login-box">
 	    <!-- Header -->
 	    <header id="header">
-	        <h1>Agregar Equipo</h1>
+	        <h1>Elija el equipo al que le quiere asociar el nuevo elemento</h1>
 	        <img class="avatar" src= "assets/img/timelimit.png" alt="Logo de login"/>
 	    </header>
 	    <!-- Signup Form -->
@@ -86,8 +86,7 @@
 			
 
 		</p:dataTable>
-			
-		
+			<h1>Elija el tipo de elemento que desea asociar</h1>
         <h:selectOneMenu id="Elemento_h" value="#{EquipoBean.prueba}" style="width: 300x; height:50px" update=":@form">
             <f:selectItem itemLabel="Teclado" itemValue="Teclado" />
             <f:selectItem itemLabel="Monitor" itemValue="Monitor" />
@@ -95,15 +94,15 @@
             <f:selectItem itemLabel="Mouse" itemValue="Mouse" />
         </h:selectOneMenu>
 			<p:commandButton type="submit" value="Filtrar" style="background:#024D12; margin-top: 0.5% " update=":@form"/>
-			
 
+			<h1>Elija el elemento</h1>
 			<p:dataTable id="tablaElementos" var="Lab" value="#{EquipoBean.getElementosEditar()}" selectionMode="single"
 						 selection="#{EquipoBean.proximo}" rowKey="#{Lab.id}"
 						 paginator="true" rows="10" paginatorTemplate="{CurrentPageReport} {PreviousPageLink} {PageLinks} {LastPageLink}RowsPerPageDropdown}"
 						 currentPageReportTemplate="{startRecord}-{endRecord} de {totalRecords} guardadas" rowsPerPageTemplate="5,10,15,20">>
-				<p:column style="color:black;" filterBy="#{Lab.id}" sortBy="#{Lab.id}" >
+				<p:column style="color:black;"  >
 					<f:facet name="header">
-						<h:outputText value="IdLaboratorio" />
+						<h:outputText value="Id ELemento" />
 					</f:facet>
 					<h:outputText value="#{Lab.id}" />
 				</p:column>

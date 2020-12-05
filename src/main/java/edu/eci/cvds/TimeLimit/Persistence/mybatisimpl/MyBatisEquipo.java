@@ -43,4 +43,11 @@ public class MyBatisEquipo implements EquipoDao {
             throw new TimeLimitExceptions("No se encontraron equipos",e);
         }
    }
+   public void cambiarLaboratorio(int id)throws TimeLimitExceptions{
+        try{
+            equipoMapper.cambiarLaboratorio(id);
+        }catch (Exception e){
+            throw new TimeLimitExceptions("No se puede cambiar el LAB");
+        }
+   }
 }

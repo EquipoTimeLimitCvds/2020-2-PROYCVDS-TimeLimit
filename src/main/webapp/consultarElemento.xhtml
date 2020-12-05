@@ -21,7 +21,7 @@
 		<center>
 			<h2 style="color:white; font-size:100px ;">Elementos</h2>
 			<h:commandLink>
-				<h:graphicImage url="assets/img/excel.png"/>
+				<h:graphicImage url="assets/img/Elemento.png"/>
 				<p:dataExporter type="xls" target="tablaElementos" fileName="excelElementos"/>
 			</h:commandLink>
 		</center>
@@ -34,14 +34,14 @@
 				
 				<p:column  style="color:black;"  filterBy="#{Elementos.id}" sortBy="#{Elementos.id}"  >
 					<f:facet name="header">
-						<h:outputText value="ID" />
+						<h:outputText value="Id" />
 					</f:facet>
 					<h:outputText value="#{Elementos.id}" />
 				</p:column>
 	
 				<p:column style="color:black;" filterBy="#{Elementos.nombre}" sortBy="#{Elementos.nombre}" >
 					<f:facet name="header">
-						<h:outputText value="nombre" />
+						<h:outputText value="Nombre" />
 					</f:facet>
 					<h:outputText value="#{Elementos.nombre}" />
 				</p:column>
@@ -69,7 +69,7 @@
 	
 				<p:column style="color:black;" filterBy="#{Elementos.idequipo}" sortBy="#{Elementos.idequipo}">
 					<f:facet name="header">
-						<h:outputText value="IdEquipo" />
+						<h:outputText value="Id Equipo" />
 					</f:facet>
 					<h:outputText value="#{Elementos.idEquipo}" />
 				</p:column>

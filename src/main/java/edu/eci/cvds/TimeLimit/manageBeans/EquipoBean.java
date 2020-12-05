@@ -31,9 +31,10 @@ public class EquipoBean {
     private ArrayList<Equipo>equiposRedes=new ArrayList<Equipo>();
     private ArrayList<Equipo>equiposPlataformas=new ArrayList<Equipo>();
     private ArrayList<Equipo>equiposSoftware=new ArrayList<Equipo>();
+    private ArrayList<Equipo>equiposMacOs=new ArrayList<Equipo>();
+    private ArrayList<Equipo>equiposInteractiva=new ArrayList<Equipo>();
+    private ArrayList<Equipo>equiposVideoJuegos=new ArrayList<Equipo>();
     private PieChartModel torta;
-
-
     private int id;
     private String nombre;
     private String estado;
@@ -52,6 +53,30 @@ public class EquipoBean {
     private Elemento Cambio;
     private Elemento proximo;
     private ArrayList<Elemento> ElementosDisponibles;
+
+    public ArrayList<Equipo> getEquiposInteractiva() {
+        return equiposInteractiva;
+    }
+
+    public ArrayList<Equipo> getEquiposMacOs() {
+        return equiposMacOs;
+    }
+
+    public ArrayList<Equipo> getEquiposVideoJuegos() {
+        return equiposVideoJuegos;
+    }
+
+    public void setEquiposInteractiva(ArrayList<Equipo> equiposInteractiva) {
+        this.equiposInteractiva = equiposInteractiva;
+    }
+
+    public void setEquiposMacOs(ArrayList<Equipo> equiposMacOs) {
+        this.equiposMacOs = equiposMacOs;
+    }
+
+    public void setEquiposVideoJuegos(ArrayList<Equipo> equiposVideoJuegos) {
+        this.equiposVideoJuegos = equiposVideoJuegos;
+    }
 
     public Elemento getProximo() {
         return proximo;
@@ -262,9 +287,15 @@ public class EquipoBean {
             if (getEquipos().get(i).getIdLaboratorio() == 1) {
                 equiposRedes.add(getEquipos().get(i));
             } else if (getEquipos().get(i).getIdLaboratorio() == 2) {
-                equiposSoftware.add(getEquipos().get(i));
-            } else if (getEquipos().get(i).getIdLaboratorio()==3) {
                 equiposPlataformas.add(getEquipos().get(i));
+            } else if (getEquipos().get(i).getIdLaboratorio()==3) {
+                equiposSoftware.add(getEquipos().get(i));
+            }else if (getEquipos().get(i).getIdLaboratorio()==4) {
+                equiposMacOs.add(getEquipos().get(i));
+            }else if (getEquipos().get(i).getIdLaboratorio()==5) {
+                equiposInteractiva.add(getEquipos().get(i));
+            }else if (getEquipos().get(i).getIdLaboratorio()==6) {
+                equiposVideoJuegos.add(getEquipos().get(i));
             }
         }
     }
@@ -305,6 +336,9 @@ public class EquipoBean {
         torta.set("Laboratorio de Software",getEquiposSoftware().size());
         torta.set("Laboratorio de Plataformas",getEquiposPlataformas().size());
         torta.set("Laboratorio de Redes",getEquiposRedes().size());
+        torta.set("Laboratorio de Interactiva",getEquiposInteractiva().size());
+        torta.set("Laboratorio de Mac Os",getEquiposMacOs().size());
+        torta.set("Laboratorio de Video Juegos",getEquiposVideoJuegos().size());
 
         torta.setTitle("Cantiadad de Equipos en cada laboratorio");
         torta.setFill(true);

@@ -16,4 +16,6 @@ public interface EquipoServices {
 
 
     public ArrayList<Equipo> getEquipos()throws TimeLimitExceptions;
+
+    public void cambiarLaboratorio(int id)throws TimeLimitExceptions;
 }

@@ -22,6 +22,10 @@
 
 
 			<h2 style="color:white; font-size:100px ;">Laboratorios</h2>
+			<h:commandLink>
+				<h:graphicImage url="assets/img/excelLaboratorio.png"/>
+				<p:dataExporter type="xls" target="tablaLaboratorios" fileName="excelLaboratorios"/>
+			</h:commandLink>
 		</center>
 		<br></br>
 
@@ -73,11 +77,6 @@
 			</p:column>
 
 		</p:dataTable>
-
-		<h:commandLink>
-			<h:graphicImage url="assets/img/excel.png" style="font-size:50px ;" />
-			<p:dataExporter type="xls" target="tablaLaboratorios" fileName="excelLaboratorios"/>
-		</h:commandLink>
 		<p:commandButton type="submit" value="Cerrar Laboratorio" style="background:#024D12; margin-top: 0.5% " styleClass="customStyleButton" actionListener="#{LaboratorioBean.cerrarLaboratorio()}"/>
 		<center>
 		<h:panelGrid id="hpgGrafico">

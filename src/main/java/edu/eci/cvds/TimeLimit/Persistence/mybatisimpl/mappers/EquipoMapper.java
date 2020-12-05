@@ -9,4 +9,6 @@ public interface EquipoMapper {
     public void registrarEquipo(@Param("nombre")String nombre,@Param("estado")String estado,@Param("enUso")String enUso,@Param("idLaboratorio")int idLaboratorio,@Param("nombreLaboratorio")String nombreLaboratorio);
     public Equipo getEquipo(int id);
     public ArrayList<Equipo> getEquipos();
+
+    public void cambiarLaboratorio(@Param("id")int id);
 }

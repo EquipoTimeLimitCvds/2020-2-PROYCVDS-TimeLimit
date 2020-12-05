@@ -36,5 +36,9 @@ public class EquipoServicesImpl implements EquipoServices {
         return equipoDao.getEquipos();
 
     }
+    @Override
+    public void cambiarLaboratorio(int id)throws TimeLimitExceptions{
+        equipoDao.cambiarLaboratorio(id);
+    }
 
 }
