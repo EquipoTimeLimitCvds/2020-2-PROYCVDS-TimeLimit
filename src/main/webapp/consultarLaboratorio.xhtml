@@ -20,11 +20,8 @@
 
 		<center>
 
+
 			<h2 style="color:white; font-size:100px ;">Laboratorios</h2>
-			<h:commandLink>
-				<h:graphicImage url="assets/img/excel.png"/>
-				<p:dataExporter type="xls" target="Laboratorios" fileName="excelLaboratorios"/>
-			</h:commandLink>
 		</center>
 		<br></br>
 
@@ -32,15 +29,6 @@
 					 selection="#{LaboratorioBean.cerrarLab}" rowKey="#{Lab.id}"
 					 paginator="true" rows="10" paginatorTemplate="{CurrentPageReport} {PreviousPageLink} {PageLinks} {LastPageLink}RowsPerPageDropdown}"
 					 currentPageReportTemplate="{startRecord}-{endRecord} de {totalRecords} guardadas" rowsPerPageTemplate="5,10,15,20">>
-			<p:column style="color:black;" filterBy="#{Lab.id}" sortBy="#{Lab.id}" >
-				<f:facet name="header">
-					<h:outputText value="IdLaboratorio" />
-				</f:facet>
-				<h:outputText value="#{Lab.id}" />
-			</p:column>
-
-
-
 			<p:column style="color:black;">
 				<f:facet name="header">
 					<h:outputText value="Nombre" />
@@ -73,17 +61,23 @@
 			</p:column>
 			<p:column style="color:black;">
 				<f:facet name="header">
-					<h:outputText value="Fecha de creación" />
+					<h:outputText value="Fecha de Creación" />
 				</f:facet>
 				<h:outputText value="#{Lab.fechaDeCreado}" />
 			</p:column>
 			<p:column style="color:black;">
 				<f:facet name="header">
-					<h:outputText value="Fecha de creación" />
+					<h:outputText value="Fecha de Cierre" />
 				</f:facet>
 				<h:outputText value="#{Lab.fechaDeCerrado}" />
 			</p:column>
+
 		</p:dataTable>
+
+		<h:commandLink>
+			<h:graphicImage url="assets/img/excel.png" style="font-size:50px ;" />
+			<p:dataExporter type="xls" target="tablaLaboratorios" fileName="excelLaboratorios"/>
+		</h:commandLink>
 		<p:commandButton type="submit" value="Cerrar Laboratorio" style="background:#024D12; margin-top: 0.5% " styleClass="customStyleButton" actionListener="#{LaboratorioBean.cerrarLaboratorio()}"/>
 		<center>
 		<h:panelGrid id="hpgGrafico">
