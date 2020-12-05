@@ -50,4 +50,11 @@ public class MyBatisEquipo implements EquipoDao {
             throw new TimeLimitExceptions("No se puede cambiar el LAB");
         }
    }
+    public void asignarLab(int id,int idLaboratorio,String nombreLaboratorio)throws TimeLimitExceptions{
+        try{
+            equipoMapper.asignarLab(id,idLaboratorio,nombreLaboratorio);
+        }catch (Exception e){
+            throw new TimeLimitExceptions("No se puede asignar este laboratorio a este esquipo");
+        }
+    }
 }

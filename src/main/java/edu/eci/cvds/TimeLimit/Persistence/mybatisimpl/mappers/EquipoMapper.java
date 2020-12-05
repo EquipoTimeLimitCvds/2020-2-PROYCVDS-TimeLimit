@@ -11,4 +11,6 @@ public interface EquipoMapper {
     public ArrayList<Equipo> getEquipos();
 
     public void cambiarLaboratorio(@Param("id")int id);
+
+    public void asignarLab(@Param("id") int id,@Param("idlaboratorio") int idLaboratorio,@Param("nombrelaboratorio") String nombreLaboratorio);
 }

@@ -40,5 +40,9 @@ public class EquipoServicesImpl implements EquipoServices {
     public void cambiarLaboratorio(int id)throws TimeLimitExceptions{
         equipoDao.cambiarLaboratorio(id);
     }
+    @Override
+    public void asignarLab(int id,int idLaboratorio,String nombreLaboratorio)throws TimeLimitExceptions{
+        equipoDao.asignarLab(id,idLaboratorio,nombreLaboratorio);
+    }
 
 }

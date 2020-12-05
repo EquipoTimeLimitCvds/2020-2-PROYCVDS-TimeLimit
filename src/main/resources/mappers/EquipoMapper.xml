@@ -26,6 +26,10 @@
     <update id="cambiarLaboratorio" parameterType="edu.eci.cvds.TimeLimit.model.Equipo">
         update "equipos" SET idlaboratorio=0,nombrelaboratorio='N/A' WHERE id=#{id};
     </update>
+    <update id="asignarLab" parameterType="edu.eci.cvds.TimeLimit.model.Equipo">
+        update "equipos" SET idlaboratorio=#{idlaboratorio},nombrelaboratorio=#{nombrelaboratorio} WHERE id=#{id};
+    </update>
+
 
 
     	

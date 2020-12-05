@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3c.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      lang="es">
+<h:head>
+    <title>TimeLimit</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon" />
+    <link href="assets/css/elementos.css" rel="stylesheet"/>
+</h:head>
+
+<h:body>
+    <div class="elemento">
+        <a href="equipos.xhtml"><input style="background:#fff; margin-top: 0.5%" styleClass="customStyleButton" type="button" value="Volver"></input></a>
+    </div>
+
+    <div class="contenedor">
+        <div class="login-box">
+            <!-- Header -->
+            <header id="header">
+                <h1>Elija el equipo al que le quiere asociar el nuevo elemento</h1>
+                <img class="avatar" src= "assets/img/timelimit.png" alt="Logo de login"/>
+            </header>
+            <!-- Signup Form -->
+
+            <h:form id="signup-form" method="post" action="#">
+                <p:growl id="growl" showDetail="true" sticky="true" life="4000">
+                    <p:autoUpdate />
+                </p:growl>
+                <style>
+					div[id="frm:growl_container"] > div {
+						background: #ABCADB !important;
+						color: #000;
+						text-shadow:none;
+						opacity:0.9;
+					}
+				</style>
+
+                <p:dataTable var="Equipos" value="#{EquipoBean.getEquipoNoAsignados()}" selectionMode="single"
+                             selection="#{EquipoBean.imaginacion}" rowKey="#{Equipos.id}"
+                             style="margin-bottom: 1%;width: 90%; margin-left: 5%; border-radius: 15px;"
+                             paginator="true"  rows="10"
+                             paginatorTemplate="{CurrentPageReport} {PreviousPageLink} {PageLinks}  {LastPageLink} {RowsPerPageDropdown}"
+                             currentPageReportTemplate="{startRecord}-{endRecord} de {totalRecords} guardadas"
+                             rowsPerPageTemplate="5,10,15,20">				>
+
+
+                    <p:column  style="color:black;"  filterBy="#{Equipos.id}" sortBy="#{Equipos.id}"  >
+                        <f:facet name="header">
+                            <h:outputText value="ID" />
+                        </f:facet>
+                        <h:outputText value="#{Equipos.id}" />
+                    </p:column>
+
+                    <p:column style="color:black;" filterBy="#{Equipos.nombre}" sortBy="#{Equipos.nombre}" >
+                        <f:facet name="header">
+                            <h:outputText value="nombre" />
+                        </f:facet>
+                        <h:outputText value="#{Equipos.nombre}" />
+                    </p:column>
+
+                    <p:column style="color:black;" filterBy="#{Equipos.estado}" sortBy="#{Equipos.estado}" >
+                        <f:facet name="header">
+                            <h:outputText value="Estado" />
+                        </f:facet>
+                        <h:outputText value="#{Equipos.estado}" />
+                    </p:column>
+
+                    <p:column style="color:black;" filterBy="#{Equipos.enUso}" sortBy="#{Equipos.enUso}">
+                        <f:facet name="header">
+                            <h:outputText value="EnUso" />
+                        </f:facet>
+                        <h:outputText value="#{Equipos.enuso}" />
+                    </p:column>
+
+                    <p:column style="color:black;" filterBy="#{Equipos.idLaboratorio}" sortBy="#{Equipos.idLaboratorio}">
+                        <f:facet name="header">
+                            <h:outputText value="IdLaboratorio" />
+                        </f:facet>
+                        <h:outputText value="#{Equipos.idLaboratorio}" />
+                    </p:column>
+
+
+
+                </p:dataTable>
+
+
+                <h1>Elija el Laboratorio</h1>
+                <p:dataTable id="tablaElementos" var="Lab" value="#{LaboratorioBean.todosLaboratoriosDisponibles()}" selectionMode="single"
+                             selection="#{EquipoBean.idLab}" rowKey="#{Lab.id}"
+                             paginator="true" rows="10" paginatorTemplate="{CurrentPageReport} {PreviousPageLink} {PageLinks} {LastPageLink}RowsPerPageDropdown}"
+                             currentPageReportTemplate="{startRecord}-{endRecord} de {totalRecords} guardadas" rowsPerPageTemplate="5,10,15,20">>
+                    <p:column style="color:black;"  >
+                        <f:facet name="header">
+                            <h:outputText value="Id ELemento" />
+                        </f:facet>
+                        <h:outputText value="#{Lab.id}" />
+                    </p:column>
+
+
+
+                    <p:column style="color:black;">
+                        <f:facet name="header">
+                            <h:outputText value="Nombre" />
+                        </f:facet>
+                        <h:outputText value="#{Lab.nombre}" />
+                    </p:column>
+
+                </p:dataTable>
+
+                <p:commandButton type="submit" value="Asociar" style="background:#024D12; margin-top: 2% ; margin-left: 40%;width: 200px" styleClass="customStyleButton" action="#{EquipoBean.asignarLab()}"/>
+
+
+            </h:form>
+        </div>
+    </div>
+</h:body>
+</html>

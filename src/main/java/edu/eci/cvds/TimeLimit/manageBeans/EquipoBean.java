@@ -14,6 +14,7 @@ import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
+import java.sql.Time;
 import java.util.ArrayList;
 
 
@@ -34,6 +35,7 @@ public class EquipoBean {
     private ArrayList<Equipo>equiposMacOs=new ArrayList<Equipo>();
     private ArrayList<Equipo>equiposInteractiva=new ArrayList<Equipo>();
     private ArrayList<Equipo>equiposVideoJuegos=new ArrayList<Equipo>();
+    private ArrayList<Equipo>equiposNoAsignados=new ArrayList<Equipo>();
     private PieChartModel torta;
     private int id;
     private String nombre;
@@ -53,6 +55,13 @@ public class EquipoBean {
     private Elemento Cambio;
     private Elemento proximo;
     private ArrayList<Elemento> ElementosDisponibles;
+
+    public void setEquiposNoAsignados(ArrayList<Equipo> equiposNoAsignados) {
+        this.equiposNoAsignados = equiposNoAsignados;
+    }
+    public ArrayList<Equipo> getEquiposNoAsignados(){
+        return equiposNoAsignados;
+    }
 
     public ArrayList<Equipo> getEquiposInteractiva() {
         return equiposInteractiva;
@@ -352,6 +361,28 @@ public class EquipoBean {
 
     public void setTorta(PieChartModel torta) {
         this.torta = torta;
+    }
+
+    public ArrayList<Equipo> getEquipoNoAsignados() throws TimeLimitExceptions {
+        ArrayList<Equipo>equipos=equipoServices.getEquipos();
+        for(int i=0;i<equipos.size();i++){
+            if(equipos.get(i).getIdLaboratorio()==0){
+                equiposNoAsignados.add(equipos.get(i));
+            }
+        }
+        return equiposNoAsignados;
+    }
+    public void asignarLab()throws TimeLimitExceptions{
+        try {
+            idLaboratorio=idLab.getId();
+            nombreLaboratorio=idLab.getNombre();
+            int idComputador=getImaginacion().getId();
+            equipoServices.asignarLab(idComputador,idLaboratorio,nombreLaboratorio);
+        }catch (TimeLimitExceptions ex){
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "No hay equipos para asignar", "Error"));
+            throw ex;
+        }
+
     }
 }
 
