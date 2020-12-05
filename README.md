@@ -66,6 +66,8 @@ El personal podrá:
 
 **Agregar**
 
+![image](https://user-images.githubusercontent.com/59893804/101232270-bf686080-367e-11eb-8529-61867f913beb.png)
+
 El personal puede agregar nuevas novedades, equipos, elementos y laboratorios. La función de agregar es muy sencilla, simplemente se llenarán los campos del formulario y se seleccionarán las opciones adecuadas del mismo.
 La única variación existe cuando creamos un nuevo equipo ya que este como requisito debe contar con sus 4 elementos que lo componen, para ello haremos los siguientes pasos:
 
@@ -75,9 +77,13 @@ La única variación existe cuando creamos un nuevo equipo ya que este como requ
 
 **Consultar** 
 
+![image](https://user-images.githubusercontent.com/59893804/101232279-cf804000-367e-11eb-913c-90ee3fbbf191.png)
+
 La función consultar también es muy sencilla, simplemente iremos al ítem que queremos consultar y oprimimos el botón "consultar", después de esto veremos en pantalla toda la información de todos los atributos del ítem.
 
 **Asociar** 
+
+![image](https://user-images.githubusercontent.com/59893804/101232298-ed4da500-367e-11eb-9d71-395494dfe7ed.png)
 
 La función de asociar está dada solo para dos ítems:
 * Asociar un elemento a un equipo 
@@ -92,6 +98,8 @@ Asociar un equipo a un laboratorio ya lo explicamos ya que se hace cuando se agr
 
 **Dar de baja**
 
+![image](https://user-images.githubusercontent.com/59893804/101232450-90062380-367f-11eb-8740-4d990a541c04.png)
+
 Para dar de baja a un elemento haremos lo siguiente:
 
 
@@ -102,6 +110,8 @@ Para dar de baja a un elemento haremos lo siguiente:
 5. Exitosamente el elemento ya no estará disponible pero aun podemos ver toda su información
 
 **Generar reporte** 
+
+![image](https://user-images.githubusercontent.com/59893804/101232469-bcba3b00-367f-11eb-948c-23bdd4a7f808.png)
 
 Podemos generar reportes para equipos, laboratorios y elementos; para ello:
 
