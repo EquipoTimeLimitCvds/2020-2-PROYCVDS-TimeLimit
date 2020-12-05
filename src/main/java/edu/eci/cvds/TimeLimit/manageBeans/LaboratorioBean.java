@@ -154,6 +154,7 @@ public class LaboratorioBean {
         try{
             int cerrar=cerrarLab.getId();
             laboratorioServices.cerrarLaboratorio(cerrar);
+            novedadServices.registrarNovedad("Se cerro el laboratorio "+cerrarLab.getNombre(),"Finalizada","Laboratorio",cerrarLab.getId());
             ArrayList<Equipo> cambiarLab=equipoServices.getEquipos();
             for (int i=0;i<cambiarLab.size();i++){
                 if(cerrar==cambiarLab.get(i).getIdLaboratorio()){
