@@ -7,6 +7,8 @@ import edu.eci.cvds.TimeLimit.exceptions.TimeLimitExceptions;
 import edu.eci.cvds.TimeLimit.model.Equipo;
 import edu.eci.cvds.TimeLimit.model.Laboratorio;
 
+import java.sql.Time;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class MyBatisLaboratorio implements LaboratorioDao {
@@ -31,9 +33,10 @@ public class MyBatisLaboratorio implements LaboratorioDao {
         }
     }
     @Override
-    public void registrarLaboratorio(String nombre,String horario,String descripcion) throws TimeLimitExceptions{
+    public void registrarLaboratorio(String nombre, String horario, String descripcion, String cerrado) throws TimeLimitExceptions{
         try{
-            laboratorioMapper.registrarLaboratorio(nombre,horario,descripcion);
+            LocalDate fechaDeCreado=LocalDate.now();
+            laboratorioMapper.registrarLaboratorio(nombre,horario,descripcion,cerrado,fechaDeCreado,null);
         }catch (Exception e){
             throw new TimeLimitExceptions("No se puede insertar el laboratorio",e);
         }
@@ -44,6 +47,15 @@ public class MyBatisLaboratorio implements LaboratorioDao {
             return laboratorioMapper.getLaboratorios();
         }catch (Exception e){
             throw new TimeLimitExceptions("No puede obtener los laboratorios",e);
+        }
+    }
+    @Override
+    public void cerrarLaboratorio(int cerrar)throws TimeLimitExceptions{
+        try{
+            LocalDate fechaDeCerrado=LocalDate.now();
+            laboratorioMapper.cerrarLaboratorio(cerrar,fechaDeCerrado);
+        }catch (Exception e){
+            throw new TimeLimitExceptions("No se puede cerrar el laboratorio");
         }
     }
 

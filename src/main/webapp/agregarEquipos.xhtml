@@ -52,7 +52,7 @@
 			</h:selectOneMenu>
 
 			<h2 style="color:white; font-size:20px ;">Escoja el laboratorio al cual va a pertenecer el equipo</h2>
-			<p:dataTable id="tablaLaboratorios" var="Lab" value="#{LaboratorioBean.todosLaboratorios()}" selectionMode="single"
+			<p:dataTable id="tablaLaboratorios" var="Lab" value="#{LaboratorioBean.todosLaboratoriosDisponibles()}" selectionMode="single"
 						 selection="#{EquipoBean.idLab}" rowKey="#{Lab.id}"
 						 paginator="true" rows="10" paginatorTemplate="{CurrentPageReport} {PreviousPageLink} {PageLinks} {LastPageLink}RowsPerPageDropdown}"
 						 currentPageReportTemplate="{startRecord}-{endRecord} de {totalRecords} guardadas" rowsPerPageTemplate="5,10,15,20">>

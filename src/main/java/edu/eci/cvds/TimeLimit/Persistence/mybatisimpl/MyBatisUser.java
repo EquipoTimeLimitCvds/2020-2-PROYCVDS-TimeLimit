@@ -13,15 +13,6 @@ public class MyBatisUser implements UserDAO {
 
     @Inject
     private UserMapper userMapper;
-    /**@Override
-    public List<User> getUsers() throws TimeLimitExceptions {
-        try{
-            return UserMapper.getUsers();
-        }catch (Exception e){
-            throw new TimeLimitExceptions("No puede obtener los usuarios",e);
-        }
-    }**/
-
     public UserMapper getUserMapper() {
         return userMapper;
     }

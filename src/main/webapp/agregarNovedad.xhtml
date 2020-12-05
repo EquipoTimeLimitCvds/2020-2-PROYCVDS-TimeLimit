@@ -45,20 +45,21 @@
 				<f:selectItem itemLabel="Finalizada" itemValue="Finalizada" />
 				<f:selectItem itemLabel="En Curso" itemValue="En curso" />
 			</h:selectOneMenu>
-			<h:selectOneMenu id="novedad_tipo" value="#{NovedadBean.tipo}" style="width: 300x; height:50px" update=":@form" >
+			<h:selectOneMenu id="novedad_tipo" value="#{NovedadBean.tipo}" style="width: 300x; height:50px">
 				<f:selectItem itemLabel="Seleccione el tipo de novedad" itemValue="Seleccione el tipo de novedad" />
 				<f:selectItem itemLabel="Laboratorio" itemValue="Laboratorio" />
 				<f:selectItem itemLabel="Equipo" itemValue="Equipo" />
 				<f:selectItem itemLabel="Elemento" itemValue="Elemento" />
 			</h:selectOneMenu>
-			<p:dataTable id="tablaElementos" var="Lab" value="#{NovedadBean.getTodosElementos()}"
+			<p:dataTable id="tablaElementos" var="Nove" value="#{NovedadBean.getTodosElementos()}" selectionMode="single"
+						 selection="#{NovedadBean.cambioEle}" rowKey="#{Nove.id}"
 						 paginator="true" rows="10" paginatorTemplate="{CurrentPageReport} {PreviousPageLink} {PageLinks} {LastPageLink}RowsPerPageDropdown}"
 						 currentPageReportTemplate="{startRecord}-{endRecord} de {totalRecords} guardadas" rowsPerPageTemplate="5,10,15,20">>
-				<p:column style="color:black;" filterBy="#{Lab.id}" sortBy="#{Lab.id}" >
+				<p:column style="color:black;" filterBy="#{Nove.id}" sortBy="#{Nove.id}" >
 					<f:facet name="header">
-						<h:outputText value="IdLaboratorio" />
+						<h:outputText value="IdElemento" />
 					</f:facet>
-					<h:outputText value="#{Lab.id}" />
+					<h:outputText value="#{Nove.id}" />
 				</p:column>
 
 
@@ -67,17 +68,40 @@
 					<f:facet name="header">
 						<h:outputText value="Nombre" />
 					</f:facet>
-					<h:outputText value="#{Lab.marca}" />
+					<h:outputText value="#{Nove.nombre}" />
 				</p:column>
 
-			</p:dataTable>
 
-			<p:dataTable id="tablaLaboratorios" var="Lab" value="#{LaboratorioBean.todosLaboratorios()}"
+
+				<p:column style="color:black;">
+					<f:facet name="header">
+						<h:outputText value="Marca" />
+					</f:facet>
+					<h:outputText value="#{Nove.marca}" />
+				</p:column>
+
+
+
+				<p:column style="color:black;">
+					<f:facet name="header">
+						<h:outputText value="Modelo" />
+					</f:facet>
+					<h:outputText value="#{Nove.modelo}" />
+				</p:column>
+				<p:column style="color:black;">
+					<f:facet name="header">
+						<h:outputText value="Caracteristicas" />
+					</f:facet>
+					<h:outputText value="#{Nove.idEquipo}" />
+				</p:column>
+			</p:dataTable>
+			<p:dataTable id="tablaLaboratorios" var="Lab" value="#{NovedadBean.getTodosLaboratorios()}" selectionMode="single"
+						 selection="#{NovedadBean.cambioLab}" rowKey="#{Lab.id}"
 						 paginator="true" rows="10" paginatorTemplate="{CurrentPageReport} {PreviousPageLink} {PageLinks} {LastPageLink}RowsPerPageDropdown}"
 						 currentPageReportTemplate="{startRecord}-{endRecord} de {totalRecords} guardadas" rowsPerPageTemplate="5,10,15,20">>
 				<p:column style="color:black;" filterBy="#{Lab.id}" sortBy="#{Lab.id}" >
 					<f:facet name="header">
-						<h:outputText value="IdLaboratorio" />
+						<h:outputText value="IdElemento" />
 					</f:facet>
 					<h:outputText value="#{Lab.id}" />
 				</p:column>
@@ -89,6 +113,94 @@
 						<h:outputText value="Nombre" />
 					</f:facet>
 					<h:outputText value="#{Lab.nombre}" />
+				</p:column>
+
+
+
+				<p:column style="color:black;">
+					<f:facet name="header">
+						<h:outputText value="Horario" />
+					</f:facet>
+					<h:outputText value="#{Lab.horario}" />
+				</p:column>
+
+
+
+				<p:column style="color:black;">
+					<f:facet name="header">
+						<h:outputText value="Descripción" />
+					</f:facet>
+					<h:outputText value="#{Lab.descripcion}" />
+				</p:column>
+				<p:column style="color:black;">
+					<f:facet name="header">
+						<h:outputText value="Esta Cerrado" />
+					</f:facet>
+					<h:outputText value="#{Lab.cerrado}" />
+				</p:column>
+				<p:column style="color:black;">
+					<f:facet name="header">
+						<h:outputText value="Fecha Creado" />
+					</f:facet>
+					<h:outputText value="#{Lab.fechaDeCreado}" />
+				</p:column>
+				<p:column style="color:black;">
+					<f:facet name="header">
+						<h:outputText value="Fecha Cerrado" />
+					</f:facet>
+					<h:outputText value="#{Lab.fechaDeCerrado}" />
+				</p:column>
+
+			</p:dataTable>
+
+			<p:dataTable id="tablaEquipos" var="Equi" value="#{NovedadBean.getComputadores()}" selectionMode="single"
+						 selection="#{NovedadBean.cambioEqui}" rowKey="#{Equi.id}"
+						 paginator="true" rows="10" paginatorTemplate="{CurrentPageReport} {PreviousPageLink} {PageLinks} {LastPageLink}RowsPerPageDropdown}"
+						 currentPageReportTemplate="{startRecord}-{endRecord} de {totalRecords} guardadas" rowsPerPageTemplate="5,10,15,20">>
+				<p:column style="color:black;" filterBy="#{Equi.id}" sortBy="#{Equi.id}" >
+					<f:facet name="header">
+						<h:outputText value="Id Equipo" />
+					</f:facet>
+					<h:outputText value="#{Equi.id}" />
+				</p:column>
+
+
+
+				<p:column style="color:black;">
+					<f:facet name="header">
+						<h:outputText value="Nombre" />
+					</f:facet>
+					<h:outputText value="#{Equi.nombre}" />
+				</p:column>
+
+
+
+				<p:column style="color:black;">
+					<f:facet name="header">
+						<h:outputText value="Estado" />
+					</f:facet>
+					<h:outputText value="#{Equi.estado}" />
+				</p:column>
+
+
+
+				<p:column style="color:black;">
+					<f:facet name="header">
+						<h:outputText value="En Uso" />
+					</f:facet>
+					<h:outputText value="#{Equi.enuso}" />
+				</p:column>
+				<p:column style="color:black;">
+					<f:facet name="header">
+						<h:outputText value="id Laboratorio" />
+					</f:facet>
+					<h:outputText value="#{Equi.idLaboratorio}" />
+				</p:column>
+				<p:column style="color:black;">
+					<f:facet name="header">
+						<h:outputText value="Nombre Laboratorio" />
+					</f:facet>
+					<h:outputText value="#{Equi.nombreLaboratorio}" />
 				</p:column>
 
 			</p:dataTable>

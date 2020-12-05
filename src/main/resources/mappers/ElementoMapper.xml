@@ -23,7 +23,7 @@
         update "elementos" set idequipo=#{idequipo} where id=#{id};
     </update>
     <update id="borrarElemento">
-        update "elementos" set idequipo=898988 where id=#{id};
+        update "elementos" set idequipo=0 where id=#{id};
     </update>
     <update id="addElemento">
         update "elementos" set idequipo=#{idequipo} where id=#{id};

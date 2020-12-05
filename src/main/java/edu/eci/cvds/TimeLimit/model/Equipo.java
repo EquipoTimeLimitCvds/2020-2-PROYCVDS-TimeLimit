@@ -6,14 +6,25 @@ public class Equipo {
     private String estado;
     private String enUso;
     private int idLaboratorio;
+    private String nombreLaboratorio;
 
-    public void Equipo(int id,String nombre,String estado,String enUso,int idLaboratorio){
+    public void Equipo(int id,String nombre,String estado,String enUso,int idLaboratorio,String nombreLaboratorio){
         this.id=id;
         this.nombre=nombre;
         this.estado=estado;
         this.enUso=enUso;
         this.idLaboratorio=idLaboratorio;
+        this.nombreLaboratorio=nombreLaboratorio;
     }
+
+    public String getNombreLaboratorio() {
+        return nombreLaboratorio;
+    }
+
+    public void setNombreLaboratorio(String nombreLaboratorio) {
+        this.nombreLaboratorio = nombreLaboratorio;
+    }
+
     public String getNombre() {
         return nombre;
     }

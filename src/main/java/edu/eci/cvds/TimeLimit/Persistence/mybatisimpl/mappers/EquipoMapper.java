@@ -6,8 +6,7 @@ import org.apache.ibatis.annotations.Param;
 import java.util.ArrayList;
 
 public interface EquipoMapper {
-    public void registrarEquipo(@Param("nombre")String nombre,@Param("estado")String estado,@Param("enUso")String enUso,@Param("idLaboratorio")int idLaboratorio);
-
+    public void registrarEquipo(@Param("nombre")String nombre,@Param("estado")String estado,@Param("enUso")String enUso,@Param("idLaboratorio")int idLaboratorio,@Param("nombreLaboratorio")String nombreLaboratorio);
     public Equipo getEquipo(int id);
     public ArrayList<Equipo> getEquipos();
 }

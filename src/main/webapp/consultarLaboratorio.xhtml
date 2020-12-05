@@ -28,49 +28,72 @@
 		</center>
 		<br></br>
 
-		<p:dataTable id="Laboratorios" var="Laboratorios" value="#{LaboratorioBean.todosLaboratorios()}"  style="margin-bottom: 1%;
-					width: 90%; margin-left: 5%; border-radius: 15px;" paginator="true"  rows="10"
-					 paginatorTemplate="{CurrentPageReport} {PreviousPageLink} {PageLinks}  {LastPageLink} {RowsPerPageDropdown}"
-					 currentPageReportTemplate="{startRecord}-{endRecord} de {totalRecords} guardadas"
-					 rowsPerPageTemplate="5,10,15,20">				>
-
-
-			<p:column  style="color:black;"  filterBy="#{Laboratorios.id}" sortBy="#{Laboratorios.id}"  >
+		<p:dataTable id="tablaLaboratorios" var="Lab" value="#{LaboratorioBean.todosLaboratorios()}" selectionMode="single"
+					 selection="#{LaboratorioBean.cerrarLab}" rowKey="#{Lab.id}"
+					 paginator="true" rows="10" paginatorTemplate="{CurrentPageReport} {PreviousPageLink} {PageLinks} {LastPageLink}RowsPerPageDropdown}"
+					 currentPageReportTemplate="{startRecord}-{endRecord} de {totalRecords} guardadas" rowsPerPageTemplate="5,10,15,20">>
+			<p:column style="color:black;" filterBy="#{Lab.id}" sortBy="#{Lab.id}" >
 				<f:facet name="header">
-					<h:outputText value="ID" />
+					<h:outputText value="IdLaboratorio" />
 				</f:facet>
-				<h:outputText value="#{Laboratorios.id}" />
+				<h:outputText value="#{Lab.id}" />
 			</p:column>
 
-			<p:column style="color:black;" filterBy="#{Laboratorios.nombre}" sortBy="#{Laboratorios.nombre}" >
+
+
+			<p:column style="color:black;">
 				<f:facet name="header">
-					<h:outputText value="nombre" />
+					<h:outputText value="Nombre" />
 				</f:facet>
-				<h:outputText value="#{Laboratorios.nombre}" />
+				<h:outputText value="#{Lab.nombre}" />
 			</p:column>
 
-			<p:column style="color:black;" filterBy="#{Laboratorios.horario}" sortBy="#{Laboratorios.horario}" >
+
+
+			<p:column style="color:black;">
 				<f:facet name="header">
 					<h:outputText value="Horario" />
 				</f:facet>
-				<h:outputText value="#{Laboratorios.horario}" />
+				<h:outputText value="#{Lab.horario}" />
 			</p:column>
 
-			<p:column style="color:black;" filterBy="#{Laboratorios.descripcion}" sortBy="#{Laboratorios.descripcion}">
+
+
+			<p:column style="color:black;">
 				<f:facet name="header">
-					<h:outputText value="descripcion" />
+					<h:outputText value="Descripción" />
 				</f:facet>
-				<h:outputText value="#{Laboratorios.descripcion}" />
+				<h:outputText value="#{Lab.descripcion}" />
 			</p:column>
-
+			<p:column style="color:black;">
+				<f:facet name="header">
+					<h:outputText value="Cerrado" />
+				</f:facet>
+				<h:outputText value="#{Lab.cerrado}" />
+			</p:column>
+			<p:column style="color:black;">
+				<f:facet name="header">
+					<h:outputText value="Fecha de creación" />
+				</f:facet>
+				<h:outputText value="#{Lab.fechaDeCreado}" />
+			</p:column>
+			<p:column style="color:black;">
+				<f:facet name="header">
+					<h:outputText value="Fecha de creación" />
+				</f:facet>
+				<h:outputText value="#{Lab.fechaDeCerrado}" />
+			</p:column>
 		</p:dataTable>
-
-		<p:commandButton value="Graficar" id="graficar" actionListener="#{EquipoBean.listar()}" update="hpgGrafico"/>
+		<p:commandButton type="submit" value="Cerrar Laboratorio" style="background:#024D12; margin-top: 0.5% " styleClass="customStyleButton" actionListener="#{LaboratorioBean.cerrarLaboratorio()}"/>
+		<center>
 		<h:panelGrid id="hpgGrafico">
+			<p:commandButton value="Graficar" id="graficar" actionListener="#{EquipoBean.listar()}" update="hpgGrafico"/>
 			<p:chart type="pie" model="#{EquipoBean.torta}" style="width: 1000px; height: 1000px" rendered="#{EquipoBean.torta!=null}"/>
 		</h:panelGrid>
+		</center>
 
 	</h:form>
+
 
 </h:body>
 </html>

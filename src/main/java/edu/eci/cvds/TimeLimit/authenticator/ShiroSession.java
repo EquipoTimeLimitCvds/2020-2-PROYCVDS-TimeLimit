@@ -28,15 +28,10 @@ public class ShiroSession implements SessionLogger {
     @Override
     public void login(String nombre,String clave) throws TimeLimitExceptions {
         try{
-
             Subject currentUser = SecurityUtils.getSubject();
-
             UsernamePasswordToken token = new UsernamePasswordToken(nombre,new Sha256Hash(clave).toHex());
-
             currentUser.getSession().setAttribute("Correo",nombre);
-
             currentUser.login( token );
-
         } catch ( UnknownAccountException a ) {
             throw new TimeLimitExceptions("Usuario o contraseña incorrectos",a);
         } catch ( IncorrectCredentialsException b ) {

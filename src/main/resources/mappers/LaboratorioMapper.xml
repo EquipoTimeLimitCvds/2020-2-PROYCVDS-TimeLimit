@@ -17,9 +17,14 @@
     </select>
 
     <insert id="registrarLaboratorio" parameterType="edu.eci.cvds.TimeLimit.model.Laboratorio">
-        INSERT INTO "Laboratorio"(id,nombre,horario,descripcion)
-	VALUES((select count(*)+1 from "Laboratorio"),#{nombre},#{horario},#{descripcion});
+        INSERT INTO "Laboratorio"(id,nombre,horario,descripcion,cerrado,fechadecreado)
+	VALUES((select count(*)+1 from "Laboratorio"),#{nombre},#{horario},#{descripcion},#{cerrado},#{fechadecreado});
     </insert>
+
+    <update id="cerrarLaboratorio" parameterType="edu.eci.cvds.TimeLimit.model.Laboratorio">
+        update "Laboratorio" SET fechadecerrado=#{fechadecerrado},cerrado='Si'  WHERE id=#{id};
+    </update>
+
 </mapper>
 
 

@@ -8,6 +8,8 @@ import edu.eci.cvds.TimeLimit.model.Equipo;
 import edu.eci.cvds.TimeLimit.model.Laboratorio;
 import edu.eci.cvds.TimeLimit.services.LaboratorioServices;
 
+import java.sql.Time;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class LaboratorioServiceImpl implements LaboratorioServices{
@@ -16,11 +18,11 @@ public class LaboratorioServiceImpl implements LaboratorioServices{
 
 
 	@Override
-	public void registrarLaboratorio(String nombre, String horario, String descripcion) throws TimeLimitExceptions {
+	public void registrarLaboratorio(String nombre, String horario, String descripcion, String cerrado) throws TimeLimitExceptions {
 		if(nombre==null){
 			throw new TimeLimitExceptions("El laboratorio no es correcto");
 		}else{
-			laboratorioDao.registrarLaboratorio(nombre,horario,descripcion);
+			laboratorioDao.registrarLaboratorio(nombre,horario,descripcion,cerrado);
 		}
 	}
 
@@ -33,6 +35,10 @@ public class LaboratorioServiceImpl implements LaboratorioServices{
 	@Override
 	public ArrayList<Laboratorio> getLaboratorios() throws TimeLimitExceptions {
 		return laboratorioDao.getLaboratorios();
+	}
+	@Override
+	public void cerrarLaboratorio(int cerrar)throws TimeLimitExceptions{
+		laboratorioDao.cerrarLaboratorio(cerrar);
 	}
 
 

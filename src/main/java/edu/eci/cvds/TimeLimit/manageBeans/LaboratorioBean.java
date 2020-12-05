@@ -1,21 +1,17 @@
 package edu.eci.cvds.TimeLimit.manageBeans;
 
-import com.google.inject.Inject;
 import edu.eci.cvds.TimeLimit.exceptions.TimeLimitExceptions;
-import edu.eci.cvds.TimeLimit.model.Equipo;
 import edu.eci.cvds.TimeLimit.model.Laboratorio;
 import edu.eci.cvds.TimeLimit.services.LaboratorioServices;
 import edu.eci.cvds.TimeLimit.services.NovedadServices;
 import edu.eci.cvds.TimeLimit.services.ServicesFactory;
 import org.primefaces.PrimeFaces;
-import org.primefaces.model.chart.PieChartModel;
-import sun.awt.Symbol;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
-import java.lang.reflect.Array;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 
@@ -36,8 +32,29 @@ public class LaboratorioBean {
     private String nombre;
     private String horario;
     private String descripcion;
+    private String cerrado;
+    private LocalDate fechaDeCreado;
+    private LocalDate fechaDeCerrado;
     private ArrayList<Laboratorio> laboratorios = new ArrayList<Laboratorio>();
+    private ArrayList<Laboratorio> laboratoriosDisponibles = new ArrayList<Laboratorio>();
+    private Laboratorio cerrarLab;
 
+
+    public ArrayList<Laboratorio> getLaboratoriosDisponibles() {
+        return laboratoriosDisponibles;
+    }
+
+    public void setLaboratoriosDisponibles(ArrayList<Laboratorio> laboratoriosDisponibles) {
+        this.laboratoriosDisponibles = laboratoriosDisponibles;
+    }
+
+    public void setCerrarLab(Laboratorio cerrarLab) {
+        this.cerrarLab = cerrarLab;
+    }
+
+    public Laboratorio getCerrarLab() {
+        return cerrarLab;
+    }
 
     public LaboratorioServices getElementoServices() {
         return laboratorioServices;
@@ -45,6 +62,30 @@ public class LaboratorioBean {
 
     public void setElementoServices(LaboratorioServices laboratorioServices) {
         this.laboratorioServices = laboratorioServices;
+    }
+
+    public String getCerrado() {
+        return cerrado;
+    }
+
+    public LocalDate getFechaDeCerrado() {
+        return fechaDeCerrado;
+    }
+
+    public LocalDate getFechaDeCreado() {
+        return fechaDeCreado;
+    }
+
+    public void setCerrado(String cerrado) {
+        this.cerrado = cerrado;
+    }
+
+    public void setFechaDeCerrado(LocalDate fechaDeCerrado) {
+        this.fechaDeCerrado = fechaDeCerrado;
+    }
+
+    public void setFechaDeCreado(LocalDate fechaDeCreado) {
+        this.fechaDeCreado = fechaDeCreado;
     }
 
     public String getNombre() {
@@ -82,7 +123,7 @@ public class LaboratorioBean {
     public void registrarLaboratorio() throws TimeLimitExceptions {
         try {
             laboratorios = todosLaboratorios();
-            laboratorioServices.registrarLaboratorio(nombre, horario, descripcion);
+            laboratorioServices.registrarLaboratorio(nombre, horario, descripcion,cerrado);
             novedadServices.registrarNovedad("Se creo el Laboratorio " + nombre + " " + "de id " + laboratorios.size() + 1, "finalizada", "Laboratorio", laboratorios.size() + 1);
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Laboratorio creado con exito"));
             PrimeFaces current = PrimeFaces.current();
@@ -96,6 +137,23 @@ public class LaboratorioBean {
     public ArrayList<Laboratorio> todosLaboratorios() throws TimeLimitExceptions {
         laboratorios = laboratorioServices.getLaboratorios();
         return laboratorioServices.getLaboratorios();
+    }
+    public ArrayList<Laboratorio> todosLaboratoriosDisponibles() throws TimeLimitExceptions {
+        laboratorios = laboratorioServices.getLaboratorios();
+        for (int i=0;i<laboratorios.size();i++) {
+            if(laboratorios.get(i).getCerrado().equals("No")){
+                laboratoriosDisponibles.add(laboratorios.get(i));
+            }
+        }
+        return laboratoriosDisponibles;
+    }
+    public void cerrarLaboratorio(){
+        try{
+            int cerrar=cerrarLab.getId();
+            laboratorioServices.cerrarLaboratorio(cerrar);
+        }catch (TimeLimitExceptions ex){
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,"No se puede cerrar este laboratorio","Error"));
+        }
     }
 }
 

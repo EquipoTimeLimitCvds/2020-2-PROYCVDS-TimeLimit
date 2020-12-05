@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public interface EquipoServices {
 
-    public void registrarEquipo(String nombre ,String estado,String enUso,int idLaboratorio)throws TimeLimitExceptions;
+    public void registrarEquipo(String nombre ,String estado,String enUso,int idLaboratorio,String nombreLaboratorio)throws TimeLimitExceptions;
 
     public Equipo getEquipo(int id)throws TimeLimitExceptions;
 

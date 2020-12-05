@@ -5,10 +5,7 @@ import edu.eci.cvds.TimeLimit.model.Elemento;
 import edu.eci.cvds.TimeLimit.model.Equipo;
 import edu.eci.cvds.TimeLimit.model.Laboratorio;
 import edu.eci.cvds.TimeLimit.model.Novedad;
-import edu.eci.cvds.TimeLimit.services.ElementoServices;
-import edu.eci.cvds.TimeLimit.services.EquipoServices;
-import edu.eci.cvds.TimeLimit.services.NovedadServices;
-import edu.eci.cvds.TimeLimit.services.ServicesFactory;
+import edu.eci.cvds.TimeLimit.services.*;
 import org.primefaces.PrimeFaces;
 
 import javax.faces.application.FacesMessage;
@@ -28,7 +25,8 @@ public class NovedadBean {
 
     NovedadServices novedadServices = ServicesFactory.getInstance().getNovedadServices();
     ElementoServices elementoServices= ServicesFactory.getInstance().getElementoServices();
-
+    LaboratorioServices laboratorioServices= ServicesFactory.getInstance().getLaboratorioServices();
+    EquipoServices equipoServices= ServicesFactory.getInstance().getEquipoServices();
 
     private int id;
     private LocalDate fecha=LocalDate.now();
@@ -36,9 +34,33 @@ public class NovedadBean {
     private String estado;
     private String tipo;
     private int idElemento;
+    private Laboratorio cambioLab;
+    private Equipo cambioEqui;
+    private Elemento cambioEle;
 
+    public Elemento getCambioEle() {
+        return cambioEle;
+    }
 
+    public Equipo getCambioEqui() {
+        return cambioEqui;
+    }
 
+    public Laboratorio getCambioLab() {
+        return cambioLab;
+    }
+
+    public void setCambioEle(Elemento cambioEle) {
+        this.cambioEle = cambioEle;
+    }
+
+    public void setCambioEqui(Equipo cambioEqui) {
+        this.cambioEqui = cambioEqui;
+    }
+
+    public void setCambioLab(Laboratorio cambioLab) {
+        this.cambioLab = cambioLab;
+    }
 
     public NovedadServices getNovedadServices(){
         return novedadServices;
@@ -92,9 +114,17 @@ public class NovedadBean {
     }
 
     public void registrarNovedad()throws TimeLimitExceptions{
+        System.out.println(tipo);
         try{
-
-            novedadServices.registrarNovedad(descripcion,estado,tipo,idElemento);
+            if(tipo.equals("Laboratorio")){
+                int idLab=cambioLab.getId();
+                System.out.println(idLab);
+                novedadServices.registrarNovedad(descripcion,estado,tipo,idLab);
+            }else if(tipo.equals("Elemento")){
+                novedadServices.registrarNovedad(descripcion,estado,tipo,cambioEle.getId());
+            }else if(tipo.equals("Equipo")){
+                novedadServices.registrarNovedad(descripcion,estado,tipo,cambioEqui.getId());
+            }
             FacesContext.getCurrentInstance().addMessage(null,new FacesMessage("Novedad creada con exito"));
             PrimeFaces current = PrimeFaces.current();
             current.executeScript("PF('dlg2').hide();");
@@ -110,5 +140,22 @@ public class NovedadBean {
     public ArrayList<Elemento>getTodosElementos() throws TimeLimitExceptions{
         return elementoServices.getElementos();
     }
+    public ArrayList<Laboratorio>getTodosLaboratorios()throws TimeLimitExceptions{
+        return laboratorioServices.getLaboratorios();
+    }
+    public ArrayList<Equipo>getComputadores()throws TimeLimitExceptions{
+        return equipoServices.getEquipos();
+    }
 
+    public void setElementoServices(ElementoServices elementoServices) {
+        this.elementoServices = elementoServices;
+    }
+
+    public void setEquipoServices(EquipoServices equipoServices) {
+        this.equipoServices = equipoServices;
+    }
+
+    public void setLaboratorioServices(LaboratorioServices laboratorioServices) {
+        this.laboratorioServices = laboratorioServices;
+    }
 }

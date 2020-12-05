@@ -2,6 +2,7 @@
 <html xmlns="http://www.w3c.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
       lang="es">
 <h:head>
 	<title>TimeLimit</title>
@@ -40,6 +41,11 @@
         <p:inputText type="nombre" name="nombre" id="nombre" placeholder="Nombre" value="#{LaboratorioBean.nombre}" />
         <p:inputText type="horario" name="horario" id="horario" placeholder="Horario" value="#{LaboratorioBean.horario}"/>
         <p:inputText type="descripcion" name="descripcion" id="descripcion" placeholder="Descripción" value="#{LaboratorioBean.descripcion}"/>
+        <h:selectOneMenu id="Equipo_cerrado" value="#{LaboratorioBean.cerrado}" style="width: 300x; height:50px" >
+            <f:selectItem itemLabel="Esta Cerrado?" itemValue="Esta en Cerrado?" />
+            <f:selectItem itemLabel="Si" itemValue="Si" />
+            <f:selectItem itemLabel="No" itemValue="No" />
+        </h:selectOneMenu>
         <p:commandButton type="submit" value="Agregar" style="background:#024D12; margin-top: 0.5% " styleClass="customStyleButton" action="#{LaboratorioBean.registrarLaboratorio()}"/>
     </h:form>
 	</div>

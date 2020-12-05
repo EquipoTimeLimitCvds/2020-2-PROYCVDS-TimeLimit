@@ -40,6 +40,7 @@ public class EquipoBean {
     private String prueba;
     private String enUso;
     private int idLaboratorio;
+    private String nombreLaboratorio;
     private Laboratorio idLab;
     private Elemento ejemplo;
     private Elemento ejemploDos;
@@ -75,6 +76,14 @@ public class EquipoBean {
     public void setPrueba(String prueba) {
 
         this.prueba = prueba;
+    }
+
+    public void setNombreLaboratorio(String nombreLaboratorio) {
+        this.nombreLaboratorio = nombreLaboratorio;
+    }
+
+    public String getNombreLaboratorio() {
+        return nombreLaboratorio;
     }
 
     public ArrayList<Equipo>getListaEquipos(){
@@ -176,8 +185,9 @@ public class EquipoBean {
     public void registrarEquipo()throws TimeLimitExceptions{
         try{
             idLaboratorio=idLab.getId();
+            nombreLaboratorio=idLab.getNombre();
             if(idLaboratorio>0){
-                equipoServices.registrarEquipo(nombre,estado,enUso,idLaboratorio);
+                equipoServices.registrarEquipo(nombre,estado,enUso,idLaboratorio,nombreLaboratorio);
                 listaEquipos=new ArrayList<Equipo>();
                 listaEquipos=getEquipos();
                 for(int i=0;i<listaEquipos.size();i++){

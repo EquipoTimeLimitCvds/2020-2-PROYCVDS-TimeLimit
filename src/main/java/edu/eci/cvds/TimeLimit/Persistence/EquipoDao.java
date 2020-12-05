@@ -10,7 +10,7 @@ public interface EquipoDao {
 
     public Equipo getEquipo(int id) throws TimeLimitExceptions;
 
-	public void registrarEquipo(String nombre, String estado, String enUso, int idLaboratorio) throws TimeLimitExceptions;
+	public void registrarEquipo(String nombre, String estado, String enUso, int idLaboratorio,String nombreLaboratorio) throws TimeLimitExceptions;
 
 
     public ArrayList<Equipo> getEquipos()throws TimeLimitExceptions;
