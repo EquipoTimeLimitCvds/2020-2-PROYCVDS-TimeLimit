@@ -21,9 +21,13 @@
 		<center>
 
 			<h2 style="color:white; font-size:100px ;">Equipos</h2>
+			<h:commandLink>
+				<h:graphicImage url="assets/img/excelEquipos.png"/>
+				<p:dataExporter type="xls" target="tablaEquipos" fileName="excelEquipos"/>
+			</h:commandLink>
 		</center>
 		<br></br>
-		<p:dataTable var="Equipos" value="#{EquipoBean.getEquipos()}"  style="margin-bottom: 1%;
+		<p:dataTable id="tablaEquipos" var="Equipos" value="#{EquipoBean.getEquipos()}"  style="margin-bottom: 1%;
 					width: 90%; margin-left: 5%; border-radius: 15px;" paginator="true"  rows="10"
 					 paginatorTemplate="{CurrentPageReport} {PreviousPageLink} {PageLinks}  {LastPageLink} {RowsPerPageDropdown}"
 					 currentPageReportTemplate="{startRecord}-{endRecord} de {totalRecords} guardadas"

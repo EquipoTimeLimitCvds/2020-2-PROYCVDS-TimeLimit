@@ -76,6 +76,7 @@ public class LoginBean {
              logger.login(nombre,clave);
              setLogg(true);
              FacesContext.getCurrentInstance().getExternalContext().redirect("/index2.xhtml");
+             
 
         } catch (TimeLimitExceptions | IOException e){
             FacesContext.getCurrentInstance().addMessage("shiro", new FacesMessage(FacesMessage.SEVERITY_ERROR, "Usuario no registrado", "Este usuario no se encuentra en nuestra base de datos"));

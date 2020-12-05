@@ -37,15 +37,15 @@
 					}
 				</style>
 				<img class="avatar" src= "assets/img/timelimit.png" alt="Logo de login"/>
-			<p:inputText type="nombre" name="nombre" id="nombre" placeholder="nombre" value="#{EquipoBean.nombre}"/>
-			<h:selectOneMenu id="Equipo_Estado" value="#{EquipoBean.estado}" style="width: 300x; height:50px" >
+			<p:inputText type="nombre" name="nombre" id="nombre" placeholder="Nombre" value="#{EquipoBean.nombre}"/>
+			<h:selectOneMenu id="Equipo_Estado" value="#{EquipoBean.estado}" style="width: 300x; height:50px; margin-left: 40%; margin-top: 1%" >
 				<f:selectItem itemLabel="Seleccione el estado del equipo" itemValue="Seleccione el estado del equipo" />
 				<f:selectItem itemLabel="Disponible" itemValue="Disponible" />
 				<f:selectItem itemLabel="En reparacion" itemValue="En reparacion" />
 				<f:selectItem itemLabel="Reservado" itemValue="Reservado" />
 				<f:selectItem itemLabel="Apagado" itemValue="Apagado" />
 			</h:selectOneMenu>
-			<h:selectOneMenu id="Equipo_EnUso" value="#{EquipoBean.enUso}" style="width: 300x; height:50px" >
+			<h:selectOneMenu id="Equipo_EnUso" value="#{EquipoBean.enUso}" style="width: 300x; height:50px; margin-left: 45%; margin-top: 1%" >
 				<f:selectItem itemLabel="Esta en uso?" itemValue="Esta en uso?" />
 				<f:selectItem itemLabel="Si" itemValue="Si" />
 				<f:selectItem itemLabel="No" itemValue="No" />
