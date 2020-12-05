@@ -132,7 +132,7 @@ Podemos generar reportes para equipos, laboratorios y elementos; para ello:
 ### Tecnologías utilizadas
 Se utilizaron diferentes tecnologías a lo largo del desarrollo del proyecto como:
 * **PrimeFaces (FRONT):** Fue la biblioteca de componentes que se utilizó para el front del aplicativo , tiene componentes agradables a la vista que son innovadores en cuanto a diseño lo que mejora la experiencia de navegación en el aplicativo.
-* **Guice (BACK):** En cuanto a framework de inyección de dependencias utilizamos Google Guice el cual podía usarse para aplicaciones hechas en java (el lenguaje oficial de nuestro proyecto).
+* **Guice (BACK):** En cuanto a inyección de dependencias utilizamos Google Guice el cual podía usarse para aplicaciones hechas en java (el lenguaje oficial de nuestro proyecto).
 * **PostgreSQL (BASE DE DATOS):** Este fue el servidor de base de datos relacional que utilizamos para el manejo de la base de datos del aplicativo; incluye características de la orientación a objetos como herencias , tipos de datos , funciones , restricciones y reglas de integridad características muy útiles para el desarrollo de nuestro proyecto.
 
 ### _Despliegue en HEROKU_ 📦
